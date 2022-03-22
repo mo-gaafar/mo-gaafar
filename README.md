@@ -12,6 +12,7 @@ I am Mohamed Nasser, people call me Nasser, currently pursuing my bachelor's deg
 ![Python](https://img.shields.io/badge/-Python-black?style=flat-square&logo=Python)
 ![MATLAB](https://img.shields.io/badge/-MATLAB-blue?logo=matrix)
 ![R](https://img.shields.io/badge/-R-grey?logo=R)
+![LUA](https://img.shields.io/badge/-LUA-2523e7?logo=LUA)
 ![C++](https://img.shields.io/badge/-C++-00599C?style=flat-square&logo=c)
 ![HTML5](https://img.shields.io/badge/-HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/-CSS3-1572B6?style=flat-square&logo=css3)
@@ -22,6 +23,8 @@ I am Mohamed Nasser, people call me Nasser, currently pursuing my bachelor's deg
 ![Google Cloud](https://img.shields.io/badge/Google%20Cloud-black?style=flat-square&logo=google-cloud)
 ![Git](https://img.shields.io/badge/-Git-black?style=flat-square&logo=git)
 ![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat-square&logo=github)
+
+## 📊 Statistics
 
 ![Github Stats](https://github-readme-stats.vercel.app/api?username=mo-gaafar&count_private=true&show_icons=true&include_all_commits=true)
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=mo-gaafar&hide=TeX&layout=compact)
