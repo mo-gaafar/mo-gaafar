@@ -28,7 +28,7 @@ I am Mohamed Nasser, people call me Nasser, currently pursuing my bachelor's deg
 
 <details>
   <summary>Read More</summary>
-  ## 📊 Statistics
+  <h2> 📊 Statistics </h2>
 
 ![Github Stats](https://github-readme-stats.vercel.app/api?username=mo-gaafar&count_private=true&show_icons=true&include_all_commits=true)
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=mo-gaafar&hide=TeX&layout=compact)
