@@ -24,9 +24,16 @@ I am Mohamed Nasser, people call me Nasser, currently pursuing my bachelor's deg
 ![Git](https://img.shields.io/badge/-Git-black?style=flat-square&logo=git)
 ![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat-square&logo=github)
 
-## 📊 Statistics
+![Visitor Badge](https://visitor-badge.laobi.icu/badge?page_id=mo-gaafar.mo-gaafar)
+
+<details>
+  <summary>Read More</summary>
+  ## 📊 Statistics
 
 ![Github Stats](https://github-readme-stats.vercel.app/api?username=mo-gaafar&count_private=true&show_icons=true&include_all_commits=true)
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=mo-gaafar&hide=TeX&layout=compact)
+</details>
 
-![Visitor Badge](https://visitor-badge.laobi.icu/badge?page_id=mo-gaafar.mo-gaafar)
+
+
+
