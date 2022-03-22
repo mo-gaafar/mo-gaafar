@@ -10,9 +10,9 @@ I am Mohamed Nasser, people call me Nasser, currently pursuing my bachelor's deg
 
 ![JavaScript](https://img.shields.io/badge/-JavaScript-black?style=flat-square&logo=javascript)
 ![Python](https://img.shields.io/badge/-Python-black?style=flat-square&logo=Python)
-![MATLAB](https://img.shields.io/badge/-MATLAB-blue?logo=matrix)
-![R](https://img.shields.io/badge/-R-grey?logo=R)
-![LUA](https://img.shields.io/badge/-LUA-2523e7?logo=LUA)
+![MATLAB](https://img.shields.io/badge/-MATLAB-blue?style=flat-square&logo=matrix)
+![R](https://img.shields.io/badge/-R-grey?style=flat-square&logo=R)
+![LUA](https://img.shields.io/badge/-LUA-2523e7?style=flat-square&logo=LUA)
 ![C++](https://img.shields.io/badge/-C++-00599C?style=flat-square&logo=c)
 ![HTML5](https://img.shields.io/badge/-HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/-CSS3-1572B6?style=flat-square&logo=css3)
