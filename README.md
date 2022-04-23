@@ -26,14 +26,14 @@ I am Mohamed Nasser, people call me Nasser, currently pursuing my bachelor's deg
 
 ![Visitor Badge](https://visitor-badge.laobi.icu/badge?page_id=mo-gaafar.mo-gaafar)
 
+
+
 <details>
-  <summary>Read More</summary>
-  <h2> 📊 Statistics </h2>
-
-![Github Stats](https://github-readme-stats.vercel.app/api?username=mo-gaafar&count_private=true&show_icons=true&include_all_commits=true)
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=mo-gaafar&hide=TeX&layout=compact)
+  <summary><h2> 📊 Statistics </h2></summary>
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=mo-gaafar&theme=dark&date_format=j%20M%5B%20Y%5D&currStreakLabel=6FDA44&fire=6FDA44&ring=6FDA44" alt="GitHub Streak Stats" height="200" />
+<br>
+<img src="https://github-readme-stats.vercel.app/api?username=mo-gaafar&title_color=6FDA44&text_color=FFFFFF&show_icons=true&icon_color=6FDA44&include_all_commits=true&count_private=true&theme=dark" alt="GitHub Stats" height="200"/>
+<br>
+<img src="https://github-readme-stats.vercel.app/api/top-langs?username=mo-gaafar&layout=compact&title_color=6FDA44&text_color=FFFFFF&theme=dark" alt="GitHub Most Used Languages" height="200" />
+<br>
 </details>
-
-
-
-
