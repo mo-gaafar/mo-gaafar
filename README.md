@@ -1,4 +1,4 @@
-## Hello! <img src="https://raw.githubusercontent.com/aemmadi/aemmadi/master/wave.gif" width="30px">
+## Hello! <img src="https://raw.githubusercontent.com/aemmadi/aemmadi/master/wave.gif" width="30px" height= "30px">
 
 I am Mohamed Nasser, people call me Nasser, currently pursuing my bachelor's degree majoring in systems and biomedical engineering from [Cairo University Faculty of Engineering](https://cu.edu.eg/Home). I am a tech enthusiast & an open-source advocate. I am always open to collaborating on projects and innovative/disruptive ideas. Find out more about me & feel free to connect with me here:
 
