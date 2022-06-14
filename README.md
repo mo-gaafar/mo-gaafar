@@ -35,6 +35,7 @@ I am Mohamed Nasser, people call me Nasser, currently pursuing my bachelor's deg
 ![Google Cloud API](https://img.shields.io/badge/Google%20Cloud%20API-084dad?style=flat-square&logo=google-cloud)
 ![Git](https://img.shields.io/badge/-Git-black?style=flat-square&logo=git)
 ![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat-square&logo=github)
+![OpenGL](https://img.shields.io/badge/-OpenGL-dedef2?style=flat-square&logo=opengl)
 ![Unity](https://img.shields.io/badge/-Unity-181717?style=flat-square&logo=unity)
 ![LUA](https://img.shields.io/badge/-LUA-2523e7?style=flat-square&logo=LUA)
 ![ROBLOX](https://img.shields.io/badge/-ROBLOX-ff0505?style=flat-square&logo=ROBLOX)
