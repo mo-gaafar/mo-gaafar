@@ -22,6 +22,7 @@ I am Mohamed Nasser, people call me Nasser, currently pursuing my bachelor's deg
 ### ⚡ Technologies
 ![Python](https://img.shields.io/badge/-Python-black?style=flat-square&logo=Python)
 ![MATLAB](https://img.shields.io/badge/-MATLAB-blue?style=flat-square&logo=matrix)
+![C#](https://img.shields.io/badge/-C%23-00599C?style=flat-square&logo=csharp)
 ![C++](https://img.shields.io/badge/-C++-00599C?style=flat-square&logo=cplusplus)
 ![Embedded C](https://img.shields.io/badge/-Embedded%20C-474747?style=flat-square&logo=c)
 ![JavaScript](https://img.shields.io/badge/-JavaScript-black?style=flat-square&logo=javascript)
