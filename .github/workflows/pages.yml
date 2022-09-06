@@ -29,27 +29,22 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Setup Pages
-        uses: actions/configure-pages@v2
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
-        with:
-          # Upload entire repository
-          path: '.'
+    - name: Checkout master
+      uses: actions/checkout@v1
+      with:
+        submodules: true
 
-      - name: Hugo Deploy GitHub Pages
-        # You may pin to the exact commit or the version.
-        # uses: benmatselby/hugo-deploy-gh-pages@0e433046d200f4ed467a689bf850833362309152
-        uses: benmatselby/hugo-deploy-gh-pages@v1.16.0
-        env:
-          HUGO_VERSION: 0.102.3
-          TARGET_REPO: mo-gaafar/mo-gaafar.github.io
-          TARGET_BRANCH: main
-          TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          CNAME: mngaafar.com
-          HUGO_PUBLISH_DIR: my-profile
+    - name: Hugo Deploy GitHub Pages
+      # You may pin to the exact commit or the version.
+      # uses: benmatselby/hugo-deploy-gh-pages@0e433046d200f4ed467a689bf850833362309152
+      uses: benmatselby/hugo-deploy-gh-pages@v1.16.0
+      env:
+        HUGO_VERSION: 0.102.3
+        TARGET_REPO: mo-gaafar/mo-gaafar.github.io
+        TARGET_BRANCH: main
+        TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        CNAME: mngaafar.com
+        HUGO_PUBLISH_DIR: my-profile
 
         
 
