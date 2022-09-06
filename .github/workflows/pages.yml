@@ -37,26 +37,29 @@ jobs:
         with:
           # Upload entire repository
           path: '.'
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1
-        
-      - name: Hugo to GH Pages
+
+      - name: Hugo Deploy GitHub Pages
         # You may pin to the exact commit or the version.
-        # uses: chabad360/hugo-gh-pages@0bcf754dc6c823a580c58a59a3baa476a41258d3
-        uses: chabad360/hugo-gh-pages@v2
+        # uses: benmatselby/hugo-deploy-gh-pages@0e433046d200f4ed467a689bf850833362309152
+        uses: benmatselby/hugo-deploy-gh-pages@v1.16.0
         with:
-          # A Github Personal Access Token with Repo permissions
-          githubToken: $${{ secrets.GITHUB_TOKEN}}
-          # The custom domain name for your GH Pages Site
+          # If you are defining a custom domain name for your GitHub site, put that value in this variable.
           cname: mngaafar.com
-          # The branch to push the built site to
-          branch: main
-          # The repo to push the built site to
-          repo: mo-gaafar
-          # The version of hugo to use
-#           hugoVersion: # optional
-#           # Arguments to pass to Hugo
-#           args: # optional, default is --gc --minify --cleanDestinationDir
-          # Directory for Hugo Site (if it's not the root of the repo)
-          siteDir: my-profile
+          # Your PAT to authorise the action to do things.
+          github_token: $${{ secrets.GITHUB_TOKEN}}
+          # The version of Go to install. Go won't be installed if this isn't set.
+          # go_version: # optional
+          # Any extra arguments to pass to Hugo.
+          # hugo_args: # optional
+          # If set to `true`, use the *extended* version of hugo.
+          # hugo_extended: # optional
+          # The publishDir from the hugo config.toml file
+          # hugo_publish_dir: # optional
+          # The version of hugo to use.
+          hugo_version: 0.102.3
+          # The branch to push the hugo public files, default will be main branch.
+          target_branch: main
+          # The repo name you want to clone and push to.
+          target_repo: mo-gaafar
+        
+
