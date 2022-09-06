@@ -46,7 +46,7 @@ jobs:
           # If you are defining a custom domain name for your GitHub site, put that value in this variable.
           cname: mngaafar.com
           # Your PAT to authorise the action to do things.
-          github_token: $${{ secrets.GITHUB_TOKEN}}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           # The version of Go to install. Go won't be installed if this isn't set.
           # go_version: # optional
           # Any extra arguments to pass to Hugo.
