@@ -47,7 +47,7 @@ jobs:
         uses: chabad360/hugo-gh-pages@v2
         with:
           # A Github Personal Access Token with Repo permissions
-          githubToken: $ACCESS_SECRET
+          githubToken: $${{ secrets.GITHUB_TOKEN}}
           # The custom domain name for your GH Pages Site
           cname: mngaafar.com
           # The branch to push the built site to
