@@ -62,6 +62,6 @@ jobs:
           # The branch to push the hugo public files, default will be main branch.
           target_branch: main
           # The repo name you want to clone and push to.
-          target_repo: mo-gaafar
+          target_repo: mo-gaafar/mo-gaafar.github.io
         
 
