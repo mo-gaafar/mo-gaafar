@@ -1,48 +1,32 @@
-# Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
-env:
-  GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+name: github pages
+
 on:
-  # Runs on pushes targeting the default branch
   push:
-    branches: ["main"]
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-# Allow one concurrent deployment
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
+    branches:
+      - main  # Set a branch to deploy
+  pull_request:
 
 jobs:
-  # Single deploy job since we're just deploying
   deploy:
-    environment:
-      name: github-pages
-      url: mngaafar.com
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v2
+        with:
+          submodules: true  # Fetch Hugo themes (true OR recursive)
+          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
 
-      - name: Hugo Deploy GitHub Pages
-        # You may pin to the exact commit or the version.
-        # uses: benmatselby/hugo-deploy-gh-pages@0e433046d200f4ed467a689bf850833362309152
-        uses: benmatselby/hugo-deploy-gh-pages@v1.16.0
-        env:
-          HUGO_VERSION: 0.102.3
-          TARGET_REPO: mo-gaafar/mo-gaafar.github.io
-          TARGET_BRANCH: main
-          TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          CNAME: mngaafar.com
-          HUGO_PUBLISH_DIR: my-profile
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+          # extended: true
 
-        
+      - name: Build
+        run: hugo --minify
 
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/main'
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./my-profile/public
