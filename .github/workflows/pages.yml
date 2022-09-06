@@ -49,24 +49,7 @@ jobs:
           TARGET_BRANCH: main
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CNAME: mngaafar.com
-        with:
-          # If you are defining a custom domain name for your GitHub site, put that value in this variable.
-          cname: mngaafar.com
-          # Your PAT to authorise the action to do things.
-          github_token: $GITHUB_TOKEN
-          # The version of Go to install. Go won't be installed if this isn't set.
-          # go_version: # optional
-          # Any extra arguments to pass to Hugo.
-          # hugo_args: # optional
-          # If set to `true`, use the *extended* version of hugo.
-          hugo_extended: true
-          # The publishDir from the hugo config.toml file
-          hugo_publish_dir: my-profile
-          # The version of hugo to use.
-          hugo_version: $HUGO_VERSION
-          # The branch to push the hugo public files, default will be main branch.
-          target_branch: $TARGET_BRANCH
-          # The repo name you want to clone and push to.
-          target_repo: $TARGET_REPO
+          HUGO_PUBLISH_DIR: my-profile
+
         
 
