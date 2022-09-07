@@ -19,11 +19,11 @@ Menus:
       url: /blogs
       weight: 1
 
-    - identifier: gallery
-      name: Gallery
-      title: Blog posts
-      url: /gallery
-      weight: 2
+    # - identifier: gallery
+    #   name: Gallery
+    #   title: Blog posts
+    #   url: /gallery
+    #   weight: 2
 
     #Dropdown menu
     # - identifier: dropdown
@@ -47,7 +47,7 @@ params:
   title: "Mohamed Nasser Gaafar"
   description: This is my personal blog and portfolio
   # staticPath: ""  # The path to serve the static files from
-  favicon: fab fa-linkedin
+  # favicon: "/fav.png"
 
   # Whether to serve bootstrap css and js files from CDN or not. Can be set to true, "css" or "js" to choose between
   # serving both, only the css, or only the js files through the CDN. Any other value will make so that CDN is not used.
@@ -101,12 +101,14 @@ params:
     intro: "Hi, my name is"
     title: "Mohamed."
     subtitle: "I build things."
-    content: "A passionate web app developer. I tend to make use of modern web technologies to build websites that looks great, feels fantastic, and functions correctly."
+    content: "A passionate biomedical software engineer. I find joy in building solutions that solve problems that matter. 
+"
     image: /images/hero.svg
     button:
       enable: true
       name: "Resume"
-      url: "#"
+      #TODO: update resume
+      url: "https://drive.google.com/uc?export=download&id=13I5iBoQa2GHrGxzJKrDxsTFoNUi-nssQ"
       download: true
     socialLinks:
       fontAwesomeIcons:
@@ -257,7 +259,7 @@ params:
   # projects
   #TODO: finish this section
   projects:
-    enable: false
+    enable: true
     # title: "Custom Name"
     items:
       - title: Hugo Profile
