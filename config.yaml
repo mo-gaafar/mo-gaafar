@@ -1,11 +1,10 @@
 baseURL: "https://mngaafar.com"
 languageCode: "en-us"
-title: "Mohamed Nasser Mohamed"
+title: "Mohamed Nasser Gaafar"
 theme: hugo-profile
 
 Paginate: 3
-disqusShortname: gurusabarish
-googleAnalytics: G-DWJJVE27WD
+googleAnalytics: G-5GL6K1NVFM
 
 markup:
   goldmark:
@@ -100,8 +99,8 @@ params:
   hero:
     enable: true
     intro: "Hi, my name is"
-    title: "Isabella."
-    subtitle: "I build things for the web"
+    title: "Mohamed."
+    subtitle: "I build things."
     content: "A passionate web app developer. I tend to make use of modern web technologies to build websites that looks great, feels fantastic, and functions correctly."
     image: /images/hero.svg
     button:
@@ -112,12 +111,12 @@ params:
     socialLinks:
       fontAwesomeIcons:
         - icon: fab fa-github
-          url: https://example.com
+          url: https://github.com/mo-gaafar
         - icon: fab fa-twitter
-          url: https://example.com
+          url: https://twitter.com/moe_gaafar
       customIcons:
-        - icon: /fav.png
-          url: "https://example.com"
+        - icon: fab fa-linkedin
+          url: "https://linkedin.com/in/mn-gaafar"
 
   # About
   about:
@@ -210,26 +209,16 @@ params:
     # title: "Custom Name"
     # index: true
     items:
-      - title: "Master of Business Administration"
+      - title: "Bachelor of Science in Systems and Biomedical Engineering"
         school:
-          name: "University of California, Berkeley"
-          url: "https://example.org"
-        date: "2013 - 2015"
-        GPA: "3.8 out of 5.0"
+          name: "Cairo University, Giza, Egypt"
+          url: "https://eng.cu.edu.eg"
+        date: "2019 - 2024"
+        GPA: "3.39 out of 4.0"
         content: |-
-          Extracurricular Activities
-            - Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            - Tempora esse, eaque delectus nulla quo doloribus itaque expedita alias natus optio totam maxime nihil excepturi velit a animi laborum hic similique.
-      - title: "Bachelor of Science in Computer Science"
-        school:
-          name: "Massachusetts Institute of Technology"
-          url: "https://example.org"
-        date: "2009 - 2013"
-        GPA: "3.9 out of 5.0"
-        content: |-
-          I Publiced two papers in the ACM SIGCHI Conference on Artificial Intelligence.
-          - [Fast and Accurate Object Detection with a Single Convolutional Neural Network](https://example.com)
-          - Face mask detection using a single convolutional neural network.
+          Projects I have worked on include
+          - Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+          - Tempora esse, eaque delectus nulla quo doloribus itaque expedita alias natus optio totam maxime nihil excepturi velit a animi laborum hic similique.
 
           Extracurricular Activities
             - Lorem ipsum dolor sit amet consectetur adipisicing elit. 
@@ -240,9 +229,9 @@ params:
           url: "https://example.com"
       - title: "High School"
         school:
-          name: "Thomas Jefferson High School for Science and Technology."
+          name: "Al Bashaer International Schools (IGCSE)"
           url: "https://example.org"
-        GPA: "4.2 out of 5.0"
+        GPA: "3.99 out of 4.0"
         featuredLink:
           enable: true
           url: "https://example.com"
@@ -267,8 +256,9 @@ params:
         url: https://example.com
 
   # projects
+  #TODO: finish this section
   projects:
-    enable: true
+    enable: false
     # title: "Custom Name"
     items:
       - title: Hugo Profile
@@ -283,11 +273,11 @@ params:
         #   - "Javascript"
         links:
           - icon: fa fa-envelope
-            url: mailto:?subject=Hugo%20Profile%20Template&body=Check%20it%20out:%20https%3a%2f%2fhugo-profile.netlify.app%2fblog%2fmarkdown-syntax%2f
+            url: mailto:mohamed_gaafar@ieee.org?subject=Website%20Email&body=Hello%20welcome%20to%20my%20website%2C%20feel%20free%20to%20ask%20me%20anything%20here%20
           - icon: fab fa-github
-            url: https://github.com/gurusabarish/hugo-profile
+            url: https://github.com/mo-gaafar
           - icon: fab fa-twitter
-            url: https://twitter.com/intent/tweet?text=Check+it+out:&url=https%3A%2F%2Fgithub.com%2Fgurusabarish%2Fhugo-profile
+            url: https://twitter.com/moe_gaafar
 
       - title: Image Converter
         content: A web app to convert image to pdf, png to jpg, png to jpg and png to webp without database using django.
@@ -321,14 +311,13 @@ params:
     enable: true
     #title: "Custom name"
     content: My inbox is always open. Whether you have a question or just want to say hi, I’ll try my best to get back to you!
-    email: gurusabarisha@gmail.com
+    email: mohamed_gaafar@ieee.org
     btnName: Mail me
 
   footer:
     # recentPosts: false
     socialNetworks:
-      github: https://github.com
-      linkedin: https://linkedin.com
-      twitter: https://twitter.com
-      instagram: https://instagram.com
-      facebook: https://facebook.com
+      github: https://github.com/mo-gaafar
+      linkedin: https://linkedin.com/in/mn-gaafar
+      twitter: https://twitter.com/moe_gaafar
+      instagram: https://instagram.com/mo.nasserr
