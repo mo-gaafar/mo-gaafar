@@ -4,7 +4,7 @@
 <head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link rel="icon" href=/fav.png type="image/gif">
+<link rel="icon" href=fab%20fa-linkedin type="image/gif">
 
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,14 +39,14 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 <meta property="og:title" content="Categories" />
-<meta property="og:description" content="Text about my cool site" />
+<meta property="og:description" content="This is my personal blog and portfolio" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://mngaafar.com/categories/" /><meta property="og:site_name" content="Hugo Profile" />
+<meta property="og:url" content="https://mngaafar.com/categories/" /><meta property="og:site_name" content="Mohamed Nasser Gaafar" />
 
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Categories"/>
-<meta name="twitter:description" content="Text about my cool site"/>
+<meta name="twitter:description" content="This is my personal blog and portfolio"/>
 
 
 <link rel="stylesheet" href="/bootstrap-5/css/bootstrap.min.css" media="all"><link rel="stylesheet" href="/css/header.css" media="all">
@@ -114,9 +114,9 @@ Categories | Mohamed Nasser Gaafar
             
             <a class="navbar-brand primary-font text-wrap" href="/">
                 
-                <img src="/fav.png" width="30" height="30"
+                <img src="fab%20fa-linkedin" width="30" height="30"
                     class="d-inline-block align-top">
-                Hugo Profile
+                Mohamed Nasser Gaafar
                 
             </a>
 
@@ -366,7 +366,7 @@ To enable emoji globally, set enableEmoji to true in your site’s configuration
         <div class="col-md-4 text-center">
             <div class="pb-2">
                 <a href="https://mngaafar.com" title="Mohamed Nasser Gaafar">
-                    <img alt="Footer logo" src="/fav.png"
+                    <img alt="Footer logo" src="fab%20fa-linkedin"
                         height="40px" width="40px">
                 </a>
             </div>
@@ -386,14 +386,10 @@ To enable emoji globally, set enableEmoji to true in your site’s configuration
     </div>
 </div></footer><script src="/bootstrap-5/js/bootstrap.bundle.min.js"></script>
 <script>
-    if (localStorage.getItem("pref-theme") === "dark") {
+    if (document.body.className.includes("light")) {
         document.body.classList.add('dark');
-    } else if (localStorage.getItem("pref-theme") === "light") {
-        document.body.classList.remove('dark')
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.body.classList.add('dark');
+        localStorage.setItem("pref-theme", 'dark');
     }
-
 </script>
 <script>
     document.getElementById("theme-toggle").addEventListener("click", () => {

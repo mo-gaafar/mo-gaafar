@@ -44,10 +44,10 @@ Menus:
     #   weight: 2
 
 params:
-  title: "Hugo Profile"
-  description: Text about my cool site
+  title: "Mohamed Nasser Gaafar"
+  description: This is my personal blog and portfolio
   # staticPath: ""  # The path to serve the static files from
-  favicon: "/fav.png"
+  favicon: fab fa-linkedin
 
   # Whether to serve bootstrap css and js files from CDN or not. Can be set to true, "css" or "js" to choose between
   # serving both, only the css, or only the js files through the CDN. Any other value will make so that CDN is not used.
@@ -56,7 +56,7 @@ params:
 
   theme:
     disableThemeToggle: false
-    # defaultTheme: "light" # dark
+    defaultTheme: "dark" # dark
 
   # font:
   #   fontSize: 1.5rem # default: 1rem
@@ -114,9 +114,8 @@ params:
           url: https://github.com/mo-gaafar
         - icon: fab fa-twitter
           url: https://twitter.com/moe_gaafar
-      customIcons:
         - icon: fab fa-linkedin
-          url: "https://linkedin.com/in/mn-gaafar"
+          url: https://linkedin.com/in/mn-gaafar
 
   # About
   about:
@@ -231,7 +230,7 @@ params:
         school:
           name: "Al Bashaer International Schools (IGCSE)"
           url: "https://example.org"
-        GPA: "3.99 out of 4.0"
+        GPA: "3.95 out of 4.0"
         featuredLink:
           enable: true
           url: "https://example.com"
@@ -272,7 +271,7 @@ params:
         #   - "Bootstrap"
         #   - "Javascript"
         links:
-          - icon: fa fa-envelope
+          - icon: fab fa-envelope
             url: mailto:mohamed_gaafar@ieee.org?subject=Website%20Email&body=Hello%20welcome%20to%20my%20website%2C%20feel%20free%20to%20ask%20me%20anything%20here%20
           - icon: fab fa-github
             url: https://github.com/mo-gaafar
