@@ -1,21 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Mohamed Nasser Gaafar</title>
-    <link>https://mngaafar.com/</link>
-    <description>Recent content on Mohamed Nasser Gaafar</description>
+    <title>Blogs on Mohamed Nasser Gaafar</title>
+    <link>https://mngaafar.com/blogs/</link>
+    <description>Recent content in Blogs on Mohamed Nasser Gaafar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 03 Apr 2021 22:53:58 +0530</lastBuildDate><atom:link href="https://mngaafar.com/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Image Gallery</title>
-      <link>https://mngaafar.com/gallery/</link>
-      <pubDate>Sat, 25 Jun 2022 18:35:46 +0530</pubDate>
-      
-      <guid>https://mngaafar.com/gallery/</guid>
-      <description></description>
-    </item>
-    
+    <lastBuildDate>Sat, 03 Apr 2021 22:53:58 +0530</lastBuildDate><atom:link href="https://mngaafar.com/blogs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Emoji Support</title>
       <link>https://mngaafar.com/blogs/emoji-support/</link>
