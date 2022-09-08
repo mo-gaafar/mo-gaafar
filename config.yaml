@@ -145,20 +145,20 @@ params:
     # title: "Custom Name"
     items:
       - job: "Clinical Engineering Intern"
-          company: "Al Assema Hospitals"
-          companyUrl: "https://example.com"
-          date: "Aug 2022 - Sept 2022"
-          featuredLink:
-            enable: true
-            url: "https://example.com"
-          info:
-            enable: true
-            content: I worked as a software developer for more than one year in Amazon.
-          content: |
-            I am currently working as a software developer at [example org.](https://example.com) in San Francisco, CA. I am currently working on a project that will be used to help people find the best way to get around the city.
+        company: "Al Assema Hospitals"
+        companyUrl: "https://example.com"
+        date: "Aug 2022 - Sept 2022"
+        featuredLink:
+          enable: true
+          url: "https://example.com"
+        info:
+          enable: true
+          content: I worked as a software developer for more than one year in Amazon.
+        content: |
+          I am currently working as a software developer at [example org.](https://example.com) in San Francisco, CA. I am currently working on a project that will be used to help people find the best way to get around the city.
 
-            - Lead backend developer for a product.
-            - Created a frontend design for a product.
+          - Lead backend developer for a product.
+          - Created a frontend design for a product.
 
       - job: "Intern Software Developer"
         company: "Clear Pictures"
