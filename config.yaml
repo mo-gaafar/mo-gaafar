@@ -226,7 +226,7 @@ params:
   #TODO: finish this section
   projects:
     enable: true
-    # title: "Custom Name"
+    title: "bing chilling"
     items:
       - title: Hugo Profile
         content: A highly customizable and mobile first Hugo template for personal portfolio and blog.
