@@ -168,7 +168,7 @@ params:
           enable: true
           name: "View the project"
           url: "https://example.com"
-        content: "I am currently working as a software developer at [example org.](https://example.com) in San Francisco, CA. I am currently working on a project that will be used to help people find the best way to get around the city."
+        content: "I am currently building my knowledge in the healthcare and hospitals field and learning more about the structure and work culture."
 
   # Education
   education:
