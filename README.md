@@ -8,7 +8,6 @@ I am Mohamed Nasser, people call me Nasser, currently pursuing my bachelor's deg
 ### 📞 Contact Me
 
 [![Linkedin Badge](https://img.shields.io/badge/-mohamednasser-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/anirudhemmadi/)](https://www.linkedin.com/in/mohamed-nasser-gaafar-bb5772111/)
-[![Gmail Badge](https://img.shields.io/badge/-mohamednasser2001@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:mohamednasser2001@gmail.com)](mailto:mohamednasser2001@gmail.com)
 [![IEEE Badge](https://img.shields.io/badge/-mohamed_gaafar@ieee.org-2523e7?style=flat-square&logo=IEEE&logoColor=white&link=mailto:mohamed_gaafar@ieee.org)](mailto:mohamed_gaafar@ieee.org)
 -------------------
 
