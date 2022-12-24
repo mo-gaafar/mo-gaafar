@@ -144,6 +144,26 @@ params:
     enable: true
     # title: "Custom Name"
     items:
+      - job: "Hardware Design Engineer"
+        company: "Formula Student Cairo University"
+        companyUrl: "https://example.com"
+        date: "Sept 2022 - Present"
+        featuredLink:
+          enable: true
+          name: "View the project"
+          url: "https://example.com"
+        content: "Working as a core team member, designing, testing and implementing the racing car's low voltage system"
+        
+      - job: "Backend Developer"
+        company: "Shell Eco Racing Team Cairo University"
+        companyUrl: "https://example.com"
+        date: "Sept 2022 - Present"
+        featuredLink:
+          enable: true
+          name: "View the project"
+          url: "https://example.com"
+        content: "Working on the backend of the team's website, Familiar with tokens and authentication, REST API, Django"
+        
       - job: "Clinical Engineering Intern"
         company: "Al Assema Hospitals"
         companyUrl: "https://example.com"
@@ -226,7 +246,7 @@ params:
   #TODO: finish this section
   projects:
     enable: true
-    title: "bing chilling"
+    title: "WORK IN PROGRESS"
     items:
       - title: Hugo Profile
         content: A highly customizable and mobile first Hugo template for personal portfolio and blog.
@@ -246,32 +266,19 @@ params:
           - icon: fab fa-twitter
             url: https://twitter.com/moe_gaafar
 
-      - title: Image Converter
-        content: A web app to convert image to pdf, png to jpg, png to jpg and png to webp without database using django.
-        image: /images/projects/converter.jpg
-        featured:
-          name: Demo
-          link: https://django-converter.herokuapp.com
-        # badges:
-        #   - "Django"
-        #   - "Bootstrap"
-        links:
-          - icon: fab fa-github
-            url: https://github.com/gurusabarish/converter
-
       - title: Hugo Profile V2
         content: A clean and simple Hugo template for personal portfolio and blog.
         image: /images/projects/profile2.jpg
         featured:
           name: Demo V2
-          link: https://hugo-profile-2.netlify.app
+          link: https://www.google.com
         # badges:
         #   - "Hugo"
         #   - "Bootstrap"
         #   - "Javascript"
         links:
           - icon: fab fa-github
-            url: https://github.com/gurusabarish/HugoProfileV2
+            url: www.google.com
 
   #Contact
   contact:
