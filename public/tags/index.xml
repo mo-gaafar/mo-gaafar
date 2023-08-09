@@ -1,324 +1,324 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Eddie Webb</title>
-    <link>https://example.com/tags/</link>
-    <description>Recent content in Tags on Eddie Webb</description>
+    <title>Tags on M. N. Gaafar</title>
+    <link>https://www.mngaafar.com/tags/</link>
+    <description>Recent content in Tags on M. N. Gaafar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 09 Aug 2023 04:53:16 +0300</lastBuildDate><atom:link href="https://example.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 09 Aug 2023 04:53:16 +0300</lastBuildDate><atom:link href="https://www.mngaafar.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>in</title>
-      <link>https://example.com/tags/in/</link>
+      <link>https://www.mngaafar.com/tags/in/</link>
       <pubDate>Wed, 09 Aug 2023 04:53:16 +0300</pubDate>
       
-      <guid>https://example.com/tags/in/</guid>
+      <guid>https://www.mngaafar.com/tags/in/</guid>
       <description></description>
     </item>
     
     <item>
       <title>techtags</title>
-      <link>https://example.com/tags/techtags/</link>
+      <link>https://www.mngaafar.com/tags/techtags/</link>
       <pubDate>Wed, 09 Aug 2023 04:53:16 +0300</pubDate>
       
-      <guid>https://example.com/tags/techtags/</guid>
+      <guid>https://www.mngaafar.com/tags/techtags/</guid>
       <description></description>
     </item>
     
     <item>
       <title>used</title>
-      <link>https://example.com/tags/used/</link>
+      <link>https://www.mngaafar.com/tags/used/</link>
       <pubDate>Wed, 09 Aug 2023 04:53:16 +0300</pubDate>
       
-      <guid>https://example.com/tags/used/</guid>
+      <guid>https://www.mngaafar.com/tags/used/</guid>
       <description></description>
     </item>
     
     <item>
       <title>website</title>
-      <link>https://example.com/tags/website/</link>
+      <link>https://www.mngaafar.com/tags/website/</link>
       <pubDate>Wed, 09 Aug 2023 04:53:16 +0300</pubDate>
       
-      <guid>https://example.com/tags/website/</guid>
+      <guid>https://www.mngaafar.com/tags/website/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Docker</title>
-      <link>https://example.com/tags/docker/</link>
+      <link>https://www.mngaafar.com/tags/docker/</link>
       <pubDate>Tue, 07 Jan 2020 17:09:26 +0000</pubDate>
       
-      <guid>https://example.com/tags/docker/</guid>
+      <guid>https://www.mngaafar.com/tags/docker/</guid>
       <description></description>
     </item>
     
     <item>
       <title>JavaScript</title>
-      <link>https://example.com/tags/javascript/</link>
+      <link>https://www.mngaafar.com/tags/javascript/</link>
       <pubDate>Tue, 07 Jan 2020 17:09:26 +0000</pubDate>
       
-      <guid>https://example.com/tags/javascript/</guid>
+      <guid>https://www.mngaafar.com/tags/javascript/</guid>
       <description></description>
     </item>
     
     <item>
       <title>JSON</title>
-      <link>https://example.com/tags/json/</link>
+      <link>https://www.mngaafar.com/tags/json/</link>
       <pubDate>Tue, 07 Jan 2020 17:09:26 +0000</pubDate>
       
-      <guid>https://example.com/tags/json/</guid>
+      <guid>https://www.mngaafar.com/tags/json/</guid>
       <description></description>
     </item>
     
     <item>
       <title>node.js</title>
-      <link>https://example.com/tags/node.js/</link>
+      <link>https://www.mngaafar.com/tags/node.js/</link>
       <pubDate>Tue, 07 Jan 2020 17:09:26 +0000</pubDate>
       
-      <guid>https://example.com/tags/node.js/</guid>
+      <guid>https://www.mngaafar.com/tags/node.js/</guid>
       <description></description>
     </item>
     
     <item>
       <title>REST APIs</title>
-      <link>https://example.com/tags/rest-apis/</link>
+      <link>https://www.mngaafar.com/tags/rest-apis/</link>
       <pubDate>Tue, 07 Jan 2020 17:09:26 +0000</pubDate>
       
-      <guid>https://example.com/tags/rest-apis/</guid>
+      <guid>https://www.mngaafar.com/tags/rest-apis/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Atlassian Ecosystem</title>
-      <link>https://example.com/tags/atlassian-ecosystem/</link>
+      <link>https://www.mngaafar.com/tags/atlassian-ecosystem/</link>
       <pubDate>Sun, 11 Feb 2018 12:41:05 -0500</pubDate>
       
-      <guid>https://example.com/tags/atlassian-ecosystem/</guid>
+      <guid>https://www.mngaafar.com/tags/atlassian-ecosystem/</guid>
       <description></description>
     </item>
     
     <item>
       <title>BOSH</title>
-      <link>https://example.com/tags/bosh/</link>
+      <link>https://www.mngaafar.com/tags/bosh/</link>
       <pubDate>Sun, 11 Feb 2018 12:41:05 -0500</pubDate>
       
-      <guid>https://example.com/tags/bosh/</guid>
+      <guid>https://www.mngaafar.com/tags/bosh/</guid>
       <description></description>
     </item>
     
     <item>
       <title>DevOps</title>
-      <link>https://example.com/tags/devops/</link>
+      <link>https://www.mngaafar.com/tags/devops/</link>
       <pubDate>Sun, 11 Feb 2018 12:41:05 -0500</pubDate>
       
-      <guid>https://example.com/tags/devops/</guid>
+      <guid>https://www.mngaafar.com/tags/devops/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Java</title>
-      <link>https://example.com/tags/java/</link>
+      <link>https://www.mngaafar.com/tags/java/</link>
       <pubDate>Sun, 11 Feb 2018 12:41:05 -0500</pubDate>
       
-      <guid>https://example.com/tags/java/</guid>
+      <guid>https://www.mngaafar.com/tags/java/</guid>
       <description></description>
     </item>
     
     <item>
       <title>monit</title>
-      <link>https://example.com/tags/monit/</link>
+      <link>https://www.mngaafar.com/tags/monit/</link>
       <pubDate>Sun, 11 Feb 2018 12:41:05 -0500</pubDate>
       
-      <guid>https://example.com/tags/monit/</guid>
+      <guid>https://www.mngaafar.com/tags/monit/</guid>
       <description></description>
     </item>
     
     <item>
       <title>python</title>
-      <link>https://example.com/tags/python/</link>
+      <link>https://www.mngaafar.com/tags/python/</link>
       <pubDate>Sun, 11 Feb 2018 12:41:05 -0500</pubDate>
       
-      <guid>https://example.com/tags/python/</guid>
+      <guid>https://www.mngaafar.com/tags/python/</guid>
       <description></description>
     </item>
     
     <item>
       <title>agile</title>
-      <link>https://example.com/tags/agile/</link>
+      <link>https://www.mngaafar.com/tags/agile/</link>
       <pubDate>Tue, 08 Nov 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/tags/agile/</guid>
+      <guid>https://www.mngaafar.com/tags/agile/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Continuous Delivery</title>
-      <link>https://example.com/tags/continuous-delivery/</link>
+      <link>https://www.mngaafar.com/tags/continuous-delivery/</link>
       <pubDate>Tue, 08 Nov 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/tags/continuous-delivery/</guid>
+      <guid>https://www.mngaafar.com/tags/continuous-delivery/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Continuous Integration</title>
-      <link>https://example.com/tags/continuous-integration/</link>
+      <link>https://www.mngaafar.com/tags/continuous-integration/</link>
       <pubDate>Tue, 08 Nov 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/tags/continuous-integration/</guid>
+      <guid>https://www.mngaafar.com/tags/continuous-integration/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Culture</title>
-      <link>https://example.com/tags/culture/</link>
+      <link>https://www.mngaafar.com/tags/culture/</link>
       <pubDate>Tue, 08 Nov 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/tags/culture/</guid>
+      <guid>https://www.mngaafar.com/tags/culture/</guid>
       <description></description>
     </item>
     
     <item>
       <title>apache</title>
-      <link>https://example.com/tags/apache/</link>
+      <link>https://www.mngaafar.com/tags/apache/</link>
       <pubDate>Thu, 01 Jan 2009 14:09:10 +0000</pubDate>
       
-      <guid>https://example.com/tags/apache/</guid>
+      <guid>https://www.mngaafar.com/tags/apache/</guid>
       <description></description>
     </item>
     
     <item>
       <title>redirect</title>
-      <link>https://example.com/tags/redirect/</link>
+      <link>https://www.mngaafar.com/tags/redirect/</link>
       <pubDate>Thu, 01 Jan 2009 14:09:10 +0000</pubDate>
       
-      <guid>https://example.com/tags/redirect/</guid>
+      <guid>https://www.mngaafar.com/tags/redirect/</guid>
       <description></description>
     </item>
     
     <item>
       <title>rewrite</title>
-      <link>https://example.com/tags/rewrite/</link>
+      <link>https://www.mngaafar.com/tags/rewrite/</link>
       <pubDate>Thu, 01 Jan 2009 14:09:10 +0000</pubDate>
       
-      <guid>https://example.com/tags/rewrite/</guid>
+      <guid>https://www.mngaafar.com/tags/rewrite/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ssl</title>
-      <link>https://example.com/tags/ssl/</link>
+      <link>https://www.mngaafar.com/tags/ssl/</link>
       <pubDate>Thu, 01 Jan 2009 14:09:10 +0000</pubDate>
       
-      <guid>https://example.com/tags/ssl/</guid>
+      <guid>https://www.mngaafar.com/tags/ssl/</guid>
       <description></description>
     </item>
     
     <item>
       <title>web development</title>
-      <link>https://example.com/tags/web-development/</link>
+      <link>https://www.mngaafar.com/tags/web-development/</link>
       <pubDate>Thu, 01 Jan 2009 14:09:10 +0000</pubDate>
       
-      <guid>https://example.com/tags/web-development/</guid>
+      <guid>https://www.mngaafar.com/tags/web-development/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Atlassian Developer Ecosystem</title>
-      <link>https://example.com/tags/atlassian-developer-ecosystem/</link>
+      <link>https://www.mngaafar.com/tags/atlassian-developer-ecosystem/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/tags/atlassian-developer-ecosystem/</guid>
+      <guid>https://www.mngaafar.com/tags/atlassian-developer-ecosystem/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Bamboo</title>
-      <link>https://example.com/tags/bamboo/</link>
+      <link>https://www.mngaafar.com/tags/bamboo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/tags/bamboo/</guid>
+      <guid>https://www.mngaafar.com/tags/bamboo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>bash/shell</title>
-      <link>https://example.com/tags/bash/shell/</link>
+      <link>https://www.mngaafar.com/tags/bash/shell/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/tags/bash/shell/</guid>
+      <guid>https://www.mngaafar.com/tags/bash/shell/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Bitbucket</title>
-      <link>https://example.com/tags/bitbucket/</link>
+      <link>https://www.mngaafar.com/tags/bitbucket/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/tags/bitbucket/</guid>
+      <guid>https://www.mngaafar.com/tags/bitbucket/</guid>
       <description></description>
     </item>
     
     <item>
       <title>CI/CD pipelines</title>
-      <link>https://example.com/tags/ci/cd-pipelines/</link>
+      <link>https://www.mngaafar.com/tags/ci/cd-pipelines/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/tags/ci/cd-pipelines/</guid>
+      <guid>https://www.mngaafar.com/tags/ci/cd-pipelines/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Confluence</title>
-      <link>https://example.com/tags/confluence/</link>
+      <link>https://www.mngaafar.com/tags/confluence/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/tags/confluence/</guid>
+      <guid>https://www.mngaafar.com/tags/confluence/</guid>
       <description></description>
     </item>
     
     <item>
       <title>JIRA</title>
-      <link>https://example.com/tags/jira/</link>
+      <link>https://www.mngaafar.com/tags/jira/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/tags/jira/</guid>
+      <guid>https://www.mngaafar.com/tags/jira/</guid>
       <description></description>
     </item>
     
     <item>
       <title>jQuery</title>
-      <link>https://example.com/tags/jquery/</link>
+      <link>https://www.mngaafar.com/tags/jquery/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/tags/jquery/</guid>
+      <guid>https://www.mngaafar.com/tags/jquery/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Maven</title>
-      <link>https://example.com/tags/maven/</link>
+      <link>https://www.mngaafar.com/tags/maven/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/tags/maven/</guid>
+      <guid>https://www.mngaafar.com/tags/maven/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Spring</title>
-      <link>https://example.com/tags/spring/</link>
+      <link>https://www.mngaafar.com/tags/spring/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/tags/spring/</guid>
+      <guid>https://www.mngaafar.com/tags/spring/</guid>
       <description></description>
     </item>
     
     <item>
       <title>xml/xslt</title>
-      <link>https://example.com/tags/xml/xslt/</link>
+      <link>https://www.mngaafar.com/tags/xml/xslt/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/tags/xml/xslt/</guid>
+      <guid>https://www.mngaafar.com/tags/xml/xslt/</guid>
       <description></description>
     </item>
     

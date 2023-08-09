@@ -9,4 +9,4 @@ outputs:
 - rss
 - json
 ---
-Proven Software Platform Engineer with experience leveraging agile, DevOps, and CI/CD to manage large scale distributed platforms both on prem and in public cloud.
+Hey, welcome! I'm an aspiring medical software engineer fueled by tech enthusiasm. From shaping games and tinkering with systems to conquering data and the web with AWS, I thrive on challenges. A team player at heart, I'm all about whipping up top projects against the clock. Join me in this journey of boundless innovation.
