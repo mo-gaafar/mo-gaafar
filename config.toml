@@ -5,7 +5,7 @@ languageCode = "en-us"
 PygmentsCodeFences = true
 PygmentsCodeFencesGuessSyntax = true
 PygmentsStyle = "monokai"
-enableGitInfo = false
+enableGitInfo = true
 
 [params]
 address = "Cairo, EG"
@@ -16,7 +16,7 @@ lastName = "N. Gaafar"
 phone = "+201155277008"
 profileImage = "img/mngaafar-avatar-thumb.png"
 showEducation = true
-showExperience = false
+showExperience = true
 showOpenSource = false
 showProjects = false
 showPublications = false
