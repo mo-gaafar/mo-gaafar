@@ -9,9 +9,8 @@
 #
 
 backend:
-  name: github
-  repo: mo-gaafar/mo-gaafar
-  branch: gh-pages
+  name: git-gateway
+  branch: main
 
 media_folder: "static/img" # Folder where user uploaded files should go
 public_folder: "img"
@@ -29,7 +28,7 @@ collections: # A list of collections the CMS should be able to edit
 
   - name: "Projects" # Used in routes, ie.: /admin/collections/:slug/edit
     label: "Projects" # Used in the UI, ie.: "New Post"
-    folder: "exampleSite/content/projects/creations" # The path to the folder where the documents are stored
+    folder: "content/projects/creations" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     fields: # The fields each document in this collection have
       - { label: "Title", name: "title", widget: "string" }
