@@ -12,6 +12,8 @@ backend:
   name: github
   repo: mo-gaafar/mo-gaafar
   branch: main
+  publish_mode: editorial_workflow
+  site_domain: mo-gaafar.netlify.app
 
 media_folder: "static/img" # Folder where user uploaded files should go
 public_folder: "img"
