@@ -9,7 +9,8 @@
 #
 
 backend:
-  name: git-gateway
+  name: github
+  repo: mo-gaafar/mo-gaafar
   branch: main
 
 media_folder: "static/img" # Folder where user uploaded files should go
