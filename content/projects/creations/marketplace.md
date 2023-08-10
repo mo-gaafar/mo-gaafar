@@ -1,6 +1,7 @@
 ---
 title: This is a test of the CMS
 date: 2023-08-10T18:46:44.585Z
+featured: true
 link: https://marketplace.atlassian.com/vendors/1017039
 image: img/aafb-agent-ids-match-bamboo.webp
 description: Multiple plugins used by thousands of teams that provide enhanced
