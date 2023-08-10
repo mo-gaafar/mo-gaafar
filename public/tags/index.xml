@@ -89,60 +89,6 @@
     </item>
     
     <item>
-      <title>Atlassian Ecosystem</title>
-      <link>https://www.mngaafar.com/tags/atlassian-ecosystem/</link>
-      <pubDate>Sun, 11 Feb 2018 12:41:05 -0500</pubDate>
-      
-      <guid>https://www.mngaafar.com/tags/atlassian-ecosystem/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>BOSH</title>
-      <link>https://www.mngaafar.com/tags/bosh/</link>
-      <pubDate>Sun, 11 Feb 2018 12:41:05 -0500</pubDate>
-      
-      <guid>https://www.mngaafar.com/tags/bosh/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>DevOps</title>
-      <link>https://www.mngaafar.com/tags/devops/</link>
-      <pubDate>Sun, 11 Feb 2018 12:41:05 -0500</pubDate>
-      
-      <guid>https://www.mngaafar.com/tags/devops/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Java</title>
-      <link>https://www.mngaafar.com/tags/java/</link>
-      <pubDate>Sun, 11 Feb 2018 12:41:05 -0500</pubDate>
-      
-      <guid>https://www.mngaafar.com/tags/java/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>monit</title>
-      <link>https://www.mngaafar.com/tags/monit/</link>
-      <pubDate>Sun, 11 Feb 2018 12:41:05 -0500</pubDate>
-      
-      <guid>https://www.mngaafar.com/tags/monit/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>python</title>
-      <link>https://www.mngaafar.com/tags/python/</link>
-      <pubDate>Sun, 11 Feb 2018 12:41:05 -0500</pubDate>
-      
-      <guid>https://www.mngaafar.com/tags/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>agile</title>
       <link>https://www.mngaafar.com/tags/agile/</link>
       <pubDate>Tue, 08 Nov 2016 00:00:00 +0000</pubDate>
@@ -175,6 +121,15 @@
       <pubDate>Tue, 08 Nov 2016 00:00:00 +0000</pubDate>
       
       <guid>https://www.mngaafar.com/tags/culture/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DevOps</title>
+      <link>https://www.mngaafar.com/tags/devops/</link>
+      <pubDate>Tue, 08 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.mngaafar.com/tags/devops/</guid>
       <description></description>
     </item>
     
@@ -242,15 +197,6 @@
     </item>
     
     <item>
-      <title>bash/shell</title>
-      <link>https://www.mngaafar.com/tags/bash/shell/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.mngaafar.com/tags/bash/shell/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Bitbucket</title>
       <link>https://www.mngaafar.com/tags/bitbucket/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -278,6 +224,15 @@
     </item>
     
     <item>
+      <title>Java</title>
+      <link>https://www.mngaafar.com/tags/java/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.mngaafar.com/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>JIRA</title>
       <link>https://www.mngaafar.com/tags/jira/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -296,29 +251,11 @@
     </item>
     
     <item>
-      <title>Maven</title>
-      <link>https://www.mngaafar.com/tags/maven/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.mngaafar.com/tags/maven/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Spring</title>
       <link>https://www.mngaafar.com/tags/spring/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.mngaafar.com/tags/spring/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>xml/xslt</title>
-      <link>https://www.mngaafar.com/tags/xml/xslt/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.mngaafar.com/tags/xml/xslt/</guid>
       <description></description>
     </item>
     

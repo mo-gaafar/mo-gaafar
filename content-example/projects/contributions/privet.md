@@ -1,6 +1,6 @@
 ---
-title: "Hello"
-date: 2023-08-09T04:52:50+03:00
+title: "Privet"
+date: 2023-08-09T04:53:16+03:00
 featured: true
 description: "Text used in summary on main page"
 tags: ["techtags","used","in","website"]

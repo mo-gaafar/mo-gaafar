@@ -26,10 +26,6 @@
     <lastmod>2023-08-09T05:03:31+03:00</lastmod>
     <priority>0.8</priority>
   </url><url>
-    <loc>https://www.mngaafar.com/projects/creations/hello/</loc>
-    <lastmod>2023-08-09T05:03:31+03:00</lastmod>
-    <priority>0.8</priority>
-  </url><url>
     <loc>https://www.mngaafar.com/projects/contributions/shields-docker/</loc>
     <lastmod>2023-08-09T05:03:31+03:00</lastmod>
     <priority>0.8</priority>
@@ -68,27 +64,6 @@
     <loc>https://www.mngaafar.com/tags/rest-apis/</loc>
     <lastmod>2023-08-09T05:03:31+03:00</lastmod>
   </url><url>
-    <loc>https://www.mngaafar.com/tags/atlassian-ecosystem/</loc>
-    <lastmod>2023-08-09T05:03:31+03:00</lastmod>
-  </url><url>
-    <loc>https://www.mngaafar.com/tags/bosh/</loc>
-    <lastmod>2023-08-09T05:03:31+03:00</lastmod>
-  </url><url>
-    <loc>https://www.mngaafar.com/projects/creations/bosh-agents/</loc>
-    <lastmod>2023-08-09T05:03:31+03:00</lastmod>
-  </url><url>
-    <loc>https://www.mngaafar.com/tags/devops/</loc>
-    <lastmod>2023-08-09T05:03:31+03:00</lastmod>
-  </url><url>
-    <loc>https://www.mngaafar.com/tags/java/</loc>
-    <lastmod>2023-08-09T05:03:31+03:00</lastmod>
-  </url><url>
-    <loc>https://www.mngaafar.com/tags/monit/</loc>
-    <lastmod>2023-08-09T05:03:31+03:00</lastmod>
-  </url><url>
-    <loc>https://www.mngaafar.com/tags/python/</loc>
-    <lastmod>2023-08-09T05:03:31+03:00</lastmod>
-  </url><url>
     <loc>https://www.mngaafar.com/</loc>
     <lastmod>2023-08-09T06:06:27+03:00</lastmod>
     <priority>1</priority>
@@ -103,6 +78,9 @@
     <lastmod>2023-08-09T05:03:31+03:00</lastmod>
   </url><url>
     <loc>https://www.mngaafar.com/tags/culture/</loc>
+    <lastmod>2023-08-09T05:03:31+03:00</lastmod>
+  </url><url>
+    <loc>https://www.mngaafar.com/tags/devops/</loc>
     <lastmod>2023-08-09T05:03:31+03:00</lastmod>
   </url><url>
     <loc>https://www.mngaafar.com/tags/apache/</loc>
@@ -135,8 +113,6 @@
     <loc>https://www.mngaafar.com/tags/bamboo/</loc>
     <lastmod>2023-08-09T05:03:31+03:00</lastmod>
   </url><url>
-    <loc>https://www.mngaafar.com/tags/bash/shell/</loc>
-  </url><url>
     <loc>https://www.mngaafar.com/tags/bitbucket/</loc>
     <lastmod>2023-08-09T05:03:31+03:00</lastmod>
   </url><url>
@@ -145,16 +121,13 @@
     <loc>https://www.mngaafar.com/tags/confluence/</loc>
     <lastmod>2023-08-09T05:03:31+03:00</lastmod>
   </url><url>
-    <loc>https://www.mngaafar.com/projects/creations/docker-marketplace/</loc>
+    <loc>https://www.mngaafar.com/tags/java/</loc>
     <lastmod>2023-08-09T05:03:31+03:00</lastmod>
   </url><url>
     <loc>https://www.mngaafar.com/tags/jira/</loc>
     <lastmod>2023-08-09T05:03:31+03:00</lastmod>
   </url><url>
     <loc>https://www.mngaafar.com/tags/jquery/</loc>
-    <lastmod>2023-08-09T05:03:31+03:00</lastmod>
-  </url><url>
-    <loc>https://www.mngaafar.com/tags/maven/</loc>
     <lastmod>2023-08-09T05:03:31+03:00</lastmod>
   </url><url>
     <loc>https://www.mngaafar.com/projects/</loc>
@@ -167,7 +140,5 @@
   </url><url>
     <loc>https://www.mngaafar.com/tags/spring/</loc>
     <lastmod>2023-08-09T05:03:31+03:00</lastmod>
-  </url><url>
-    <loc>https://www.mngaafar.com/tags/xml/xslt/</loc>
   </url>
 </urlset>

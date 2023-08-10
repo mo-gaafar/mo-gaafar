@@ -18,24 +18,31 @@ profileImage = "img/mngaafar-avatar-thumb.png"
 showEducation = true
 showExperience = true
 showOpenSource = false
-showProjects = false
+showProjects = true
 showPublications = false
 showSocializations = true
 showQr = true
+showBlog = true
+showResume = true
 showSkills = false
 
 [params.google]
 
 [params.google.analytics]
 trackerID = "G-5GL6K1NVFM"
+[[params.handles]]
+link = "https://github.com/mo-gaafar/"
+name = "GitHub"
+icon = "fa-github-alt"
 
 [[params.handles]]
 link = "https://www.linkedin.com/in/mn-gaafar/"
 name = "LinkedIn"
 
+
 [[params.handles]]
-link = "https://github.com/mo-gaafar/"
-name = "GitHub"
+link = "https://twitter.com/jaafar_dev/"
+name = "Twitter"
 
 [outputs]
 home = ["HTML", "JSON"]
