@@ -8,28 +8,24 @@ PygmentsStyle = "monokai"
 enableGitInfo = true
 
 [params]
-address = "Cairo, EG"
-email = "mohamed_gaafar@ieee.org"
-favicon = "/favicon.ico"
-firstName = "Mohamed"
 lastName = "N. Gaafar"
+showOpenSource = false
+showPublications = false
+showExperience = true
+showResume = true
+showEducation = true
 phone = "+201155277008"
 profileImage = "img/mngaafar-avatar-thumb.png"
-showEducation = true
-showExperience = true
-showOpenSource = false
-showProjects = true
-showPublications = false
+favicon = "/favicon.ico"
+address = "Cairo, EG"
+showProjects = false
 showSocializations = true
+firstName = "Mohamed"
+email = "mohamed_gaafar@ieee.org"
 showQr = true
 showBlog = true
-showResume = true
 showSkills = false
 
-[params.google]
-
-[params.google.analytics]
-trackerID = "G-5GL6K1NVFM"
 [[params.handles]]
 link = "https://github.com/mo-gaafar/"
 name = "GitHub"
@@ -39,10 +35,14 @@ icon = "fa-github-alt"
 link = "https://www.linkedin.com/in/mn-gaafar/"
 name = "LinkedIn"
 
-
 [[params.handles]]
 link = "https://twitter.com/jaafar_dev/"
 name = "Twitter"
+
+[params.google]
+
+[params.google.analytics]
+trackerID = "G-5GL6K1NVFM"
 
 [outputs]
 home = ["HTML", "JSON"]
