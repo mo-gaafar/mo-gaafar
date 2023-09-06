@@ -3,6 +3,8 @@
 
 I am Mohamed Nasser, people call me Nasser, currently pursuing my bachelor's degree majoring in systems and biomedical engineering from [Cairo University Faculty of Engineering](https://cu.edu.eg/Home). I am a tech enthusiast & an open-source advocate. I am always open to collaborating on projects and innovative/disruptive ideas. Find out more about me & feel free to connect with me here:
 
+[![wakatime](https://wakatime.com/badge/user/da6c03be-746f-407a-b490-c5fe8ddc59a5.svg)](https://wakatime.com/@da6c03be-746f-407a-b490-c5fe8ddc59a5)
+![Visitor Badge](https://visitor-badge.laobi.icu/badge?page_id=mo-gaafar.mo-gaafar)
 -------------------
 
 ### 📞 Contact Me
@@ -45,8 +47,6 @@ I am Mohamed Nasser, people call me Nasser, currently pursuing my bachelor's deg
 ![ROBLOX](https://img.shields.io/badge/-ROBLOX-ff0505?style=flat-square&logo=ROBLOX)
 ![Blender](https://img.shields.io/badge/-Blender-E34F26?style=flat-square&logo=blender&logoColor=white)
 -------------------
-
-![Visitor Badge](https://visitor-badge.laobi.icu/badge?page_id=mo-gaafar.mo-gaafar)
 
 
 
