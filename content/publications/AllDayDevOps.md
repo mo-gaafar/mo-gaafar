@@ -1,25 +1,39 @@
 ---
-title: "Organically DevOps: Building Quality and Security into the Software Supply Chain at Liberty Mutual"
-date: 2016-11-08
-pubtype: "Talk"
+title: Scoping Review - Immersive Virtual Reality Games in Neuromotor
+  Rehabilitation with Brain-Computer Interfaces
+date: 2024-01-09T22:00:00.000Z
 featured: true
-description: "This talk looked at Liberty Mutual’s transformation to Continuous Integration, Continuous Delivery, and DevOps. For a large, heavily regulated industry, this task can not only be daunting, but viewed by many as impossible."
-tags: ["DevOps","Continuous Integration","Continuous Delivery","CI/CD pipelines","agile","Culture"]
-image: "/img/organicdevops.webp"
-link: "http://www.alldaydevops.com/blog/organically-devops-building-quality-and-security-into-the-software-supply-chain-at-liberty-mutual"
-fact: "Interesting little tidbit shown below image on summary and detail page"
-weight: 400
+link: Waiting for approval
+image: img/pub1.png
+description: "This was the first professional paper I publish, it was intended
+  for the first ever IEEE student paper contest held in Alexandira, Egypt and is
+  part of my graduation project "
+tags:
+  - brain computer interface (BCIs)
+  - electroencephalography (EEG)
+  - rehabilitation
+  - upper limb
+  - lower limb
+  - virtual reality (VR)
+  - exergames
+  - video games
+  - motor function
+  - scoping review
+fact: ""
 sitemap:
-  priority : 0.8
+  priority: 0.8
+  weight: 0.5
+pubtype: Talk
+weight: 20
 ---
 
 
-This talk looked at Liberty Mutual’s transformation to Continuous Integration, Continuous Delivery, and DevOps. For a large, heavily regulated industry, this task can not only be daunting, but viewed by many as impossible. Often, organizations try to reduce the friction through micro-fixes, but Eddie’s team asked how to change the culture to reduce the friction and concluded with the following final points:
+This review delves into the pioneering integration of immersive Virtual Reality (VR) and Brain-Computer Interface (BCI) technologies in neuromotor rehabilitation. Highlighting a significant leap in the realm of therapeutic interventions, the paper, titled "Immersive Virtual Reality Games in Neuromotor Rehabilitation with Brain-Computer Interfaces: A Scoping Review," encapsulates an extensive synthesis of current research, offering a comprehensive understanding of the field's trajectory and potential.
 
-- Don’t mandate DevOps. Give employees the chance to master their discipline with examples to set and follow.
-- Favor deep end-to-end accomplishments over broad but incremental steps forward. Focus on taking the right teams far before encouraging broad adoption.
-- Centralize the platforms and tools that your teams shouldn’t be thinking about. Provide foundational services/commodities and let teams stay on purpose.
-- Incorporate contributions from everyone; don’t stifle autonomy. Stay open to new ways of working.
-- Challenge security policies, but respect intentions. Find new ways to enforce concerns without abandoning precaution.
+Key takeaways include:
 
-{{< youtube id="FsfKsqI07jM" t="80" width="600px" >}}
+* **Demographic Diversity and Wide Age Range**: The studies encompass a broad demographic, underscoring VR and BCI's potential across various age groups and health conditions, particularly emphasizing the inclusion of stroke and cerebral palsy patients.
+* **Technological Evolution**: A shift from traditional CAVE systems to the Oculus Rift marks a significant technological advancement, reflecting user preference and accessibility.
+* **Motor Imagery (MI) Paradigm**: The unanimous adoption of MI across studies accentuates its critical role in enhancing neuroplasticity and improving rehabilitation outcomes.
+* **Design and Engagement**: The diverse game design elements, focusing on scoring, embodiment, and customization, demonstrate the versatility of immersive BCI-VR games in addressing motor impairments and engaging users.
+* **Future Directions**: While revealing promising results, the review also identifies areas needing attention, such as the limited focus on gamification and the predominance of healthy participants, suggesting a pathway for more inclusive and engaging future research.
