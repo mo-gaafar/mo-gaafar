@@ -30,7 +30,7 @@ To give a glimpse into the future,here is a generative AI-created image depictin
 
 While we navigate the complexities of developing accurate motor imagery classifiers and integrating them with the VR environment, we are also dedicated to ensuring user comfort and adapting the system to individual needs. Our commitment extends beyond technological innovation; we are focused on creating a solution that is accessible, effective, and user-centered. For that we have used a 3D printed prototype that will fit well with VR headsets and also provide us with good signal quality from the motor cortex area. This uses the OpenBCI snap EEG electrodes along with any standard 3.5mm electrode clip.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ayfdvQNBu3U?si=9DScENOUAFMRamfm&amp;start=3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+[![Video](https://res.cloudinary.com/marcomontalbano/image/upload/v1704653674/video_to_markdown/images/youtube--ayfdvQNBu3U-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=ayfdvQNBu3U&t=3s "Video")
 
 Our project is a journey of innovation, collaboration, and determination. As we continue to make strides in VR and BCI integration for neurorehabilitation, we invite our academic and professional community to join us in this exciting venture. Your insights, critiques, and support are crucial as we strive to transform the landscape of rehabilitation for individuals affected by stroke and brain injuries.
 
