@@ -23,7 +23,7 @@ fact: ""
 sitemap:
   priority: 0.8
   weight: 0.5
-pubtype: Talk
+pubtype: Paper
 weight: 20
 ---
 
