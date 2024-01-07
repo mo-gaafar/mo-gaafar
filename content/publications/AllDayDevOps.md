@@ -1,7 +1,7 @@
 ---
 title: Scoping Review - Immersive Virtual Reality Games in Neuromotor
   Rehabilitation with Brain-Computer Interfaces
-date: 2024-01-09T22:00:00.000Z
+date: 2024-01-06T22:00:00.000Z
 featured: true
 link: Waiting for approval
 image: img/pub1.png
