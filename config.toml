@@ -10,7 +10,7 @@ enableGitInfo = true
 [params]
 lastName = "N. Gaafar"
 showOpenSource = false
-showPublications = false
+showPublications = true
 showExperience = true
 showResume = true
 showEducation = true
