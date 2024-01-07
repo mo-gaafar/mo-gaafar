@@ -26,7 +26,7 @@ A critical element of our BCI system is the OpenBCI Cyton board, an adaptable an
 
 To give a glimpse into the future,here is a generative AI-created image depicting our envisioned VR game design. 
 
-![AI generated image of game concept](img/vrgame3.png "Game Concept")
+![AI generated image of game concept](https://gcdnb.pbrd.co/images/1j3JvXXZro8V.png?o=1 "Game Concept")
 
 While we navigate the complexities of developing accurate motor imagery classifiers and integrating them with the VR environment, we are also dedicated to ensuring user comfort and adapting the system to individual needs. Our commitment extends beyond technological innovation; we are focused on creating a solution that is accessible, effective, and user-centered. For that we have used a 3D printed prototype that will fit well with VR headsets and also provide us with good signal quality from the motor cortex area. This uses the OpenBCI snap EEG electrodes along with any standard 3.5mm electrode clip.
 
