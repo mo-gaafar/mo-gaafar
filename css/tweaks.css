@@ -64,8 +64,8 @@ div.skills-heading{
   border-radius: 8px 8px  ;
   color: #999;
   display: inline-block;
-  height: 26px;
-  line-height: 26px;
+  /* height: 26px;
+  line-height: 26px; */
   padding: 0 10px 0 10px;
   position: relative;
   margin: 0 10px 10px 0;
