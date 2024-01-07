@@ -15,4 +15,4 @@ This page represents the landing page for "blog" section. It is also shown under
 
 \-->
 
-A collection of articles and posts on various topics that I find interesting. Most of them are related to Backend and Devops, but not all of them. I hope you find them useful.
+A collection of my written work whether in work or personal life. I write about a variety of topics including but not limited to: Software Engineering, Machine Learning, Biomedical Engineering, and more.

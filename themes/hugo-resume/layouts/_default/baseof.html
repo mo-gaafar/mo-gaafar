@@ -3,7 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>{{ .Site.Title }} | {{ .Title }}</title>
+  <!-- <title>{{ .Site.Title }} | {{ .Title }}</title> -->
+  <!-- if .Site.Title is equal to .Title, then just show the site title -->
+  <title>{{ if eq .Site.Title .Title }}{{ .Site.Title }}{{ else }}{{ .Site.Title }} | {{ .Title }}{{ end }}</title>
+   
   <meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{else}}{{ .Description }}{{ end }}">
 
   {{ $preview_image := .Resources.GetMatch "site_preview" }}
