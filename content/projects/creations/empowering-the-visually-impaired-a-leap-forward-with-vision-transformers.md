@@ -3,7 +3,7 @@ title: "Empowering the Visually Impaired: A Leap Forward with Vision Transformer
 date: 2024-01-08T06:17:25.579Z
 featured: true
 link: https://github.com/mo-gaafar/blind-assistance-deep-learning
-image: https://gcdnb.pbrd.co/images/0tZkrqG7l4dP.png?o=1
+image: https://gcdnb.pbrd.co/images/9Hp7WfpDrMFt.png?o=1
 description: "The goal is to provide real-time auditory descriptions of
   surroundings, improving navigation, social interaction, and the performance of
   daily tasks for those suffering from blindness.. "
