@@ -3,9 +3,12 @@
 <div class="resume-item d-flex flex-column flex-md-row mb-3">
 
   <div class="resume-content" style="width:200px;">
-    {{with  .Params.image }}
+
+
+    {{with  .Params.image }} 
       <img src="{{ . }}" style="max-height:150px;max-width:150px;"/>
     {{ end }}
+    
   </div>
   <div class="resume-date">
     <p>{{ .Description | safeHTML }}<p>
