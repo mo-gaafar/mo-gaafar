@@ -3,7 +3,7 @@ title: "Advancing Neurorehabilitation: Integrating Brain Computer Interfaces in
   Virtual Reality for Motor Rehabilitation of Stroke Patients"
 date: 2024-01-07T17:55:31.498Z
 featured: true
-link: None
+link: https://doi.org/10.1101/2024.01.08.24300991
 image: img/bcivrcover.png
 description: "This is an informative article on the current progress of our
   graduation project "
