@@ -3,7 +3,7 @@ title: Scoping Review - Immersive Virtual Reality Games in Neuromotor
   Rehabilitation with Brain-Computer Interfaces
 date: 2024-01-06T22:00:00.000Z
 featured: true
-link: Waiting for approval
+link: http://doi.org/10.1101/2024.01.08.24300991
 image: img/pub1.png
 description: "This was the first professional paper I publish, it was intended
   for the first ever IEEE student paper contest held in Alexandira, Egypt and is
@@ -20,11 +20,11 @@ tags:
   - motor function
   - scoping review
 fact: ""
+weight: 20
 sitemap:
   priority: 0.8
   weight: 0.5
 pubtype: Paper
-weight: 20
 ---
 
 
