@@ -39,6 +39,10 @@ name = "LinkedIn"
 link = "https://twitter.com/jaafar_dev/"
 name = "Twitter"
 
+[[params.handles]]
+name = "ORCID"
+link = "https://orcid.org/0009-0001-5478-7940"
+
 [params.google]
 
 [params.google.analytics]
