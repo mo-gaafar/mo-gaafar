@@ -3,7 +3,7 @@ title: "Empowering the Visually Impaired: A Leap Forward with Vision Transformer
 date: 2024-01-08T06:17:25.579Z
 featured: true
 link: https://github.com/mo-gaafar/blind-assistance-deep-learning
-image: https://gcdnb.pbrd.co/images/9Hp7WfpDrMFt.png?o=1
+image: https://miro.medium.com/v2/resize:fit:1024/1*mr46bo_Vj5K0nmt5ViEX8Q.png
 description: "The goal is to provide real-time auditory descriptions of
   surroundings, improving navigation, social interaction, and the performance of
   daily tasks for those suffering from blindness.. "
@@ -44,17 +44,13 @@ The choice to employ ViT over multiple CNNs wasn't incidental. Traditional CNNs,
 | Object: Bicycle (x9,y9,x10,y10), Fence (x11,y11,x12,y12) | A bicycle leaning against a wooden fence.       |
 | Object: Bench (x13,y13,x14,y14), Pond (x15,y15,x16,y16)  | A bench overlooking a serene pond in the park.  |
 
- ﻿
- ﻿
- ﻿
-
 **Enriching Understanding with Advanced Text-to-Speech**
 
 To further enhance the system's utility, we've integrated an advanced Text-to-Speech (TTS) model. This component takes the descriptive text generated from the image recognition process and converts it into spoken words, providing an auditory representation of the visual data. This feature is crucial for visually impaired users, as it translates the detailed visual descriptions into a format they can easily understand and interact with.
 
 L﻿ink to the TTS model: [coqui/XTTS-v2 · Hugging Face](https://huggingface.co/coqui/XTTS-v2)
 
-![Full System Diagram](https://gcdnb.pbrd.co/images/Jz3Q3WzXawCx.png?o=1 "Full System Diagram")
+![Full System Diagram](img/block_diagram.png "Full System Diagram")
 
 **Real-World Impact and Future Directions**
 
