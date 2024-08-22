@@ -22,6 +22,7 @@ This project introduces a new Motor Mapping Visualization feature to Invesalius,
 
 
 
+
 ## Features:
 1. Heatmap visualization on brain surface based on Motor evoked potentials
 2. Interactive MEP value adjustment and session persistence
@@ -32,24 +33,21 @@ This project introduces a new Motor Mapping Visualization feature to Invesalius,
 
 ### Quick Runthrough
 The following animation demonstrates the interactive workflow, allowing for real-time exploration of MEP data and visualization customization.
-| Show number of hits|
+| Demo GIF|
 | :---:	|
-| <img src="assets/numberofhits_AdobeExpress.gif"> |
-| Filter Category "Language" results for "1156" in Keyword's field. |
-![Animation](https://github.com/user-attachments/assets/ca4e6f08-3e1b-4fb9-a17a-e1485081b167)
+| ![Animation](https://github.com/user-attachments/assets/ca4e6f08-3e1b-4fb9-a17a-e1485081b167) |
+| Showing the visualization in action |
+
 
 ### Detailed Feature Screenshots
 
-| Motor Mapping | Color Map Presets | 
+| **Motor Mapping** | **Color Map Presets** | 
 | --- | --- |  
 | ![motor map](https://github.com/user-attachments/assets/4ce3c72f-3e5f-482c-b378-7345a47f4892)|![colormap presets](https://github.com/user-attachments/assets/30f94d2b-ef7a-4fca-a89d-f2db3ac50149) |
 | How the brain visualization looks like using the HotMetal theme | Many heatmap themes to choose from | 
  ﻿ 
  ﻿ 
- ﻿   
- ﻿ 
- ﻿ 
-|MEP Values and Toggle Button |Preferences  |
+| **MEP Values and Toggle Button** | **Preferences**  |
 | --- | --- |  
 |![mep values and toggle button](https://github.com/user-attachments/assets/dc8a2765-7858-4448-8918-85c1695c8842)|![preferences](https://github.com/user-attachments/assets/5e4a3c54-6ac3-4d55-b7b1-ed825b817e60) |
 |MEP Values are now being saved and displayed |New section in preferences to manage the visualization parameters  |
