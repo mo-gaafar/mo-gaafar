@@ -13,7 +13,9 @@ backend:
   repo: mo-gaafar/mo-gaafar
   branch: main
   publish_mode: editorial_workflow
-  site_domain: mo-gaafar.netlify.app
+  site_domain: https://mngaafar.com
+  display_url: https://mngaafar.com
+  logo_url: https://mngaafar.com/favicon.ico
 
 media_folder: "static/img" # Folder where user uploaded files should go
 public_folder: "img"
