@@ -63,20 +63,20 @@
       crossorigin="anonymous">
   </noscript>
   <!-- Custom styles for this template -->
-  <link rel="preload" href="{{ " css/resume.css" | absURL }}" as="style"
-    onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href='{{ "css/resume.css" | absURL }}' as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript>
-    <link rel="stylesheet" href="{{ " css/resume.css" | absURL }}">
+    <link rel="stylesheet" href='{{ "css/resume.css" | absURL }}'>
   </noscript>
-  <link rel="preload" href="{{ " css/tweaks.css" | absURL }}" as="style"
-    onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href='{{ "css/tweaks.css" | absURL }}' as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript>
-    <link rel="stylesheet" href="{{ " css/tweaks.css" | absURL }}">
+    <link rel="preload" href='{{ " css/tweaks.css" | absURL }}' as="style"
+      onload="this.onload=null;this.rel='stylesheet'">
   </noscript>
-  <link rel="preload" href="{{ " css/resume-override.css" | absURL }}" as="style"
+  <link rel="preload" href='{{ "css/resume-override.css" | absURL }}' as="style"
     onload="this.onload=null;this.rel='stylesheet'">
   <noscript>
-    <link rel="stylesheet" href="{{ " css/resume-override.css" | absURL }}">
+    <link rel="preload" href='{{ "css/resume-override.css" | absURL }}' as="style"
+      onload="this.onload=null;this.rel='stylesheet'">
   </noscript>
   {{ hugo.Generator }}
   {{ block "headfiles" . }}
