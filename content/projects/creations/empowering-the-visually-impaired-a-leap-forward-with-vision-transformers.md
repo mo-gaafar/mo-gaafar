@@ -3,7 +3,7 @@ title: "Empowering the Visually Impaired: A Leap Forward with Vision Transformer
 date: 2024-01-08T06:17:25.579Z
 featured: true
 link: https://github.com/mo-gaafar/blind-assistance-deep-learning
-image: https://miro.medium.com/v2/resize:fit:1024/1*mr46bo_Vj5K0nmt5ViEX8Q.png
+image: img/vision-transformer.png
 description: "The goal is to provide real-time auditory descriptions of
   surroundings, improving navigation, social interaction, and the performance of
   daily tasks for those suffering from blindness.. "
@@ -50,11 +50,11 @@ To further enhance the system's utility, we've integrated an advanced Text-to-Sp
 
 L﻿ink to the TTS model: [coqui/XTTS-v2 · Hugging Face](https://huggingface.co/coqui/XTTS-v2)
 
-![Full System Diagram](img/block_diagram.png "Full System Diagram")
+![Full System Diagram](https://raw.githubusercontent.com/mo-gaafar/mo-gaafar/main/static/img/block_diagram.png)
 
 **Real-World Impact and Future Directions**
 
-This system isn't just a technological marvel; it's a tool for empowerment. By providing visually impaired individuals with a more nuanced and holistic understanding of their environment, we're opening up new avenues for them to navigate and interact with the world. Initially deployed on smartphones, future versions may include wearable devices, further integrating this technology into everyday life seamlessly.
+This system isn't just a prototype; it's a tool for empowerment. By providing visually impaired individuals with a more nuanced and holistic understanding of their environment, we're opening up new avenues for them to navigate and interact with the world. Initially deployed on smartphones, future versions may include wearable devices, further integrating this technology into everyday life seamlessly
 
 ![Concept Art for the Application](https://gcdnb.pbrd.co/images/0tZkrqG7l4dP.png?o=1 "Concept Art (GenAI image using DALLE)")
 
