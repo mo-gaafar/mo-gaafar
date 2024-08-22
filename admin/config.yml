@@ -243,6 +243,8 @@ collections: # A list of collections the CMS should be able to edit
             fields:
               - { label: "First Name", name: "firstName", widget: "string" }
               - { label: "Last Name", name: "lastName", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "string" }
               - { label: address, name: address, widget: "string" }
               - { label: profileImage, name: profileImage, widget: "image" }
               - { label: "phone", name: "phone", widget: "string" }
