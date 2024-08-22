@@ -2,7 +2,7 @@
 title: TMS Motor Mapping Visualization - GSoC 24 @Invesalius
 date: 2024-08-22T05:48:35.663Z
 featured: true
-link: https://github.com/invesalius/invesalius3/pull/825
+link: https://github.com/invesalius/invesalius3
 image: https://gist.github.com/user-attachments/assets/dbbc2819-00c8-49b1-ac07-902155b2d5ba
 description: Google Summer of Code 2024 Contribution to Invesalius
 tags:
