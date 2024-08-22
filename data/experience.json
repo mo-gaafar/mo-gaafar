@@ -1,9 +1,9 @@
 [
     {
-        "role": "Software Engineer Intern",
-        "company": "National Bank of Egypt (NBE)",
-        "summary": "Skills: Software Development · C#",
-        "range": "Aug 2023 - Present"
+        "role": "Backend Software Engineer",
+        "company": "Freelance",
+        "summary": "Developing and architecting market-ready software solutions from the ground up. Some technologies I use: FastAPI, ExpressJS, MongoDB, PostgreSQL, Docker, AWS",
+        "range": "May 2023 - Present"
     },
     {
         "role": "Head of Web Development",
@@ -18,16 +18,16 @@
         "range": "Oct 2022 - Aug 2023"
     },
     {
-        "role": "Backend Software Engineer",
-        "company": "Freelance",
-        "summary": "Developing and architecting market-ready software solutions from the ground up. Some technologies I use: FastAPI, ExpressJS, MongoDB, PostgreSQL, Docker, AWS",
-        "range": "May 2023 - Present"
-    },
-    {
         "role": "Hardware Design Engineer",
         "company": "Cairo Uni Racing Team - Formula Student",
         "summary": "Skills: Embedded Systems · Printed Circuit Board (PCB) Design · Hardware Testing · Altium · Electronics · Electrical Troubleshooting · Electric Vehicles",
         "range": "Oct 2022 - Present"
+    },
+    {
+        "role": "Information Technlogy and Infrastructure Intern",
+        "company": "National Bank of Egypt (NBE)",
+        "summary": "Skills: Call Center System Infrastructure · On-Premises Datacenter · Virtulaization · VoIP · Networking ",
+        "range": "Aug 2023 - Sept 2023"
     },
     {
         "role": "Clinical Engineer Trainee",

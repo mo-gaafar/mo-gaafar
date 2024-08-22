@@ -191,6 +191,7 @@ collections: # A list of collections the CMS should be able to edit
               max: 1.0,
             },
         }
+      - { label: "Publication Type", name: "pubtype", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
 
   - name: "settings"

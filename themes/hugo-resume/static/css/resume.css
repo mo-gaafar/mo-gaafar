@@ -92,7 +92,7 @@ h2 {
   #sideNav .navbar-brand .img-profile {
     max-width: 10rem;
     max-height: 10rem;
-    border: 0.5rem solid rgba(255, 255, 255, 0.2);
+    border: 0.5rem solid rgba(22, 19, 19, 0.2);
   }
   #sideNav .navbar-collapse {
     display: flex;
@@ -114,7 +114,7 @@ h2 {
 }
 
 section.resume-section {
-  border-bottom: 1px solid #dee2e6;
+  border-bottom: 1px solid #818284;
   padding-top: 5rem !important;
   padding-bottom: 5rem !important;
 }
@@ -140,17 +140,23 @@ section.resume-section .resume-item .resume-date {
 }
 
 .bg-primary {
-  background-color: #3daa2f !important;
+  background-color: #364f33 !important;
 }
 
 .text-primary {
-  color: #3daa2f !important;
+  color: #2f542b !important;
 }
 
 a {
-  color: #3daa2f;
+  color: #2c613d;
 }
 
 a:hover, a:focus, a:active {
-  color: #21631f;
+  color: #336730;
+}
+
+/* I want the main background to be beige */
+body {
+  background-color: #f5f5dc;
+  
 }
