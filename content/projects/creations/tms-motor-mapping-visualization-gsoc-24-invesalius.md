@@ -20,6 +20,8 @@ sitemap:
 This project introduces a new Motor Mapping Visualization feature to Invesalius, offering enhanced capabilities for visualizing and interacting with Motor Evoked Potential (MEP) data
 
 
+
+
 ## Features:
 1. Heatmap visualization on brain surface based on Motor evoked potentials
 2. Interactive MEP value adjustment and session persistence
@@ -30,10 +32,10 @@ This project introduces a new Motor Mapping Visualization feature to Invesalius,
 
 ### Quick Runthrough
 The following animation demonstrates the interactive workflow, allowing for real-time exploration of MEP data and visualization customization.
-
-
-
-
+| Show number of hits|
+| :---:	|
+| <img src="assets/numberofhits_AdobeExpress.gif"> |
+| Filter Category "Language" results for "1156" in Keyword's field. |
 ![Animation](https://github.com/user-attachments/assets/ca4e6f08-3e1b-4fb9-a17a-e1485081b167)
 
 ### Detailed Feature Screenshots
@@ -41,9 +43,16 @@ The following animation demonstrates the interactive workflow, allowing for real
 | Motor Mapping | Color Map Presets | 
 | --- | --- |  
 | ![motor map](https://github.com/user-attachments/assets/4ce3c72f-3e5f-482c-b378-7345a47f4892)|![colormap presets](https://github.com/user-attachments/assets/30f94d2b-ef7a-4fca-a89d-f2db3ac50149) |
+| How the brain visualization looks like using the HotMetal theme | Many heatmap themes to choose from | 
+ ﻿ 
+ ﻿ 
+ ﻿   
+ ﻿ 
+ ﻿ 
 |MEP Values and Toggle Button |Preferences  |
+| --- | --- |  
 |![mep values and toggle button](https://github.com/user-attachments/assets/dc8a2765-7858-4448-8918-85c1695c8842)|![preferences](https://github.com/user-attachments/assets/5e4a3c54-6ac3-4d55-b7b1-ed825b817e60) |
-
+|MEP Values are now being saved and displayed |New section in preferences to manage the visualization parameters  |
 ## Challenges and Takeaways
 
 * I have invested a good amount of time during the project start for developing understanding on the architecture of the VTK pipeline and the overall visualization logic in Invesalius. Most of that was done on my own, with a little push from my mentors to fill in the knowledge gaps I had. This really gave me a taste of open source and the need to be self reliant first and foremost before using any of the contributors' time.
@@ -66,3 +75,4 @@ https://github.com/invesalius/invesalius3/pull/825
 
 * In future iterations, I plan to add a sliding gradient editor for more intuitive color customization and enhance the colorbar for improved range interpretation.
 * The brain projection is not directly projected to the surface and is dependent on the height from the scalp as the point is generated at the coil's center position and not directly on the brain surface, increasing the visualization radius from preferences helps. But it is not ideal.
+* Marker file import and export functionality in addition to the ability to export a colored mesh object to be done.
