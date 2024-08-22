@@ -14,6 +14,9 @@ body {
   font-family: 'Open Sans', serif;
   padding-top: 54px;
   color:var(--text-color);
+  /* padding: 3.2rem;
+   */
+  padding-right: 3rem;
 }
 
 @media (min-width: 992px) {
@@ -129,12 +132,13 @@ h3 {
 
 section.resume-section {
   border-bottom: 1px solid #818284;
-  padding-top: 5rem !important;
+  /* padding-top: 0rem !important; */
   padding-bottom: 5rem !important;
   /* margin : 100px; */
   max-width: 900px; /* Set the maximum width */
-  margin-left: auto;  /* Center the section horizontally */
+  margin-left:  auto;  /* Center the section horizontally */
   margin-right: auto; 
+
 }
 
 section.resume-section .resume-item .resume-date {
