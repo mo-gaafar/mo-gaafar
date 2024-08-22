@@ -10,7 +10,9 @@
           <a href="mailto:{{ substr .Site.Params.email 0 5}}-remove-{{ substr .Site.Params.email 5 }}">{{ substr
             .Site.Params.email 0 5}}<span style="display:none">-remove-</span>{{ substr .Site.Params.email 5 }}</a>
         </div>
-
+        <div class="resume-date">
+          <p style="margin-right: 2rem;">{{ .Site.Params.description }} </p>
+        </div>
       </div>
 
       {{ if .Site.Params.showQr }}
@@ -19,34 +21,37 @@
 
     </div>
     <div>
-      {{ .Content }}
-      {{ if .Site.Params.showCertifications }}
-      <h3>{{ i18n "certifications" }}</h3>
-      <ul class="list-inline list-social-icons mb-0">
-        {{ range .Site.Data.certifications }}
-        <li class="list-inline-item">
-          <a href="{{ .proof }}" data-toggle="tooltip" title="{{ .name }}" data-offset="0 10" rel="me">
-            <img src="{{ .badge }}" width=75 />
-          </a>
-        </li>
+
+      <div>
+        {{ .Content }}
+        {{ if .Site.Params.showCertifications }}
+        <h3>{{ i18n "certifications" }}</h3>
+        <ul class="list-inline list-social-icons mb-0">
+          {{ range .Site.Data.certifications }}
+          <li class="list-inline-item">
+            <a href="{{ .proof }}" data-toggle="tooltip" title="{{ .name }}" data-offset="0 10" rel="me">
+              <img src="{{ .badge }}" width=75 />
+            </a>
+          </li>
+          {{ end }}
+        </ul>
         {{ end }}
-      </ul>
-      {{ end }}
-      {{ if .Site.Params.showSocializations }}
-      <h3>{{ i18n "socialization" }}</h3>
-      <ul class="list-inline list-social-icons mb-0">
-        {{ range .Site.Params.handles }}
-        <li class="list-inline-item">
-          <a href="{{ .link }}" data-toggle="tooltip" title="{{ .name }}" data-offset="0,10" rel="me">
-            <span class="fa-stack fa-lg">
-              <i class="fa fa-circle fa-stack-2x"></i>
-              <i class="fab {{ if .icon}}{{ .icon }}{{ else }}fa-{{ lower .name }}{{ end }} fa-stack-1x fa-inverse"></i>
-            </span>
-          </a>
-        </li>
+        {{ if .Site.Params.showSocializations }}
+        <h3>{{ i18n "socialization" }}</h3>
+        <ul class="list-inline list-social-icons mb-0">
+          {{ range .Site.Params.handles }}
+          <li class="list-inline-item">
+            <a href="{{ .link }}" data-toggle="tooltip" title="{{ .name }}" data-offset="0,10" rel="me">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i
+                  class="fab {{ if .icon}}{{ .icon }}{{ else }}fa-{{ lower .name }}{{ end }} fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          {{ end }}
+        </ul>
         {{ end }}
-      </ul>
-      {{ end }}
+      </div>
     </div>
-  </div>
 </section>

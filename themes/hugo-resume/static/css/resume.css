@@ -1,3 +1,10 @@
+:root {
+  --base-font-size: 1rem; /* Adjust if your base font size is different */
+  --primary-color: #af2a2a;
+  --secondary-color: #e8a495;
+  --text-color: #3d453f;
+  --background-color: #f0e8dd;
+}
 html {
   --scroll-behavior: smooth;
   scroll-behavior: smooth;
@@ -6,7 +13,7 @@ html {
 body {
   font-family: 'Open Sans', serif;
   padding-top: 54px;
-  color: #868e96;
+  color:var(--text-color);
 }
 
 @media (min-width: 992px) {
@@ -16,51 +23,51 @@ body {
   }
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+/* Basic styling for all headings */
+h1, h2, h3, h4, h5, h6 {
   font-family: 'Saira Extra Condensed', serif;
   font-weight: 700;
-  color: #343a40;
-  margin: auto;
+  color: var(--text-color);
+  margin: auto; /* Center the headings if their container allows */
 }
 
-
-h1, h2{
+/* Specific styling for h1 and h2 */
+h1, h2 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   text-transform: uppercase;
 }
 
+
 h1 {
-  font-size: 3rem;
-  line-height: 3rem;
+  font-size: clamp(2.5rem, 3.5vw, 4rem); 
 }
 
 h2 {
-  font-size: 2.5rem;
-  line-height: 4rem;
+  font-size: clamp(2rem, 2.5vw, 3rem); 
+  line-height: 1.3; /* Unitless line-height for better scaling */
 }
 
 h3 {
-  font-size: 2rem;
-  line-height: 2.5rem;
+  font-size: clamp(1.5rem, 1.75vw, 2rem);
+  line-height: 1.4; 
 }
 
+
+
+/* Styling for .subheading */
 .subheading {
   text-transform: uppercase;
   font-weight: 500;
   font-family: 'Saira Extra Condensed', serif;
-  font-size: 1.35rem;
+  font-size: clamp(1.1rem, 1.225vw, 1.35rem); 
 }
-
 .list-social-icons a {
-  color: #495057;
+  color:var(--text-color);
 }
 
 .list-social-icons a:hover {
-  color: #3daa2f;
+  color:var(--secondary-color);
 }
 
 .list-social-icons a .fa-lg {
@@ -72,7 +79,7 @@ h3 {
 }
 
 .list-icons .list-inline-item i:hover {
-  color: #3daa2f;
+  color: var(--secondary-color);
 }
 
 #sideNav .navbar-nav .nav-item .nav-link {
@@ -124,7 +131,7 @@ section.resume-section {
   border-bottom: 1px solid #818284;
   padding-top: 5rem !important;
   padding-bottom: 5rem !important;
-  margin : 100px;
+  /* margin : 100px; */
   max-width: 900px; /* Set the maximum width */
   margin-left: auto;  /* Center the section horizontally */
   margin-right: auto; 
@@ -157,23 +164,23 @@ section.resume-section .resume-item .resume-date {
 }
 
 .bg-primary {
-  background-color: #364f33 !important;
+  background-color:var(--primary-color) !important;
 }
 
 .text-primary {
-  color: #2f542b !important;
+  color:var(--primary-color) !important;
 }
 
 a {
-  color: #2c613d;
+  color:var(--primary-color);
 }
 
 a:hover, a:focus, a:active {
-  color: #336730;
+  color: var(--primary-color);
 }
 
 /* I want the main background to be beige */
 body {
-  background-color: #f5f5dc;
+  background-color:var(--background-color);
   
 }

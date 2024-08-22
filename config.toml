@@ -22,6 +22,7 @@ showProjects = true
 showSocializations = true
 firstName = "Mohamed"
 email = "mohamed_gaafar@ieee.org"
+description = "MAECI Scholar, Founding Backend Engineer, Aspiring Researcher, and Open Source Enthusiast. Loves to design and overengineer things for fun. Interested in Backend , Neurotech and AI."
 showQr = true
 showBlog = true
 showSkills = false
