@@ -351,17 +351,21 @@ collections: # A list of collections the CMS should be able to edit
 
   - name: "experience"
     label: "Experience"
-    folder: "data/experience"
     create: true
     delete: true
     editor:
       preview: false
-    fields:
-      - label: "List of Experiences"
-        name: "experience"
-        widget: "list"
+    - name: "Experience"
+        label: "Experience"
+        file: "data/experience.json"
+        extension: json
+        description: "Work Experience Settings"
         fields:
-          - { label: "Company", name: "company", widget: "string" }
-          - { label: "Role", name: "role", widget: "string" }
-          - { label: "Date Range", name: "range", widget: "string" }
-          - { label: "Summary", name: "summary", widget: "string" }
+          - label: "List of Experiences"
+            name: "experience"
+            widget: "list"
+            fields:
+              - { label: "Company", name: "company", widget: "string" }
+              - { label: "Role", name: "role", widget: "string" }
+              - { label: "Date Range", name: "range", widget: "string" }
+              - { label: "Summary", name: "summary", widget: "string" }
