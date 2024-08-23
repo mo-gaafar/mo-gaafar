@@ -6,6 +6,7 @@ PygmentsCodeFences = true
 PygmentsCodeFencesGuessSyntax = true
 PygmentsStyle = "monokai"
 enableGitInfo = true
+enableRobotsTXT = true
 
 [params]
 lastName = "N. Gaafar"
@@ -48,6 +49,10 @@ link = "https://orcid.org/0009-0001-5478-7940"
 
 [params.google.analytics]
 trackerID = "G-5GL6K1NVFM"
+
+[sitemap]
+  ChangeFreq = "daily"
+  Priority = "1"
 
 [outputs]
 home = ["HTML", "JSON"]

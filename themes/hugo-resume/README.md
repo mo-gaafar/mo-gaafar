@@ -108,3 +108,6 @@ Start Bootstrap was created by and is maintained by **[David Miller](http://davi
 
 Start Bootstrap is based on the [Bootstrap](http://getbootstrap.com/) framework created by [Mark Otto](https://twitter.com/mdo) and [Jacob Thorton](https://twitter.com/fat).
 
+## Notes
+
+[Useful for robots.txt config](https://discourse.gohugo.io/t/custom-robots-txt-and-sitemap-xml-templates/11869/23)
