@@ -1,50 +1,38 @@
 [
-    {
-        "role": "Backend Software Engineer",
-        "company": "Freelance",
-        "summary": "Developing and architecting market-ready software solutions from the ground up. Some technologies I use: FastAPI, ExpressJS, MongoDB, PostgreSQL, Docker, AWS",
-        "range": "May 2023 - Present"
-    },
-    {
-        "role": "Head of Web Development",
-        "company": "Cairo University Eco Racing Team",
-        "summary": "Skills: Python (Programming Language) · Postman API · Software Documentation · Django · PostgreSQL",
-        "range": "Aug 2023 - Present"
-    },
-    {
-        "role": "Back End Developer",
-        "company": "Cairo University Eco Racing Team",
-        "summary": "Skills: Python (Programming Language) · Postman API · Software Documentation · Django · PostgreSQL",
-        "range": "Oct 2022 - Aug 2023"
-    },
-    {
-        "role": "Hardware Design Engineer",
-        "company": "Cairo Uni Racing Team - Formula Student",
-        "summary": "Skills: Embedded Systems · Printed Circuit Board (PCB) Design · Hardware Testing · Altium · Electronics · Electrical Troubleshooting · Electric Vehicles",
-        "range": "Oct 2022 - Present"
-    },
-    {
-        "role": "Information Technlogy and Infrastructure Intern",
-        "company": "National Bank of Egypt (NBE)",
-        "summary": "Skills: Call Center System Infrastructure · On-Premises Datacenter · Virtulaization · VoIP · Networking ",
-        "range": "Aug 2023 - Sept 2023"
-    },
-    {
-        "role": "Clinical Engineer Trainee",
-        "company": "Al Assema Hospital",
-        "summary": "Skills: Medical Equipment · Medical Equipment Planning · Planned Preventative Maintenance · Predictive Maintenance · Healthcare Industry · Healthcare Management",
-        "range": "Aug 2022 - Sep 2022"
-    },
-    {
-        "role": "Game Developer",
-        "company": "Clear Pictures",
-        "summary": "Developing educational games for children. Using the unity engine and c#. Skills: Object-Oriented Programming (OOP) · C# · Unity · Event Driven Programming · GitHub · Game Development · Game Programming",
-        "range": "Jul 2022 - Aug 2022"
-    },
-    {
-        "role": "Public Relations Assistant",
-        "company": "Adham Omar ESL",
-        "summary": "Responsible for communication with the students and their parents. Skills: Microsoft Office · Communication · Customer Relationship Management (CRM) · Public Relations",
-        "range": "Sep 2018 - May 2019"
-    }
+  {
+    "role": "Open Source Developer",
+    "company": "Google Summer of Code · Apprenticeship",
+    "range": "May 2024 - Present · 4 mos",
+    "summary": "Skills: Transcranial Magnetic Stimulation · VTK · Back-End Web Development · WebSocket"
+  },
+  {
+    "role": "Founding Backend Engineer",
+    "company": "Eventec · Contract",
+    "range": "Apr 2024 - Present · 5 mos",
+    "summary": "Skills: Back-End Web Development · FastAPI · Python (Programming Language) · Software Architecture · Event Management"
+  },
+  {
+    "role": "Head of Web Development",
+    "company": "Cairo University Eco Racing Team",
+    "range": "Aug 2023 - May 2024 · 10 mos",
+    "summary": "- Leading a team of 6 great developers - Participated in the local edition of Shell Eco-Marathon - Working on 3 projects and using Trello (Kanban) for agile project management - Built cu-eco.org as a portfolio website for the team with an integrated content management system CMS for ease of data entry. - Building inventory.cu-eco.org as an internal solution for managing inventory and logistics - Working on the recruitment system for the next season with a streamlined workflow for applicant management"
+  },
+  {
+    "role": "Backend Software Engineer",
+    "company": "Illusionare LLC",
+    "range": "May 2023 - Feb 2024 · 10 mos",
+    "summary": "Developing VR Training Solutions in Unity, Building backend for custom software and performing technical recruitment. - Built 2 Backend Projects and 2 Immersive VR Experiences for different clients - Performed more than 20 technical interviews for new applicants Skills: Back-End Web Development · FastAPI · C# · Python (Programming Language) · Unity · Virtual Reality (VR) · Leadership"
+  },
+  {
+    "role": "Information Technology Infrastructure Engineer",
+    "company": "National Bank of Egypt (NBE) · Internship",
+    "range": "Aug 2023 - Sep 2023 · 2 mos",
+    "summary": "- Final project: Built a text to speech applicaiton that would extract useful CRM data from customer service calls - Learned about infrastructure of the call center and multimedia in the whole bank - Toured the main datacenter of the bank understanding security and safety considerations Skills: Network Infrastructure · Voice over IP (VoIP)"
+  },
+  {
+    "role": "Game Developer",
+    "company": "Clear Pictures · Internship",
+    "range": "Jul 2022 - Aug 2022 · 2 mos",
+    "summary": "Developing educational games for children. Using the unity engine and c# - Weekly projects and tutorials - Game Design Patterns - Event driven architecture - Object Oriented Programming in C# - Introduced to VR Skills: C# · Game Programming · GitHub · Object-Oriented Programming (OOP) · Event Driven Programming · Game Development · Unity"
+  }
 ]
