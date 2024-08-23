@@ -349,23 +349,24 @@ collections: # A list of collections the CMS should be able to edit
                 },
             }
 
-  - name: "experience"
-    label: "Experience"
+  - name: "jobs"
+    label: "Job Settings"
     create: true
-    delete: true
+    delete: false
     editor:
       preview: false
+    files:
     - name: "Experience"
-        label: "Experience"
-        file: "data/experience.json"
-        extension: json
-        description: "Work Experience Settings"
-        fields:
-          - label: "List of Experiences"
-            name: "experience"
-            widget: "list"
-            fields:
-              - { label: "Company", name: "company", widget: "string" }
-              - { label: "Role", name: "role", widget: "string" }
-              - { label: "Date Range", name: "range", widget: "string" }
-              - { label: "Summary", name: "summary", widget: "string" }
+      label: "Experience"
+      file: "data/experience.json"
+      extension: json
+      description: "Work Experience Settings"
+      fields:
+        - label: "List of Experiences"
+          name: "experience"
+          widget: "list"
+          fields:
+            - { label: "Company", name: "company", widget: "string" }
+            - { label: "Role", name: "role", widget: "string" }
+            - { label: "Date Range", name: "range", widget: "string" }
+            - { label: "Summary", name: "summary", widget: "string" }
