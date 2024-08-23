@@ -7,7 +7,7 @@
   <!-- <title>{{ .Site.Title }} | {{ .Title }}</title> -->
   <!-- if .Site.Title is equal to .Title, then just show the site title -->
   <title>{{ if eq .Site.Title .Title }}{{ .Site.Title }}{{ else }}{{ .Site.Title }} | {{ .Title }}{{ end }}</title>
-
+  <link rel="canonical" href="{{ .Permalink }}">
   <meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{else}}{{ .Description }}{{ end }}">
 
   {{ $preview_image := .Resources.GetMatch "site_preview" }}
