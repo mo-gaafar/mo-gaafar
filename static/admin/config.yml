@@ -355,6 +355,7 @@ collections: # A list of collections the CMS should be able to edit
     delete: false
     editor:
       preview: false
+    files:
     - name: "Experience"
       label: "Experience"
       file: "data/experience.json"
