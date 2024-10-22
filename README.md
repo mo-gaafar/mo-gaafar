@@ -1,7 +1,7 @@
 <h1> <img src="https://raw.githubusercontent.com/aemmadi/aemmadi/master/wave.gif" width="30px" height= "30px"> Hello! </h1>
 
 
-I am Mohamed Nasser, people call me Nasser, currently pursuing my bachelor's degree majoring in systems and biomedical engineering from [Cairo University Faculty of Engineering](https://cu.edu.eg/Home). I am a tech enthusiast & an open-source advocate. I am always open to collaborating on projects and innovative/disruptive ideas. Find out more about me & feel free to connect with me here:
+I am Mohamed Nasser, people call me Nasser, currently pursuing my masters degree majoring in bionics and neuroengineering at [Scuola Superiore Santanna, Biorobotics Institute](https://www.bionicsengineering.it/edu/). I am a tech enthusiast & an open-source advocate. I am always open to collaborating on projects and innovative/disruptive ideas. Find out more about me & feel free to connect with me here:
 
 ![Visitor Badge](https://visitor-badge.laobi.icu/badge?page_id=mo-gaafar.mo-gaafar)
 [![wakatime](https://wakatime.com/badge/user/da6c03be-746f-407a-b490-c5fe8ddc59a5.svg)](https://wakatime.com/@da6c03be-746f-407a-b490-c5fe8ddc59a5)
