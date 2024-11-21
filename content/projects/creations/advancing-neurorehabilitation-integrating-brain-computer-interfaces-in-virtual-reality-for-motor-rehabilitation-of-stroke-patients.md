@@ -32,6 +32,6 @@ While we navigate the complexities of developing accurate motor imagery classifi
 
 [![Video](https://res.cloudinary.com/marcomontalbano/image/upload/v1704653674/video_to_markdown/images/youtube--ayfdvQNBu3U-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=ayfdvQNBu3U&t=3s "Video")
 
-Our project is a journey of innovation, collaboration, and determination. As we continue to make strides in VR and BCI integration for neurorehabilitation, we invite our academic and professional community to join us in this exciting venture. Your insights, critiques, and support are crucial as we strive to transform the landscape of rehabilitation for individuals affected by stroke and brain injuries.
+Our project is a journey of innovation, collaboration, and determination. As we continue to make progress in VR and BCI integration for neurorehabilitation, we invite our academic and professional community to join us in this exciting venture. Your insights, critiques, and support are crucial as we strive to transform the landscape of rehabilitation for individuals affected by stroke and brain injuries.
 
-We welcome discussions, feedback, and collaborations from experts and enthusiasts alike. If you wish to learn more, contribute your expertise, or explore potential research collaborations, please reach out. Together, we can make a significant impact on the future of neurorehabilitation.
+We welcome discussions, feedback, and collaboration. If you wish to learn more, contribute your expertise, or explore potential research collaborations, please reach out. Together, we can make a significant impact on the future of neurorehabilitation.
