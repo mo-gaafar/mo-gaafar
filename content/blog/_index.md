@@ -1,9 +1,9 @@
 ---
-title: My Blog
+title: AI Automation, Neurotechnology, and Software Engineering Notes
 date: 2020-01-07T16:47:30.077Z
 link: NA
 image: /img/organicdevops.webp
-description: NA
+description: Practical writing by Mohamed Gaafar on AI automation consulting, RAG systems, voice AI agents, n8n workflows, and neurotechnology software.
 weight: 10
 sitemap:
   priority: 0.6
@@ -15,4 +15,4 @@ This page represents the landing page for "blog" section. It is also shown under
 
 \-->
 
-A collection of my written work whether in work or personal life. I write about a variety of topics including but not limited to: Software Engineering, Machine Learning, Biomedical Engineering, and more.
+Practical notes from building AI automation systems, voice agents, RAG products, biomedical software, and neurotechnology research prototypes across startups, education, healthcare-adjacent systems, and open source.

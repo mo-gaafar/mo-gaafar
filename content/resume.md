@@ -4,6 +4,7 @@ sitemap:
   priority : 0.1
 layout: "resume"
 canva: "https://www.canva.com/design/DAFosyETcxs/view"
+link: "/files/Mohamed Gaafar CV.pdf"
 ---
 
 This file exists solely to respond to /resume URL with the related `resume` layout template.

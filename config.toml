@@ -1,4 +1,4 @@
-title = "Mohamed Gaafar's Portfiolio"
+title = "Mohamed Gaafar | AI Automation Consultant and Bionics Engineer"
 baseURL = "https://www.mngaafar.com/"
 theme = "hugo-resume"
 languageCode = "en-us"
@@ -16,17 +16,19 @@ showExperience = true
 showResume = true
 showEducation = true
 phone = "+201155277008"
-profileImage = "img/slice-2-0.2x.png"
+profileImage = "img/mo.jpeg"
 favicon = "/favicon.ico"
-address = "Cairo, EG"
+address = "Turin, Italy · Cairo, Egypt"
 showProjects = true
 showSocializations = true
 firstName = "Mohamed"
 email = "mohamed_gaafar@ieee.org"
-description = "MAECI Scholar, Founding Backend Engineer, Aspiring Researcher, and Open Source Enthusiast. Loves to design and overengineer things for fun. Interested in Backend , Neurotech and AI."
+description = "Mohamed Gaafar is an AI automation consultant, Co-Founder and CTO at EXODIA AI Technologies, and Bionics Engineering MSc student building RAG systems, voice AI agents, n8n workflows, and neurotechnology software."
 showQr = true
 showBlog = true
-showSkills = false
+showSkills = true
+upworkLink = "https://www.upwork.com/freelancers/~0169b1c1f18b963e0e"
+upworkMrrLink = "https://upworkmrr.com/freelancer/1786456811508379648"
 
 [[params.handles]]
 link = "https://github.com/mo-gaafar/"
@@ -36,6 +38,12 @@ icon = "fa-github-alt"
 [[params.handles]]
 link = "https://www.linkedin.com/in/mn-gaafar/"
 name = "LinkedIn"
+
+[[params.handles]]
+link = "https://www.upwork.com/freelancers/~0169b1c1f18b963e0e"
+name = "Upwork"
+icon = "fa-briefcase"
+iconPrefix = "fas"
 
 [[params.handles]]
 link = "https://twitter.com/jaafar_dev/"
@@ -59,3 +67,4 @@ home = ["HTML", "JSON"]
 
 [taxonomies]
 tag = "tags"
+advtag = "advtags"

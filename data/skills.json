@@ -1,32 +1,62 @@
 [
   {
-      "grouping":"Architecture",
-      "skills":[ "IP Networking","DNS","Firewalls","Load Balancing","Microservices","RESTful APIs","SaaS/PaaS/IaaS"]
-  },{
-      "grouping":"Languages, Operating Systems & Tools",
-      "skills":[ "Java","Python","git","subversion","linux","bash","php","jquery","javascript"]
-  },
-  {
-      "grouping":"Platform Development & Administration",
-      "skills":[ "Atlassian","Bamboo","Bitbucket","NGINX","MySQL","Wordpress"]
-  },
-  {
-      "grouping":"Data Management",
+      "grouping":"AI Automation and Agents",
       "skills":[
-        {"name":"Microsoft SQL Server","icon":"msql_server"},
-        {"name":"Oracle","icon":"database"},
-        "MongoDB",
-        {"name":"Apache Spark"}
+        {"name":"RAG Systems"},
+        {"name":"Voice AI"},
+        {"name":"WhatsApp AI Agents"},
+        {"name":"n8n Automations"},
+        {"name":"VAPI"},
+        {"name":"Retell"},
+        {"name":"Pydantic AI"},
+        {"name":"Zapier"},
+        {"name":"Prompt Engineering"}
+      ]
+  },{
+      "grouping":"Software Engineering",
+      "skills":[
+        {"name":"Python"},
+        {"name":"FastAPI"},
+        {"name":"Django"},
+        {"name":"JavaScript"},
+        {"name":"C++"},
+        {"name":"C#"},
+        {"name":"SQL"},
+        {"name":"MongoDB"},
+        {"name":"Docker"},
+        {"name":"AWS"},
+        {"name":"GCP"},
+        {"name":"Linux"},
+        {"name":"git"}
       ]
   },
   {
-    "grouping":"Containers & Cloud",
+      "grouping":"Machine Learning and Data",
       "skills":[
-          {"name":"BOSH","link":"https://bosh.io"},
-          {"name":"Docker","link":"https://docker.com"},
-          {"name":"AWS","link":"https://aws.amazon.com"},
-          {"name":"Google Cloud","link":"https://cloud.google.com"},
-          {"name":"Linux","link":"https://bosh.io"}
+        {"name":"PyTorch"},
+        {"name":"TensorFlow"},
+        {"name":"Keras"},
+        {"name":"Vision Transformers"},
+        {"name":"GPT-2"},
+        {"name":"Sentiment Analysis"},
+        {"name":"Data Enrichment"},
+        {"name":"Google Colab"}
+      ]
+  },
+  {
+      "grouping":"Neurotechnology and Immersive Systems",
+      "skills":[
+        {"name":"Bionics Engineering"},
+        {"name":"Brain-Computer Interfaces"},
+        {"name":"EEG"},
+        {"name":"MNE"},
+        {"name":"LSL"},
+        {"name":"TMS Motor Mapping"},
+        {"name":"VTK"},
+        {"name":"Unity 3D"},
+        {"name":"Virtual Reality"},
+        {"name":"MATLAB"},
+        {"name":"Embedded C"}
       ]
   }
 ]

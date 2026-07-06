@@ -1,38 +1,44 @@
 [
   {
-    "role": "Open Source Developer",
-    "company": "Google Summer of Code · Apprenticeship",
-    "range": "May 2024 - Present · 4 mos",
-    "summary": "Skills: Transcranial Magnetic Stimulation · VTK · Back-End Web Development · WebSocket"
+    "role": "Co-Founder & CTO",
+    "company": "EXODIA AI Technologies",
+    "range": "July 2025 - Present",
+    "summary": "Leading a team of 10+ engineers delivering AI automation and applied AI systems, including an enterprise RAG platform for a subsidized finance consultancy that reduced grant researchers' office work by 70%. Delivered AI training services to a major culinary institute in Italy with 100+ employees."
   },
   {
-    "role": "Founding Backend Engineer",
-    "company": "Eventec · Contract",
-    "range": "Apr 2024 - Present · 5 mos",
-    "summary": "Skills: Back-End Web Development · FastAPI · Python (Programming Language) · Software Architecture · Event Management"
+    "role": "AI Automation Consultant",
+    "company": "RemodelBoom · Remote",
+    "range": "Dec 2025 - Present",
+    "summary": "Advising founders on n8n automation and AI-assisted internal tools, including a direct mail management system for 30K+ monthly mails with address verification and data enrichment."
   },
   {
-    "role": "Head of Web Development",
-    "company": "Cairo University Eco Racing Team",
-    "range": "Aug 2023 - May 2024 · 10 mos",
-    "summary": "- Leading a team of 6 great developers - Participated in the local edition of Shell Eco-Marathon - Working on 3 projects and using Trello (Kanban) for agile project management - Built cu-eco.org as a portfolio website for the team with an integrated content management system CMS for ease of data entry. - Building inventory.cu-eco.org as an internal solution for managing inventory and logistics - Working on the recruitment system for the next season with a streamlined workflow for applicant management"
+    "role": "Voice AI Consultant",
+    "company": "Teammate AI · Remote",
+    "range": "July 2025 - Nov 2025",
+    "summary": "Resolved a product emergency in the team's voice agent setup and trained the team on VAPI and Retell scaling constraints. The platform has since handled 50K+ calls."
   },
   {
-    "role": "Backend Software Engineer",
-    "company": "Illusionare LLC",
-    "range": "May 2023 - Feb 2024 · 10 mos",
-    "summary": "Developing VR Training Solutions in Unity, Building backend for custom software and performing technical recruitment. - Built 2 Backend Projects and 2 Immersive VR Experiences for different clients - Performed more than 20 technical interviews for new applicants Skills: Back-End Web Development · FastAPI · C# · Python (Programming Language) · Unity · Virtual Reality (VR) · Leadership"
+    "role": "AI Integration Consultant",
+    "company": "Sports Nutrition Association · Remote",
+    "range": "June 2025 - Nov 2025",
+    "summary": "Trained the CEO on n8n automation and built an email auditing system with sentiment analysis to flag unanswered support requests and monitor quality across 6,000+ threads."
   },
   {
-    "role": "Information Technology Infrastructure Engineer",
-    "company": "National Bank of Egypt (NBE) · Internship",
-    "range": "Aug 2023 - Sep 2023 · 2 mos",
-    "summary": "- Final project: Built a text to speech applicaiton that would extract useful CRM data from customer service calls - Learned about infrastructure of the call center and multimedia in the whole bank - Toured the main datacenter of the bank understanding security and safety considerations Skills: Network Infrastructure · Voice over IP (VoIP)"
+    "role": "AI Engineer",
+    "company": "Duara Education - The School for a New Generation · Remote, Kenya",
+    "range": "June 2025 - Oct 2025",
+    "summary": "Supported AI-accelerated development of a full school management platform for a smart school in Kenya, covering enrollments, grades, finances, and inventory."
   },
   {
-    "role": "Game Developer",
-    "company": "Clear Pictures · Internship",
-    "range": "Jul 2022 - Aug 2022 · 2 mos",
-    "summary": "Developing educational games for children. Using the unity engine and c# - Weekly projects and tutorials - Game Design Patterns - Event driven architecture - Object Oriented Programming in C# - Introduced to VR Skills: C# · Game Programming · GitHub · Object-Oriented Programming (OOP) · Event Driven Programming · Game Development · Unity"
+    "role": "Artificial Intelligence Consultant",
+    "company": "Educate! · Remote, Kenya",
+    "range": "March 2025 - July 2025",
+    "summary": "Built multimodal AI WhatsApp agents for entrepreneurship trainers and volunteers, retrieving guidance from a large database of program policies and operating guidelines."
+  },
+  {
+    "role": "Founding Software Engineer",
+    "company": "Eventec, formerly Illusionare LLC · Cairo, Egypt",
+    "range": "March 2023 - April 2024",
+    "summary": "Built a multitenant event management SaaS platform from the ground up, scaling from solo engineering work to a team of 6+ engineers and designers. The platform now supports 100K+ event-goers."
   }
 ]
