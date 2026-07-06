@@ -3,7 +3,6 @@ title: "Resume"
 sitemap:
   priority : 0.1
 layout: "resume"
-canva: "https://www.canva.com/design/DAFosyETcxs/view"
 link: "/files/Mohamed Gaafar CV.pdf"
 ---
 
@@ -13,4 +12,4 @@ No content shown here is rendered, all content is based in the template layouts/
 
 Setting a very low sitemap priority will tell search engines this is not important content.
 
-The canva link is used to embed the resume in the website.
+The link field is used to embed and download the resume PDF.

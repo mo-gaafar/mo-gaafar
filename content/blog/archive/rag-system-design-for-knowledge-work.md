@@ -2,8 +2,11 @@
 title: "RAG System Design for Knowledge Work: Lessons from Grant Research Automation"
 date: 2026-06-18T09:00:00+02:00
 draft: false
-featured: true
+featured: false
+archived: true
 description: "How to design retrieval-augmented generation systems for policy-heavy knowledge work, with lessons from grant research automation."
+aliases:
+  - /blog/rag-system-design-for-knowledge-work/
 tags:
   - RAG systems
   - retrieval augmented generation

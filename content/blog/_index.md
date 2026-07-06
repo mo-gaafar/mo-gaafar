@@ -1,13 +1,13 @@
 ---
-title: AI Automation, Neurotechnology, and Software Engineering Notes
-date: 2020-01-07T16:47:30.077Z
+title: AI Automation Consulting, Agents, and Workflow Engineering
+date: 2026-07-06T09:00:00+02:00
 link: NA
 image: /img/organicdevops.webp
-description: Practical writing by Mohamed Gaafar on AI automation consulting, RAG systems, voice AI agents, n8n workflows, and neurotechnology software.
+description: SEO-focused practical writing by Mohamed Gaafar on AI automation consulting, Claude AI agents, n8n workflows, RAG systems, and voice AI agents.
 weight: 10
 sitemap:
-  priority: 0.6
-  weight: 0.5
+  priority: 0.8
+  weight: 0.7
 ---
 <!--
 
@@ -15,4 +15,4 @@ This page represents the landing page for "blog" section. It is also shown under
 
 \-->
 
-Practical notes from building AI automation systems, voice agents, RAG products, biomedical software, and neurotechnology research prototypes across startups, education, healthcare-adjacent systems, and open source.
+Practical notes on AI automation consulting, Claude AI agents, n8n workflow automation, voice agents, RAG systems, and production-ready LLM applications for business teams.

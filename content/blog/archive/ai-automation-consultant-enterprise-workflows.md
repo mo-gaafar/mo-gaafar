@@ -2,8 +2,11 @@
 title: "What an AI Automation Consultant Actually Builds for Enterprise Teams"
 date: 2026-06-12T09:00:00+02:00
 draft: false
-featured: true
+featured: false
+archived: true
 description: "A practical view of AI automation consulting, from n8n workflows and RAG systems to internal tools that reduce repetitive office work."
+aliases:
+  - /blog/ai-automation-consultant-enterprise-workflows/
 tags:
   - AI automation consultant
   - enterprise AI

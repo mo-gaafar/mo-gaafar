@@ -2,8 +2,11 @@
 title: "Voice AI Agents with VAPI and Retell: What Breaks When Call Volume Grows"
 date: 2026-06-24T09:00:00+02:00
 draft: false
-featured: true
+featured: false
+archived: true
 description: "A field guide to scaling voice AI agents, including latency, fallback handling, prompt design, and operational constraints in VAPI and Retell deployments."
+aliases:
+  - /blog/voice-ai-agents-vapi-retell-scaling/
 tags:
   - voice AI
   - VAPI

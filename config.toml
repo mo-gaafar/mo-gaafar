@@ -28,7 +28,6 @@ showQr = true
 showBlog = true
 showSkills = true
 upworkLink = "https://www.upwork.com/freelancers/~0169b1c1f18b963e0e"
-upworkMrrLink = "https://upworkmrr.com/freelancer/1786456811508379648"
 
 [[params.handles]]
 link = "https://github.com/mo-gaafar/"

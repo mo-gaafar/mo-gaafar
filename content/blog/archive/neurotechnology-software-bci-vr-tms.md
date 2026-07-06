@@ -2,8 +2,11 @@
 title: "Neurotechnology Software: Connecting BCI, VR, and TMS Visualization"
 date: 2026-07-01T09:00:00+02:00
 draft: false
-featured: true
+featured: false
+archived: true
 description: "How software engineering connects brain-computer interfaces, virtual reality rehabilitation, TMS motor mapping, and bionics engineering research."
+aliases:
+  - /blog/neurotechnology-software-bci-vr-tms/
 tags:
   - neurotechnology software
   - brain computer interface

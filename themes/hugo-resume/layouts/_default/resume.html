@@ -5,8 +5,22 @@
         <div class="mb-3 d-flex flex-column justify-content-between">
             <h1 class="mb-0"><span class="text-primary">{{ .Title }}</span></h1>
         </div>
-        <div>
-            <!-- Contains an embed given a canva link -->
+        <div class="resume-viewer">
+            {{ with .Params.link }}
+            <div class="resume-actions">
+                <a class="hero-button hero-button-primary" href="{{ . }}" target="_blank" rel="noopener">
+                    <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                    Open PDF
+                </a>
+                <a class="hero-button hero-button-secondary" href="{{ . }}" download>
+                    <i class="fas fa-download" aria-hidden="true"></i>
+                    Download
+                </a>
+            </div>
+            <div class="pdf-frame">
+                <iframe src="{{ . }}" title="Mohamed Gaafar resume PDF"></iframe>
+            </div>
+            {{ else }}
             {{ if .Params.canva }}
             <div style="position: relative; width: 100%; height: 0; padding-top: 141.4286%;
              padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
@@ -19,9 +33,7 @@
             <a href="{{ .Params.canva }}?utm_content=&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link"
                 target="_blank" rel="noopener">Mohamed Nasser SWE Resume</a> by Mohamed Nasser
             {{ end }}
-
-            {{ with .Params.link }}
-            <p>Download link: <a href="{{ . }}">{{ . }}</a></p>{{ end }}
+            {{ end }}
         </div>
         {{ partial "advtags" . }}
     </div>

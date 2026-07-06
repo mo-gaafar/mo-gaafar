@@ -2,6 +2,11 @@
 title: My first blog post
 date: Thu, 01 Jan 2009 14:09:10 +0000
 draft: false
+archived: true
+featured: false
+description: "Archived technical note on forcing SSL with Apache rewrite rules."
+aliases:
+  - /blog/force-ssl/
 tags:
   - apache
   - apache
