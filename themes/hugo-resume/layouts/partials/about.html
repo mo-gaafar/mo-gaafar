@@ -37,6 +37,15 @@
       <div class="hero-portrait">
         <img src="{{ .Site.Params.profileImage | relURL }}" alt="{{ .Site.Params.firstName }} {{ .Site.Params.lastName }}" loading="eager">
       </div>
+      {{ with .Site.Params.upworkProfile }}
+      <a class="upwork-badge" href="{{ . }}" target="_blank" rel="noopener me" aria-label="Upwork Top Rated Plus profile">
+        <span class="upwork-badge-mark" aria-hidden="true">up</span>
+        <span>
+          <strong>Top Rated Plus</strong>
+          <em>Upwork talent</em>
+        </span>
+      </a>
+      {{ end }}
       <div class="hero-proof-grid">
         <span><strong>50K+</strong> voice AI calls supported</span>
         <span><strong>10+</strong> engineers led</span>

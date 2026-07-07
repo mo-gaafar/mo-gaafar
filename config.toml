@@ -23,6 +23,7 @@ showProjects = true
 showSocializations = true
 firstName = "Mohamed"
 email = "mohamed_gaafar@ieee.org"
+upworkProfile = "https://www.upwork.com/freelancers/~0169b1c1f18b963e0e"
 description = "I build RAG systems, voice AI agents, n8n workflows, and neurotechnology software that turn messy operations into reliable, measurable automation."
 showQr = true
 showBlog = true
