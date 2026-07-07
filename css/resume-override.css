@@ -113,7 +113,7 @@ h3 {
 
 #sideNav .navbar-nav .nav-item .nav-link {
   border-radius: 8px;
-  color: rgba(255, 255, 255, 0.72);
+  color: rgba(255, 255, 255, 0.82);
   font-size: 0.82rem;
   font-weight: 800;
   letter-spacing: 0.04em;
@@ -127,6 +127,64 @@ h3 {
 #sideNav .navbar-nav .nav-item .nav-link:focus {
   background: rgba(255, 255, 255, 0.08);
   color: #ffffff;
+}
+
+.nav-social-block {
+  display: none;
+}
+
+.nav-mini-cta {
+  align-items: center;
+  background: var(--primary-color);
+  border-radius: 8px;
+  color: #ffffff;
+  display: inline-flex;
+  font-size: 0.8rem;
+  font-weight: 800;
+  gap: 0.45rem;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0.65rem 0.75rem;
+  width: 100%;
+}
+
+.nav-mini-cta:hover,
+.nav-mini-cta:focus {
+  background: #ffffff;
+  color: var(--ink-color);
+  text-decoration: none;
+}
+
+.nav-social-list {
+  display: flex;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0.9rem 0 0;
+  padding: 0;
+}
+
+.nav-social-list a {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.84);
+  display: inline-flex;
+  height: 34px;
+  justify-content: center;
+  text-decoration: none;
+  width: 34px;
+}
+
+.nav-social-list a:hover,
+.nav-social-list a:focus {
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+}
+
+.nav-x-icon {
+  font-size: 0.88rem;
+  font-weight: 800;
+  line-height: 1;
 }
 
 section.resume-section {
@@ -172,10 +230,10 @@ section.resume-section .lead {
 }
 
 .hero-grid {
-  align-items: center;
+  align-items: stretch;
   display: grid;
-  gap: clamp(2rem, 5vw, 4.5rem);
-  grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.72fr);
+  gap: clamp(1.75rem, 4vw, 3.25rem);
+  grid-template-columns: minmax(0, 1.04fr) minmax(300px, 0.72fr);
 }
 
 .hero-kicker {
@@ -188,21 +246,23 @@ section.resume-section .lead {
 }
 
 .hero-copy h1 {
-  font-size: clamp(3.25rem, 8vw, 6.8rem);
-  line-height: 0.93;
-  max-width: 780px;
+  font-size: clamp(2.8rem, 6.2vw, 4.8rem);
+  line-height: 0.96;
+  max-width: 680px;
 }
 
 .hero-copy h1 span {
   color: var(--primary-color);
   display: block;
+  white-space: nowrap;
 }
 
 .hero-lede {
   color: var(--muted-color);
-  font-size: clamp(1.04rem, 1.7vw, 1.28rem);
-  margin: 1.4rem 0 0;
-  max-width: 720px;
+  font-size: clamp(1rem, 1.45vw, 1.125rem);
+  line-height: 1.65;
+  margin: 1.2rem 0 0;
+  max-width: 60ch;
 }
 
 .hero-actions {
@@ -232,15 +292,15 @@ section.resume-section .lead {
 }
 
 .hero-button-primary {
-  background: var(--ink-color);
-  border-color: var(--ink-color);
+  background: var(--primary-color);
+  border-color: var(--primary-color);
   color: #ffffff;
 }
 
 .hero-button-primary:hover,
 .hero-button-primary:focus {
-  background: var(--primary-color);
-  border-color: var(--primary-color);
+  background: var(--ink-color);
+  border-color: var(--ink-color);
   color: #ffffff;
 }
 
@@ -249,11 +309,27 @@ section.resume-section .lead {
   color: var(--ink-color);
 }
 
+.hero-resume-link {
+  align-items: center;
+  color: var(--ink-color);
+  display: inline-flex;
+  font-weight: 800;
+  gap: 0.45rem;
+  min-height: 46px;
+  padding: 0.5rem 0.25rem;
+}
+
+.hero-resume-link:hover,
+.hero-resume-link:focus {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
 .hero-meta {
   color: var(--muted-color);
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.85rem 1.2rem;
+  flex-direction: column;
+  gap: 0.45rem;
   margin-bottom: 1rem;
 }
 
@@ -262,6 +338,18 @@ section.resume-section .lead {
   align-items: center;
   display: inline-flex;
   gap: 0.45rem;
+}
+
+.hero-email {
+  color: var(--ink-color);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.hero-email:hover,
+.hero-email:focus {
+  color: var(--primary-color);
+  text-decoration: none;
 }
 
 .hero-focus-list {
@@ -273,8 +361,8 @@ section.resume-section .lead {
 
 .hero-focus-list span,
 .tag {
-  background: rgba(23, 107, 135, 0.1);
-  border: 1px solid rgba(23, 107, 135, 0.18);
+  background: rgba(23, 107, 135, 0.12);
+  border: 1px solid rgba(23, 107, 135, 0.28);
   border-radius: 8px;
   color: var(--ink-color);
   font-size: 0.9rem;
@@ -293,6 +381,9 @@ section.resume-section .lead {
   border: 1px solid var(--border-color);
   border-radius: 8px;
   box-shadow: var(--shadow-soft);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding: clamp(1rem, 2vw, 1.4rem);
 }
 
@@ -320,12 +411,12 @@ section.resume-section .lead {
   border: 1px solid var(--border-color);
   border-radius: 8px;
   color: var(--muted-color);
-  min-height: 116px;
+  min-height: 108px;
   padding: 0.9rem;
 }
 
 .hero-proof-grid strong {
-  color: var(--ink-color);
+  color: var(--primary-color);
   display: block;
   font-size: clamp(1.65rem, 3vw, 2.25rem);
   line-height: 1;
@@ -465,7 +556,11 @@ h3 + .resume-item {
 
 @media (min-width: 992px) {
   body {
-    padding-left: 17rem;
+    padding-left: 13rem;
+  }
+
+  #sideNav {
+    width: 13rem;
   }
 
   #sideNav {
@@ -479,16 +574,25 @@ h3 + .resume-item {
   }
 
   #sideNav .navbar-collapse {
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
     margin-bottom: auto;
     padding-top: 0.5rem;
   }
 
   #sideNav .navbar-collapse .navbar-nav .nav-item .nav-link {
-    margin: 0.12rem 1.1rem;
+    margin: 0.12rem 0.85rem;
+  }
+
+  .nav-social-block {
+    display: block;
+    margin: auto 0.85rem 1.5rem;
+    padding-top: 1rem;
   }
 
   section.resume-section {
-    padding: 5.5rem 3rem !important;
+    padding: 5.5rem 2.5rem !important;
   }
 
   .landing-hero {
@@ -505,6 +609,17 @@ h3 + .resume-item {
   #sideNav .navbar-nav .nav-item .nav-link {
     margin-left: 0;
     margin-right: 0;
+  }
+
+  .nav-social-block {
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    display: block;
+    margin-top: 0.75rem;
+    padding-top: 0.9rem;
+  }
+
+  .nav-mini-cta {
+    width: auto;
   }
 }
 
@@ -528,7 +643,7 @@ h3 + .resume-item {
   }
 
   .hero-copy h1 {
-    font-size: 3.15rem;
+    font-size: 2.75rem;
   }
 
   .hero-actions {
@@ -538,6 +653,10 @@ h3 + .resume-item {
 
   .hero-button {
     width: 100%;
+  }
+
+  .hero-resume-link {
+    justify-content: center;
   }
 
   .hero-proof-grid {
