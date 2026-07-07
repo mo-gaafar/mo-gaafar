@@ -40,12 +40,15 @@
       {{ with .Site.Params.upworkProfile }}
       <a class="upwork-badge" href="{{ . }}" target="_blank" rel="noopener me" aria-label="Upwork Top Rated Plus profile">
         <span class="upwork-badge-mark" aria-hidden="true">
-          <i class="fas fa-star"></i>
+          <svg viewBox="0 0 48 48" focusable="false">
+            <path d="M24 8l4.1 11.2L40 23.4l-11.9 4.2L24 40l-4.1-12.4L8 23.4l11.9-4.2L24 8z" />
+            <path d="M38 7v9" />
+            <path d="M33.5 11.5h9" />
+          </svg>
         </span>
         <span>
-          <em>Upwork</em>
           <strong>Top Rated Plus</strong>
-          <small>100% Job Success profile</small>
+          <small>Upwork talent</small>
         </span>
       </a>
       {{ end }}
