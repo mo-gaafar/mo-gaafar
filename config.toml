@@ -23,7 +23,7 @@ showProjects = true
 showSocializations = true
 firstName = "Mohamed"
 email = "mohamed_gaafar@ieee.org"
-description = "Mohamed Gaafar is an AI automation consultant, Co-Founder and CTO at EXODIA AI Technologies, and Bionics Engineering MSc student building RAG systems, voice AI agents, n8n workflows, and neurotechnology software."
+description = "I build RAG systems, voice AI agents, n8n workflows, and neurotechnology software that turn messy operations into reliable, measurable automation."
 showQr = true
 showBlog = true
 showSkills = true
@@ -39,7 +39,7 @@ name = "LinkedIn"
 
 [[params.handles]]
 link = "https://twitter.com/jaafar_dev/"
-name = "Twitter"
+name = "X"
 
 [[params.handles]]
 name = "ORCID"

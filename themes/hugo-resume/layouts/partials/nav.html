@@ -63,5 +63,26 @@
       </li>
       {{ end }}
     </ul>
+    {{ if .Site.Params.showSocializations }}
+    <div class="nav-social-block">
+      <a class="nav-mini-cta" href="mailto:{{ .Site.Params.email }}">
+        <i class="fas fa-paper-plane" aria-hidden="true"></i>
+        Get in touch
+      </a>
+      <ul class="nav-social-list" aria-label="Social links">
+        {{ range .Site.Params.handles }}
+        <li>
+          <a href="{{ .link }}" data-toggle="tooltip" title="{{ .name }}" data-offset="0,10" rel="me" aria-label="{{ .name }}">
+            {{ if eq .name "X" }}
+            <span class="nav-x-icon" aria-hidden="true">X</span>
+            {{ else }}
+            <i class="{{ default "fab" .iconPrefix }} {{ if .icon}}{{ .icon }}{{ else }}fa-{{ lower .name }}{{ end }}" aria-hidden="true"></i>
+            {{ end }}
+          </a>
+        </li>
+        {{ end }}
+      </ul>
+    </div>
+    {{ end }}
   </div>
 </nav>

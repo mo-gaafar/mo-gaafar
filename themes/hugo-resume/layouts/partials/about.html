@@ -5,7 +5,7 @@
       <h1>{{ .Site.Params.firstName }} <span>{{ .Site.Params.lastName }}</span></h1>
       <p class="hero-lede">{{ .Site.Params.description }}</p>
       <div class="hero-actions" aria-label="Primary actions">
-        <a class="hero-button hero-button-primary" href="mailto:{{ substr .Site.Params.email 0 5}}-remove-{{ substr .Site.Params.email 5 }}">
+        <a class="hero-button hero-button-primary" href="mailto:{{ .Site.Params.email }}">
           <i class="fas fa-paper-plane" aria-hidden="true"></i>
           Contact
         </a>
@@ -14,7 +14,7 @@
           Work
         </a>
         {{ if .Site.Params.showResume }}
-        <a class="hero-button hero-button-secondary" href="/resume">
+        <a class="hero-resume-link" href="/resume">
           <i class="fas fa-file-alt" aria-hidden="true"></i>
           Resume
         </a>
@@ -22,11 +22,10 @@
       </div>
       <div class="hero-meta">
         <span><i class="fas fa-map-marker-alt" aria-hidden="true"></i>{{ .Site.Params.address }}</span>
-        <a href="mailto:{{ substr .Site.Params.email 0 5}}-remove-{{ substr .Site.Params.email 5 }}">{{ substr
-          .Site.Params.email 0 5}}<span style="display:none">-remove-</span>{{ substr .Site.Params.email 5 }}</a>
+        <a class="hero-email" href="mailto:{{ .Site.Params.email }}">
+          <i class="fas fa-envelope" aria-hidden="true"></i>{{ substr .Site.Params.email 0 5}}<span style="display:none">-remove-</span>{{ substr .Site.Params.email 5 }}</a>
       </div>
       <div class="hero-focus-list" aria-label="Services and specialties">
-        <span>AI automation</span>
         <span>Enterprise RAG</span>
         <span>Voice AI agents</span>
         <span>n8n workflows</span>
@@ -39,15 +38,15 @@
         <img src="{{ .Site.Params.profileImage | relURL }}" alt="{{ .Site.Params.firstName }} {{ .Site.Params.lastName }}" loading="eager">
       </div>
       <div class="hero-proof-grid">
-        <span><strong>CTO</strong> Co-Founder, EXODIA AI Technologies</span>
-        <span><strong>10+</strong> engineers led across AI delivery</span>
-        <span><strong>70%</strong> less grant research admin work</span>
         <span><strong>50K+</strong> voice AI calls supported</span>
+        <span><strong>10+</strong> engineers led</span>
+        <span><strong>3</strong> products shipped</span>
+        <span><strong>70%</strong> grant admin time cut</span>
       </div>
     </aside>
   </div>
 
-  {{ if or .Content .Site.Params.showCertifications .Site.Params.showSocializations }}
+  {{ if or .Content .Site.Params.showCertifications }}
   <div class="hero-footer">
     {{ .Content }}
     {{ if .Site.Params.showCertifications }}
@@ -58,24 +57,6 @@
         <li class="list-inline-item">
           <a href="{{ .proof }}" data-toggle="tooltip" title="{{ .name }}" data-offset="0 10" rel="me">
             <img src="{{ .badge }}" width=75 alt="{{ .name }}" />
-          </a>
-        </li>
-        {{ end }}
-      </ul>
-    </div>
-    {{ end }}
-    {{ if .Site.Params.showSocializations }}
-    <div class="hero-social-block">
-      <h3>{{ i18n "socialization" }}</h3>
-      <ul class="list-inline list-social-icons mb-0">
-        {{ range .Site.Params.handles }}
-        <li class="list-inline-item">
-          <a href="{{ .link }}" data-toggle="tooltip" title="{{ .name }}" data-offset="0,10" rel="me">
-            <span class="fa-stack fa-lg">
-              <i class="fa fa-circle fa-stack-2x"></i>
-              <i
-                class="{{ default "fab" .iconPrefix }} {{ if .icon}}{{ .icon }}{{ else }}fa-{{ lower .name }}{{ end }} fa-stack-1x fa-inverse"></i>
-            </span>
           </a>
         </li>
         {{ end }}
