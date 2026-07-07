@@ -1,7 +1,7 @@
 ---
 title: Added Docker Build Status Badge to shields.io
 date: 2020-01-07T17:09:26.037Z
-featured: true
+featured: false
 link: 'https://github.com/badges/shields/pull/856'
 image: >-
   https://img.shields.io/docker/build/eddiewebb/bitbucket-pipelines-marketplace.svg?style=plastic

@@ -13,14 +13,14 @@ This is Mohamed Gaafar's personal portfolio website built with Hugo.
 - Static assets: `static/`
 - Generated build output: `public/`
 
-The site positions Mohamed as an AI automation consultant, Upwork freelancer, CTO/co-founder, and bionics/neurotechnology engineer. Current SEO focus is around:
+The site positions Mohamed as an AI automation consultant, CTO/co-founder, applied AI systems builder, and bionics/neurotechnology engineer. Upwork is only a supporting credibility channel, not the primary brand.
 
 - AI automation consultant
 - n8n AI automation consultant
 - Claude AI agents
 - Voice AI agents
 - RAG systems
-- Upwork AI consultant
+- Upwork AI consultant, only for targeted SEO posts, not homepage positioning
 - Neurotechnology software
 
 ## Development Commands
@@ -56,7 +56,7 @@ Do not edit `public/` directly. Edit source files under `content/`, `static/`, `
 
 Key files:
 
-- `config.toml`: site params, social handles, Upwork links, profile image, feature toggles.
+- `config.toml`: site params, social handles, profile image, feature toggles.
 - `themes/hugo-resume/layouts/partials/about.html`: landing page hero.
 - `static/css/resume-override.css`: main custom design override stylesheet.
 - `themes/hugo-resume/layouts/_default/resume.html`: `/resume` layout.
@@ -75,18 +75,14 @@ The landing page was redesigned away from the default resume theme. Keep the cur
 - Portfolio/resume content should feel business-focused, not academic-only.
 - Avoid returning to the old oversized classic resume look.
 
-Current hero proof metrics come from Mohamed's Upwork screenshot:
+Current hero proof metrics should stay broad and founder/operator-oriented:
 
-- `100%` Job Success on Upwork
-- `597` Upwork hours delivered
-- `Top Rated Plus` Upwork freelancer
-- `14` completed Upwork jobs
+- `CTO` Co-Founder, EXODIA AI Technologies
+- `10+` engineers led across AI delivery
+- `70%` less grant research admin work
+- `50K+` voice AI calls supported
 
-Upwork URLs are in `config.toml`:
-
-```toml
-upworkLink = "https://www.upwork.com/freelancers/~0169b1c1f18b963e0e"
-```
+Do not make the homepage feel like an Upwork profile. Keep Upwork mentions off the hero unless Mohamed explicitly asks.
 
 ## Resume PDF
 

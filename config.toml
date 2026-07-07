@@ -27,7 +27,6 @@ description = "Mohamed Gaafar is an AI automation consultant, Co-Founder and CTO
 showQr = true
 showBlog = true
 showSkills = true
-upworkLink = "https://www.upwork.com/freelancers/~0169b1c1f18b963e0e"
 
 [[params.handles]]
 link = "https://github.com/mo-gaafar/"
@@ -37,12 +36,6 @@ icon = "fa-github-alt"
 [[params.handles]]
 link = "https://www.linkedin.com/in/mn-gaafar/"
 name = "LinkedIn"
-
-[[params.handles]]
-link = "https://www.upwork.com/freelancers/~0169b1c1f18b963e0e"
-name = "Upwork"
-icon = "fa-briefcase"
-iconPrefix = "fas"
 
 [[params.handles]]
 link = "https://twitter.com/jaafar_dev/"

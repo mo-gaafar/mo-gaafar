@@ -2,7 +2,7 @@
 title: "Hiring an AI Consultant for Voice Agents, RAG, and n8n Automation"
 date: 2026-07-04T09:00:00+02:00
 draft: false
-featured: true
+featured: false
 description: "What to look for when hiring an AI consultant for voice agents, RAG systems, n8n automation, and production-ready LLM workflows."
 tags:
   - AI consultant
