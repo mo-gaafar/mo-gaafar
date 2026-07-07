@@ -15,11 +15,6 @@
       <li class="nav-item">
         <a class="nav-link js-scroll-trigger" href="/#about">{{ i18n "about" }}</a>
       </li>
-      {{ if .Site.Params.showSkills }}
-      <li class="nav-item">
-        <a class="nav-link js-scroll-trigger" href="/#skills">{{ i18n "skills" }}</a>
-      </li>
-      {{ end }}
       {{ if .Site.Params.showProjects }}
       <li class="nav-item">
         <a class="nav-link js-scroll-trigger" href="/#projects">Projects</a>
@@ -40,6 +35,11 @@
       {{ if .Site.Params.showExperience }}
       <li class="nav-item">
         <a class="nav-link js-scroll-trigger" href="/#experience">{{ i18n "experience" }}</a>
+      </li>
+      {{ end }}
+      {{ if .Site.Params.showSkills }}
+      <li class="nav-item">
+        <a class="nav-link js-scroll-trigger" href="/#skills">{{ i18n "skills" }}</a>
       </li>
       {{ end }}
       {{ if .Site.Params.showEducation }}

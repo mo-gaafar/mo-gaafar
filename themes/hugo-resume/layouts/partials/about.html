@@ -39,10 +39,13 @@
       </div>
       {{ with .Site.Params.upworkProfile }}
       <a class="upwork-badge" href="{{ . }}" target="_blank" rel="noopener me" aria-label="Upwork Top Rated Plus profile">
-        <span class="upwork-badge-mark" aria-hidden="true">up</span>
+        <span class="upwork-badge-mark" aria-hidden="true">
+          <i class="fas fa-star"></i>
+        </span>
         <span>
+          <em>Upwork</em>
           <strong>Top Rated Plus</strong>
-          <em>Upwork talent</em>
+          <small>100% Job Success profile</small>
         </span>
       </a>
       {{ end }}
