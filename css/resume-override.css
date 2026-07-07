@@ -400,6 +400,60 @@ section.resume-section .lead {
   width: 100%;
 }
 
+.upwork-badge {
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid rgba(20, 168, 0, 0.28);
+  border-radius: 8px;
+  box-shadow: 0 8px 22px rgba(20, 168, 0, 0.08);
+  color: var(--ink-color);
+  display: flex;
+  gap: 0.75rem;
+  margin: 0 0 1rem;
+  padding: 0.75rem 0.85rem;
+  text-decoration: none;
+}
+
+.upwork-badge:hover,
+.upwork-badge:focus {
+  border-color: #14a800;
+  color: var(--ink-color);
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.upwork-badge-mark {
+  align-items: center;
+  background: #14a800;
+  border-radius: 999px;
+  color: #ffffff;
+  display: inline-flex;
+  flex: 0 0 auto;
+  font-size: 0.82rem;
+  font-weight: 800;
+  height: 38px;
+  justify-content: center;
+  line-height: 1;
+  width: 38px;
+}
+
+.upwork-badge strong {
+  color: var(--ink-color);
+  display: block;
+  font-size: 0.98rem;
+  line-height: 1.15;
+}
+
+.upwork-badge em {
+  color: var(--muted-color);
+  display: block;
+  font-size: 0.82rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-top: 0.18rem;
+}
+
 .hero-proof-grid {
   display: grid;
   gap: 0.75rem;
@@ -574,11 +628,15 @@ h3 + .resume-item {
   }
 
   #sideNav .navbar-collapse {
-    align-items: stretch;
-    display: flex;
-    flex-direction: column;
+    display: block !important;
     margin-bottom: auto;
     padding-top: 0.5rem;
+    width: 100%;
+  }
+
+  #sideNav .navbar-collapse .navbar-nav {
+    flex-direction: column;
+    width: 100%;
   }
 
   #sideNav .navbar-collapse .navbar-nav .nav-item .nav-link {
@@ -587,8 +645,9 @@ h3 + .resume-item {
 
   .nav-social-block {
     display: block;
-    margin: auto 0.85rem 1.5rem;
+    margin: 1.25rem 0.85rem 0;
     padding-top: 1rem;
+    width: auto;
   }
 
   section.resume-section {
