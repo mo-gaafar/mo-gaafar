@@ -1,8 +1,0 @@
-# pnpm 11 no longer reads the `pnpm.onlyBuiltDependencies` field from
-# package.json (it moved here). Without this, `pnpm install` aborts with
-# ERR_PNPM_IGNORED_BUILDS because sharp/esbuild need to run build scripts.
-# Keep the package.json field too, for pnpm <= 10.
-onlyBuiltDependencies:
-  - sharp
-  - esbuild
-  - unrs-resolver
