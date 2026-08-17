@@ -6,8 +6,10 @@ read and edit portfolio content as tools. Implemented with the official
 
 ## Endpoint & auth
 
-- **URL:** `POST`/`GET` `{NEXT_PUBLIC_SERVER_URL}/api/mcp` — Streamable HTTP
-  (SSE disabled, so no Redis needed).
+- **Live URL:** `https://mo-cms.botica.it.com/api/mcp` (the deployed instance).
+  Generically: `POST`/`GET` `{NEXT_PUBLIC_SERVER_URL}/api/mcp` — Streamable HTTP
+  (SSE disabled, so no Redis needed). Note: the endpoint is **not** on
+  `mngaafar.com`.
 - **Auth:** `Authorization: Bearer <api-key>`. Unauthenticated requests get `401`.
 - **Kill switch:** `DISABLE_MCP=true`.
 - Served through Payload's existing custom-endpoint route
@@ -59,7 +61,7 @@ Against a running instance with a scoped key:
   "mcpServers": {
     "mngaafar-portfolio": {
       "type": "http",
-      "url": "https://www.mngaafar.com/api/mcp",
+      "url": "https://mo-cms.botica.it.com/api/mcp",
       "headers": { "Authorization": "Bearer YOUR_API_KEY" }
     }
   }

@@ -77,10 +77,16 @@ Claude/LLM agents, voice AI (VAPI/Retell), RAG, and neurotechnology software.
 ## MCP
 
 The CMS is exposed over MCP via `@payloadcms/plugin-mcp` at `/api/mcp`
-(Streamable HTTP, `Authorization: Bearer <api-key>`). Configure exposed
-collections/globals in the `mcpPlugin({...})` block in `src/payload.config.ts`;
-issue keys in `/admin` → MCP → API Keys. Disable with `DISABLE_MCP=true`. See
-`docs/08-mcp.md`.
+(Streamable HTTP, `Authorization: Bearer <api-key>`).
+
+**The live deployment is `https://mo-cms.botica.it.com`** — so the MCP endpoint
+is `https://mo-cms.botica.it.com/api/mcp`. Do **not** assume the endpoint lives
+on `mngaafar.com` (that is the eventual public domain from the old Hugo docs,
+not where the CMS is hosted).
+
+Configure exposed collections/globals in the `mcpPlugin({...})` block in
+`src/payload.config.ts`; issue keys in `/admin` → MCP → API Keys. Disable with
+`DISABLE_MCP=true`. See `docs/08-mcp.md`.
 
 ## Notes
 
