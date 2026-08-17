@@ -1,0 +1,41 @@
+# Docker Compose for Coolify (or local prod-like runs).
+#
+# In Coolify: create a "Docker Compose" resource pointing at this file.
+# Set the environment variables (PAYLOAD_SECRET, NEXT_PUBLIC_SERVER_URL,
+# POSTGRES_PASSWORD, and optionally SEED_ADMIN_*) in the Coolify UI.
+# Coolify injects them at deploy time.
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgres://portfolio:${POSTGRES_PASSWORD:-portfolio}@db:5432/portfolio
+      PAYLOAD_SECRET: ${PAYLOAD_SECRET:?set a strong PAYLOAD_SECRET}
+      NEXT_PUBLIC_SERVER_URL: ${NEXT_PUBLIC_SERVER_URL:-http://localhost:3000}
+      NODE_ENV: production
+    ports:
+      - '3000:3000'
+
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: portfolio
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-portfolio}
+      POSTGRES_DB: portfolio
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U portfolio -d portfolio']
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  db-data:

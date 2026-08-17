@@ -1,2 +1,26 @@
-public/
+# dependencies
+node_modules/
+.pnpm-store/
+
+# next.js
+.next/
+out/
+next-env.d.ts
+
+# production
+build/
+
+# env
+.env
+.env.local
+.env.*.local
+
+# payload / uploads
+/media/
+public/media/
+
+# misc
 .DS_Store
+*.pem
+npm-debug.log*
+yarn-error.log*

@@ -1,63 +1,102 @@
-<h1> <img src="https://raw.githubusercontent.com/aemmadi/aemmadi/master/wave.gif" width="30px" height= "30px"> Hello! </h1>
+# mngaafar.com — Portfolio (Next.js + PayloadCMS)
 
+Mohamed N. Gaafar's portfolio, positioned as **AI Engineer & Fractional CTO**.
+Rebuilt from the previous Hugo site onto a modern, CMS-backed stack.
 
-I am Mohamed Nasser, people call me Nasser, currently pursuing my masters degree majoring in bionics and neuroengineering at [Scuola Superiore Santanna, Biorobotics Institute](https://www.bionicsengineering.it/edu/). I am a tech enthusiast & an open-source advocate. I am always open to collaborating on projects and innovative/disruptive ideas. Find out more about me & feel free to connect with me here:
+- **Framework:** Next.js 15 (App Router, React 19)
+- **CMS:** PayloadCMS 3 (self-hosted, in-app admin at `/admin`)
+- **Database:** PostgreSQL
+- **Styling:** framework-free CSS with design tokens + light/dark themes
+- **Deploy target:** Coolify via Docker Compose
 
-![Visitor Badge](https://visitor-badge.laobi.icu/badge?page_id=mo-gaafar.mo-gaafar)
-[![wakatime](https://wakatime.com/badge/user/da6c03be-746f-407a-b490-c5fe8ddc59a5.svg)](https://wakatime.com/@da6c03be-746f-407a-b490-c5fe8ddc59a5)
-[![committers.top badge](https://user-badge.committers.top/egypt/mo-gaafar.svg)](https://user-badge.committers.top/egypt/mo-gaafar)
+## Quick start (local)
 
--------------------
+```bash
+pnpm install
+cp .env.example .env         # set PAYLOAD_SECRET + DATABASE_URL
+# start a Postgres (any), point DATABASE_URL at it, then:
+pnpm dev                     # http://localhost:3000  (admin: /admin)
+pnpm seed                    # migrate the initial content into the DB
+```
 
-### 📞 Contact Me
+`pnpm seed` creates the admin user (`SEED_ADMIN_EMAIL` / `SEED_ADMIN_PASSWORD`,
+defaults `admin@mngaafar.com` / `changeme-please`) and loads all content
+(experience, skills, education, certifications, services, case studies,
+projects, publications, blog posts, and the two globals). It is repeatable —
+it clears and re-inserts content collections each run.
 
-[![Linkedin Badge](https://img.shields.io/badge/-mohamednasser-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/anirudhemmadi/)](https://www.linkedin.com/in/mohamed-nasser-gaafar-bb5772111/)
-[![IEEE Badge](https://img.shields.io/badge/-mohamed_gaafar@ieee.org-2523e7?style=flat-square&logo=IEEE&logoColor=white&link=mailto:mohamed_gaafar@ieee.org)](mailto:mohamed_gaafar@ieee.org)
--------------------
+## Environment variables
 
-### 🏆 Competitive Programming
+| Var | Purpose |
+|-----|---------|
+| `DATABASE_URL` | Postgres connection string |
+| `PAYLOAD_SECRET` | Long random string for Payload auth/encryption |
+| `NEXT_PUBLIC_SERVER_URL` | Public site URL (no trailing slash) — used for CORS, canonical, OG |
+| `SEED_ADMIN_EMAIL` / `SEED_ADMIN_PASSWORD` | First admin user (seed only) |
 
-[![Leetcode Badge](https://img.shields.io/badge/-LeetCode-ff8c00?style=flat-square&logo=leetcode&logoColor=white&link=https://leetcode.com/mo-gaafar/)](https://leetcode.com/mo-gaafar/)
-[![Hackerrank Badge](https://img.shields.io/badge/-HackerRank-3aa527?style=flat-square&logo=hackerrank&logoColor=white&link=https://www.hackerrank.com/mo_gaafar)](https://www.hackerrank.com/mo_gaafar)
-[![Codeforces Badge](https://img.shields.io/badge/-CodeForces-2c5687?style=flat-square&logo=codeforces&logoColor=white&link=https://codeforces.com/profile/mo-gaafar)](https://codeforces.com/profile/mo-gaafar)
-------------------
+## Scripts
 
-### ⚡ Technologies
-![Python](https://img.shields.io/badge/-Python-black?style=flat-square&logo=Python)
-![MATLAB](https://img.shields.io/badge/-MATLAB-blue?style=flat-square&logo=matrix)
-![MongoDB](https://img.shields.io/badge/-MongoDB-lightgreen?style=flat-square&logo=mongodb)
-![C#](https://img.shields.io/badge/-C%23-00599C?style=flat-square&logo=csharp)
-![C++](https://img.shields.io/badge/-C++-00599C?style=flat-square&logo=cplusplus)
-![Embedded C](https://img.shields.io/badge/-Embedded%20C-474747?style=flat-square&logo=c)
-![JavaScript](https://img.shields.io/badge/-JavaScript-black?style=flat-square&logo=javascript)
-![R](https://img.shields.io/badge/-R-2a7aea?style=flat-square&logo=R)
-![HTML5](https://img.shields.io/badge/-HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/-CSS3-1572B6?style=flat-square&logo=css3)
-![Bootstrap](https://img.shields.io/badge/-Bootstrap-563D7C?style=flat-square&logo=bootstrap)
-![MySQL](https://img.shields.io/badge/-MySQL-black?style=flat-square&logo=mysql)
-![AWS](https://img.shields.io/badge/Amazon%20Web%20Services-E34F26?style=flat-square&logo=amazon&logoColor=black)
-![Docker](https://img.shields.io/badge/-Docker-00599C?style=flat-square&logo=docker&logoColor=white)
-![Kubernetes](https://img.shields.io/badge/Kubernetes-2523e7?style=flat-square&logo=kubernetes&logoColor=white)
-![Microsoft Azure](https://img.shields.io/badge/Microsoft%20Azure-232F7E?style=flat-square&logo=microsoft-azure)
-![Heorku](https://img.shields.io/badge/Heroku-563D7C?style=flat-square&logo=heroku)
-![Google Cloud API](https://img.shields.io/badge/Google%20Cloud%20API-084dad?style=flat-square&logo=google-cloud)
-![Git](https://img.shields.io/badge/-Git-black?style=flat-square&logo=git)
-![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat-square&logo=github)
-![OpenGL](https://img.shields.io/badge/-OpenGL-E34F26?style=flat-square&logo=opengl&logoColor=white)
-![Unity](https://img.shields.io/badge/-Unity-181717?style=flat-square&logo=unity)
-![LUA](https://img.shields.io/badge/-LUA-2523e7?style=flat-square&logo=LUA)
-![ROBLOX](https://img.shields.io/badge/-ROBLOX-ff0505?style=flat-square&logo=ROBLOX)
-![Blender](https://img.shields.io/badge/-Blender-E34F26?style=flat-square&logo=blender&logoColor=white)
--------------------
+| Script | What it does |
+|--------|--------------|
+| `pnpm dev` | Dev server |
+| `pnpm build` / `pnpm start` | Production build / serve |
+| `pnpm seed` | Migrate/seed content |
+| `pnpm generate:types` | Regenerate `src/payload-types.ts` after schema changes |
+| `pnpm generate:importmap` | Regenerate the admin import map |
 
+## Deploying to Coolify
 
+1. Create a **Docker Compose** resource pointing at this repo's
+   `docker-compose.yml`.
+2. Set env vars in Coolify: `PAYLOAD_SECRET`, `NEXT_PUBLIC_SERVER_URL`
+   (your domain), and `POSTGRES_PASSWORD`. Optionally `SEED_ADMIN_*`.
+3. Deploy. The `db` service is a bundled Postgres with a persistent volume;
+   the app connects to it over the compose network. Schema is auto-synced on
+   boot (`push: true`).
+4. First run only — seed the content from the app container's terminal:
+   ```bash
+   pnpm seed
+   ```
+5. Point your domain at the app service and set it as `NEXT_PUBLIC_SERVER_URL`.
 
-<details>
-  <summary><h3> 📊 Statistics </h3></summary>
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=mo-gaafar&theme=dark&date_format=j%20M%5B%20Y%5D&currStreakLabel=6FDA44&fire=6FDA44&ring=6FDA44" alt="GitHub Streak Stats" height="200" />
-<br>
-<img src="https://github-readme-stats.vercel.app/api?username=mo-gaafar&title_color=6FDA44&text_color=FFFFFF&show_icons=true&icon_color=6FDA44&include_all_commits=true&count_private=true&theme=dark" alt="GitHub Stats" height="200"/>
-<br>
-<img src="https://github-readme-stats.vercel.app/api/top-langs?username=mo-gaafar&layout=compact&title_color=6FDA44&text_color=FFFFFF&theme=dark" alt="GitHub Most Used Languages" height="200" />
-<br>
-</details>
+> If you prefer Coolify's managed Postgres over the bundled `db` service,
+> delete the `db` service from `docker-compose.yml` and set `DATABASE_URL` to
+> the managed instance.
+
+## Project structure
+
+```
+src/
+├── app/(frontend)/     # Public site (home, projects, blog, publications, resume)
+├── app/(payload)/      # Payload admin + API (auto-wired)
+├── collections/        # Payload collections
+├── globals/            # SiteSettings, Home
+├── components/         # Nav, Footer, ThemeToggle, Icon, RichText
+├── fields/             # Reusable field helpers (slug)
+├── lib/                # Payload client helpers
+├── seed/               # Content migration script + source markdown
+└── payload.config.ts   # Payload config (Postgres, collections, globals)
+docs/                   # Site map + rebuild documentation
+Dockerfile, docker-compose.yml   # Coolify deployment
+```
+
+## Content model
+
+Managed in `/admin`:
+
+- **Collections:** Projects, Case Studies, Publications, Blog Posts, Services,
+  Testimonials, Media, Experience, Skill Groups, Education, Certifications, Users.
+- **Globals:** Site Settings (identity, contact, socials, analytics), Home
+  (hero, proof metrics, section visibility).
+
+See [`docs/`](docs/) for the full map of the previous site, the design system,
+and the rebuild plan.
+
+## Notes
+
+- The previous Hugo source directories (`content/`, `data/`, `themes/`,
+  `static/`, `content-example/`) are **retired**. Their content has been
+  migrated into Payload (seed) and their assets copied to `public/`. They can
+  be deleted.
+- Blog SEO redirects from old URLs are preserved via each post's `redirectFrom`
+  field (handled in `src/app/(frontend)/blog/[slug]/page.tsx`).

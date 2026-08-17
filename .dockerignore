@@ -1,0 +1,17 @@
+node_modules
+.next
+.git
+.env
+.env.*
+!.env.example
+public/media
+npm-debug.log*
+Dockerfile
+docker-compose.yml
+themes
+content
+content-example
+static
+public_hugo
+resources
+.hugo_build.lock
