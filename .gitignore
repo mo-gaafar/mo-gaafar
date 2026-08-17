@@ -24,3 +24,6 @@ public/media/
 *.pem
 npm-debug.log*
 yarn-error.log*
+
+# TypeScript incremental build cache
+*.tsbuildinfo
