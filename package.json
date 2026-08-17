@@ -4,6 +4,7 @@
   "description": "Mohamed N. Gaafar — AI Engineer & Fractional CTO portfolio (Next.js + PayloadCMS)",
   "license": "MIT",
   "type": "module",
+  "packageManager": "pnpm@10.0.0",
   "engines": {
     "node": ">=20.9.0",
     "pnpm": "^9 || ^10 || ^11"

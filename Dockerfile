@@ -3,6 +3,9 @@
 FROM node:22-alpine AS base
 RUN apk add --no-cache libc6-compat
 RUN corepack enable
+# Pin pnpm via package.json's packageManager field; let corepack fetch it
+# non-interactively during the build.
+ENV COREPACK_ENABLE_DOWNLOAD_PROMPT=0
 WORKDIR /app
 
 # ---- Dependencies ----
