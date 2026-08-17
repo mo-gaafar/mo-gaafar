@@ -45,7 +45,7 @@ export async function seed(payload: Payload) {
       roleTitle: 'AI Engineer & Fractional CTO',
       siteTitle: 'Mohamed Gaafar — AI Engineer & Fractional CTO',
       description:
-        'AI Engineer and Fractional CTO. I design, build, and lead the delivery of production AI systems — RAG platforms, voice agents, and automation — and run the engineering function for founders who need technical leadership without a full-time hire.',
+        'AI engineer and fractional CTO. I build production RAG platforms, voice AI agents, and workflow automation, and run engineering for founders who need technical leadership without a full-time hire.',
       email: 'mohamed_gaafar@ieee.org',
       phone: '+201155277008',
       location: 'Turin, Italy · Cairo, Egypt',
@@ -70,7 +70,7 @@ export async function seed(payload: Payload) {
       kicker: 'Applied AI systems · Engineering leadership',
       headline: 'AI Engineer & Fractional CTO',
       lede:
-        'I design, build, and lead the delivery of production AI systems — RAG platforms, voice agents, and workflow automation — and run the engineering function for founders who need a technical leader without a full-time hire.',
+        'I build AI systems that survive contact with production: enterprise RAG, voice agents, workflow automation. When a build needs more than code, I step in as fractional CTO and run architecture, hiring, and delivery.',
       ctas: [
         { label: 'Book a call', url: 'mailto:mohamed_gaafar@ieee.org', style: 'primary' },
         { label: 'See case studies', url: '/#work', style: 'secondary' },
@@ -87,11 +87,11 @@ export async function seed(payload: Payload) {
         { value: 'CTO', label: 'Co-Founder, EXODIA AI Technologies' },
         { value: '10+', label: 'engineers led across AI delivery' },
         { value: '50K+', label: 'voice AI calls supported' },
-        { value: '70%', label: 'less grant research admin work' },
+        { value: '70%', label: 'less grant-research admin work' },
       ],
       servicesHeading: 'How I work',
       servicesIntro:
-        'Three ways I plug into a team — from owning the whole engineering function to shipping a single high-stakes AI build.',
+        'Most engagements take one of three shapes, from owning the whole engineering function to shipping a single well-defined build.',
       visibility: {
         showServices: true,
         showCaseStudies: true,
@@ -112,7 +112,7 @@ export async function seed(payload: Payload) {
     {
       title: 'Fractional CTO',
       summary:
-        'Technical leadership for AI-first products: architecture, hiring, delivery, and roadmap — the engineering function without the full-time hire.',
+        'Architecture, hiring, delivery, and roadmap for AI-first products. You get the engineering function without the full-time hire.',
       forWho: 'Founders scaling an AI product',
       icon: 'compass',
       order: 1,
@@ -125,7 +125,7 @@ export async function seed(payload: Payload) {
     {
       title: 'Applied AI Engineering',
       summary:
-        'Hands-on builds of production LLM systems: enterprise RAG, agents, and voice AI that are reliable and measurable.',
+        'Hands-on builds of LLM systems that hold up in production: enterprise RAG over messy documents, agents with tool use, and voice AI under real call volume.',
       forWho: 'Teams with a concrete AI build',
       icon: 'cpu',
       order: 2,
@@ -138,14 +138,14 @@ export async function seed(payload: Payload) {
     {
       title: 'AI Advisory & Automation',
       summary:
-        'n8n workflow automation and AI-assisted internal tools that remove repetitive office work — plus a second opinion on AI strategy.',
+        'n8n workflows and AI-assisted internal tools that take repetitive admin off your team, plus a straight second opinion on your AI plans.',
       forWho: 'Operators modernising workflows',
       icon: 'workflow',
       order: 3,
       bullets: [
         { text: 'n8n workflows across CRMs, inboxes, and docs' },
         { text: 'Data enrichment and quality monitoring' },
-        { text: 'Pragmatic AI roadmap reviews' },
+        { text: 'Roadmap reviews that tell you what not to build' },
       ],
     },
   ]
@@ -159,13 +159,13 @@ export async function seed(payload: Payload) {
       client: 'EXODIA AI Technologies',
       role: 'Co-Founder & CTO',
       summary:
-        'Built an enterprise retrieval-augmented platform for a subsidized-finance consultancy so grant researchers could query dense program policies instead of manually digging through documents.',
+        'Built an enterprise RAG platform for a subsidized-finance consultancy so grant researchers could query dense program policies instead of manually digging through documents.',
       headlineMetric: '70%',
-      headlineMetricLabel: 'less grant research office work',
+      headlineMetricLabel: 'less grant-research admin work',
       problem:
         'Researchers spent most of their day manually cross-referencing grant policies and eligibility rules across large document sets.',
       outcome:
-        'A production RAG platform that cut repetitive office work by roughly 70% and freed the team for higher-value analysis.',
+        'A production RAG platform that cut the team’s admin work by roughly 70% and freed researchers for higher-value analysis.',
       stack: [{ item: 'RAG' }, { item: 'Python' }, { item: 'Vector search' }, { item: 'LLMs' }],
       featured: true,
       order: 1,
@@ -177,7 +177,7 @@ export async function seed(payload: Payload) {
       summary:
         'Resolved a production emergency in the team’s voice-agent setup and trained them on VAPI and Retell scaling constraints — latency, fallback handling, and prompt design.',
       headlineMetric: '50K+',
-      headlineMetricLabel: 'calls handled since',
+      headlineMetricLabel: 'calls handled since then',
       problem:
         'A voice-agent product was failing under real call volume, with no clear view of the scaling constraints.',
       outcome:
@@ -311,7 +311,7 @@ export async function seed(payload: Payload) {
       degree: 'Master of Science',
       major: 'Bionics Engineering, Neural Engineering Track',
       notes: 'Ranked 2nd among international applicants in the admission test and interview.',
-      range: 'In Progress',
+      range: '2024 – Present',
       order: 1,
     },
     {

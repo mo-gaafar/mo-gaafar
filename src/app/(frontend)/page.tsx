@@ -331,7 +331,7 @@ export default async function HomePage() {
           <p className="eyebrow">Let’s talk</p>
           <h2>Have a system worth building?</h2>
           <p className="lead">
-            Whether you need a fractional CTO, an applied-AI build, or a second opinion on an AI roadmap — I’m happy to dig in.
+            Tell me what you’re trying to build — or un-break. If I can help, I’ll say how. If I can’t, I’ll tell you that too.
           </p>
         </div>
         <div className="hero-actions">
