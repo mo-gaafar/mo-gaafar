@@ -68,35 +68,31 @@ export default async function HomePage() {
               )}
             </div>
             {focusTags.length > 0 && (
-              <div className="chips hero-focus">
+              <p className="hero-focus" aria-label="Focus areas">
                 {focusTags.map((t, i) => (
-                  <span className="chip" key={i}>
-                    {t.label}
-                  </span>
+                  <span key={i}>{t.label}</span>
                 ))}
-              </div>
+              </p>
             )}
           </div>
 
-          <aside className="hero-panel" aria-label="Highlights">
-            {portrait && (
-              <div className="hero-portrait">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={portrait} alt={`${settings?.firstName ?? ''} ${settings?.lastName ?? ''}`.trim()} />
-              </div>
-            )}
-            {proof.length > 0 && (
-              <div className="proof-grid">
-                {proof.map((m, i) => (
-                  <div className="proof" key={i}>
-                    <strong>{m.value}</strong>
-                    {m.label}
-                  </div>
-                ))}
-              </div>
-            )}
-          </aside>
+          {portrait && (
+            <aside className="hero-portrait" aria-label="Portrait">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={portrait} alt={`${settings?.firstName ?? ''} ${settings?.lastName ?? ''}`.trim()} />
+            </aside>
+          )}
         </div>
+        {proof.length > 0 && (
+          <div className="proof-strip">
+            {proof.map((m, i) => (
+              <div className="proof" key={i}>
+                <strong>{m.value}</strong>
+                <span>{m.label}</span>
+              </div>
+            ))}
+          </div>
+        )}
       </header>
 
       {/* ---------- Services ---------- */}
@@ -145,13 +141,7 @@ export default async function HomePage() {
                   <h3>{c.title}</h3>
                   <p className="muted">{c.summary}</p>
                   {c.stack && c.stack.length > 0 && (
-                    <div className="chips" style={{ marginTop: '0.8rem' }}>
-                      {c.stack.map((s, i) => (
-                        <span className="chip" key={i}>
-                          {s.item}
-                        </span>
-                      ))}
-                    </div>
+                    <p className="stack-line">{c.stack.map((s) => s.item).join(' · ')}</p>
                   )}
                 </div>
                 {c.headlineMetric && (
@@ -170,7 +160,7 @@ export default async function HomePage() {
       {vis.showTestimonials !== false && testimonials.length > 0 && (
         <section className="section" id="testimonials">
           <div className="section-head">
-            <p className="eyebrow">Social proof</p>
+            <p className="eyebrow">Kind words</p>
             <h2>What people say</h2>
           </div>
           <div className="card-grid">
@@ -248,7 +238,7 @@ export default async function HomePage() {
                 <article className="card" key={p.id}>
                   {img && (
                     // eslint-disable-next-line @next/next/no-img-element
-                    <img src={img} alt={p.title} style={{ borderRadius: 8, marginBottom: '0.9rem', aspectRatio: '16/10', objectFit: 'cover' }} />
+                    <img src={img} alt={p.title} style={{ borderRadius: 4, marginBottom: '0.9rem', aspectRatio: '16/10', objectFit: 'cover' }} />
                   )}
                   <h3 style={{ fontSize: '1.15rem' }}>
                     <Link href={`/projects/${p.slug}`}>{p.title}</Link>

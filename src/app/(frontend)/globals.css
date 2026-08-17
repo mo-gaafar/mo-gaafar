@@ -22,8 +22,8 @@
   --shadow-soft: 0 18px 50px rgba(13, 23, 29, 0.08);
   --shadow-card: 0 10px 28px rgba(13, 23, 29, 0.07);
 
-  --radius: 12px;
-  --radius-sm: 8px;
+  --radius: 8px;
+  --radius-sm: 5px;
   --nav-width: 14rem;
   --maxw: 1120px;
 
@@ -94,10 +94,7 @@ html {
 body {
   font-family: var(--font-body);
   color: var(--text);
-  background:
-    radial-gradient(60rem 40rem at 100% -10%, var(--primary-soft), transparent 60%),
-    radial-gradient(50rem 40rem at -10% 110%, rgba(182, 66, 95, 0.07), transparent 55%),
-    var(--bg);
+  background: var(--bg);
   line-height: 1.7;
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
@@ -113,7 +110,9 @@ a {
   text-decoration: none;
 }
 a:hover {
-  color: var(--accent);
+  color: var(--primary-strong);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 h1,
 h2,
@@ -152,18 +151,27 @@ h4 {
   }
 }
 .section-head {
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 .section-head h2 {
-  font-size: clamp(1.9rem, 3.4vw, 2.9rem);
+  font-size: clamp(1.65rem, 2.6vw, 2.25rem);
 }
 .section-head .eyebrow {
-  color: var(--primary);
-  font-weight: 700;
-  font-size: 0.82rem;
-  letter-spacing: 0.12em;
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.9rem;
+}
+.section-head .eyebrow::after {
+  content: '';
+  height: 1px;
+  flex: 1;
+  background: var(--border);
 }
 .section-head .lead {
   color: var(--muted);
@@ -184,13 +192,12 @@ h4 {
   border: 1px solid var(--border);
   cursor: pointer;
   transition:
-    transform 140ms ease,
     background-color 140ms ease,
     color 140ms ease,
     border-color 140ms ease;
 }
 .btn:hover {
-  transform: translateY(-1px);
+  text-decoration: none;
 }
 .btn-primary {
   background: var(--primary);
@@ -203,12 +210,13 @@ h4 {
   color: #fff;
 }
 .btn-secondary {
-  background: var(--surface);
+  background: transparent;
   color: var(--ink);
+  border-color: var(--border);
 }
 .btn-secondary:hover {
   color: var(--ink);
-  border-color: var(--primary);
+  border-color: var(--ink);
 }
 .btn-link {
   border-color: transparent;
@@ -227,13 +235,13 @@ h4 {
   gap: 0.5rem;
 }
 .chip {
-  background: var(--primary-soft);
-  border: 1px solid var(--primary-border);
-  color: var(--ink);
-  border-radius: var(--radius-sm);
-  padding: 0.4rem 0.7rem;
-  font-size: 0.88rem;
-  font-weight: 600;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  border-radius: 3px;
+  padding: 0.22rem 0.55rem;
+  font-size: 0.82rem;
+  font-weight: 500;
 }
 
 /* ============================================================ Cards */
@@ -241,7 +249,6 @@ h4 {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  box-shadow: var(--shadow-card);
   padding: 1.35rem;
 }
 .card-grid {
@@ -252,22 +259,20 @@ h4 {
 
 /* ============================================================ Hero */
 .hero {
-  max-width: 1240px;
+  max-width: var(--maxw);
   margin: 0 auto;
-  padding: 4.5rem 1.25rem 4rem;
-  min-height: min(100vh, 780px);
-  display: flex;
-  align-items: center;
+  padding: 4.5rem 1.25rem 3.5rem;
 }
 @media (min-width: 992px) {
   .hero {
-    padding: 6rem 2.5rem 4.5rem;
+    padding: 6.5rem 2.5rem 4.5rem;
   }
 }
 .hero-grid {
   display: grid;
-  gap: clamp(1.75rem, 4vw, 3.25rem);
-  grid-template-columns: minmax(0, 1.05fr) minmax(300px, 0.7fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  grid-template-columns: minmax(0, 1.3fr) minmax(240px, 0.55fr);
+  align-items: start;
   width: 100%;
 }
 @media (max-width: 880px) {
@@ -276,16 +281,25 @@ h4 {
   }
 }
 .hero-kicker {
-  color: var(--primary);
-  font-weight: 700;
-  letter-spacing: 0.12em;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: var(--muted);
+  font-weight: 600;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  font-size: 0.85rem;
-  margin-bottom: 1rem;
+  font-size: 0.78rem;
+  margin-bottom: 1.1rem;
+}
+.hero-kicker::before {
+  content: '';
+  width: 2rem;
+  height: 1px;
+  background: var(--primary);
 }
 .hero h1 {
-  font-size: clamp(2.6rem, 6vw, 4.4rem);
-  line-height: 0.98;
+  font-size: clamp(2.3rem, 4.6vw, 3.5rem);
+  line-height: 1.05;
 }
 .hero h1 .accent {
   color: var(--primary);
@@ -293,15 +307,15 @@ h4 {
 }
 .hero-lede {
   color: var(--muted);
-  font-size: clamp(1.02rem, 1.4vw, 1.18rem);
+  font-size: clamp(1.02rem, 1.4vw, 1.14rem);
   margin-top: 1.2rem;
-  max-width: 60ch;
+  max-width: 58ch;
 }
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 0.7rem;
-  margin: 1.8rem 0 1.3rem;
+  margin: 1.8rem 0 0;
 }
 @media (max-width: 520px) {
   .hero-actions {
@@ -314,83 +328,76 @@ h4 {
   }
 }
 .hero-focus {
-  margin-top: 1.3rem;
+  margin-top: 1.6rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+.hero-focus span:not(:last-child)::after {
+  content: '·';
+  color: var(--primary);
+  margin: 0 0.55rem;
 }
 
-.hero-panel {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-soft);
-  padding: 1.25rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
 .hero-portrait {
+  margin-top: 0.4rem;
   aspect-ratio: 4 / 3;
-  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  border-radius: 3px;
   overflow: hidden;
   background: var(--surface-alt);
+  box-shadow: 12px 12px 0 var(--primary-soft);
+}
+@media (max-width: 880px) {
+  .hero-portrait {
+    max-width: 420px;
+  }
 }
 .hero-portrait img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.proof-grid {
-  display: grid;
-  gap: 0.75rem;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-@media (max-width: 400px) {
-  .proof-grid {
-    grid-template-columns: 1fr;
-  }
+.proof-strip {
+  margin-top: 3rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.4rem 3rem;
 }
 .proof {
-  background: var(--surface-alt);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  padding: 0.9rem;
-  min-height: 96px;
-  color: var(--muted);
-  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
 }
 .proof strong {
-  display: block;
-  color: var(--primary);
+  color: var(--ink);
   font-family: var(--font-display);
-  font-size: clamp(1.6rem, 3vw, 2.15rem);
-  line-height: 1;
-  margin-bottom: 0.35rem;
+  font-size: 1.4rem;
+  line-height: 1.2;
+}
+.proof span {
+  color: var(--muted);
+  font-size: 0.87rem;
 }
 
 /* ============================================================ Services */
 .service-grid {
   display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2.25rem 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 .service {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-card);
-  padding: 1.5rem;
+  border-top: 1px solid var(--border);
+  padding-top: 1.4rem;
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 0.55rem;
 }
 .service .service-icon {
-  width: 42px;
-  height: 42px;
-  display: grid;
-  place-items: center;
-  border-radius: 10px;
-  background: var(--primary-soft);
+  display: inline-flex;
   color: var(--primary);
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.15rem;
 }
 .service h3 {
   font-size: 1.2rem;
@@ -412,11 +419,19 @@ h4 {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  box-shadow: var(--shadow-card);
   padding: 1.6rem;
   display: grid;
   gap: 1rem;
   grid-template-columns: minmax(0, 1fr) minmax(140px, 200px);
+}
+.case + .case {
+  margin-top: 1.1rem;
+}
+.stack-line {
+  margin-top: 0.8rem;
+  color: var(--muted);
+  font-size: 0.87rem;
+  letter-spacing: 0.01em;
 }
 @media (max-width: 640px) {
   .case {
@@ -444,17 +459,17 @@ h4 {
 .timeline {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0;
 }
 .timeline-item {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-card);
-  padding: 1.3rem;
+  border-top: 1px solid var(--border);
+  padding: 1.4rem 0;
   display: flex;
   gap: 1rem;
   flex-direction: column;
+}
+.timeline-item:last-child {
+  padding-bottom: 0.25rem;
 }
 @media (min-width: 720px) {
   .timeline-item {
@@ -484,36 +499,35 @@ h4 {
   margin-bottom: 1.5rem;
 }
 .skill-group .label {
-  color: var(--primary);
+  color: var(--muted);
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-weight: 700;
-  font-size: 0.82rem;
-  margin-bottom: 0.7rem;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  font-size: 0.78rem;
+  margin-bottom: 0.5rem;
 }
 .skill-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.3rem 0.9rem;
   list-style: none;
   padding: 0;
 }
 .skill-list li {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  padding: 0.5rem 0.7rem;
-  font-size: 0.9rem;
-  font-weight: 600;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text);
+}
+.skill-list li:not(:last-child)::after {
+  content: '·';
+  margin-left: 0.9rem;
+  color: var(--primary-border);
 }
 
 /* ============================================================ Testimonials */
 .quote {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-card);
-  padding: 1.5rem;
+  border-left: 2px solid var(--primary-border);
+  padding: 0.25rem 0 0.25rem 1.4rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -598,6 +612,29 @@ h4 {
   border: 0;
 }
 
+/* ============================================================ Contact closer */
+#contact {
+  text-align: center;
+  padding-top: 5.5rem;
+  padding-bottom: 6rem;
+}
+#contact .section-head {
+  margin-bottom: 2rem;
+}
+#contact .eyebrow {
+  justify-content: center;
+}
+#contact .eyebrow::after {
+  display: none;
+}
+#contact .lead {
+  margin-inline: auto;
+}
+#contact .hero-actions {
+  justify-content: center;
+  margin-top: 0;
+}
+
 /* ============================================================ Utility */
 .stack-sm {
   display: flex;
@@ -618,6 +655,11 @@ h4 {
 }
 
 /* ============================================================ Sidebar nav */
+.sidenav a:hover,
+.nav-cta:hover,
+.footer-socials a:hover {
+  text-decoration: none;
+}
 .sidenav {
   position: sticky;
   top: 0;
