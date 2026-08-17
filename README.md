@@ -63,6 +63,18 @@ it clears and re-inserts content collections each run.
 > delete the `db` service from `docker-compose.yml` and set `DATABASE_URL` to
 > the managed instance.
 
+### Media storage (important) + Cloudflare
+
+Container disks are **ephemeral** — CMS uploads must go to object storage or
+they vanish on redeploy. Set the `S3_*` env vars to a **Cloudflare R2** bucket
+and Media uploads persist there (falls back to local disk only when `S3_BUCKET`
+is unset, for local dev).
+
+The chosen hosting model is **Cloudflare in front, Node behind**: the app runs
+on Coolify, Cloudflare proxies the domain for CDN/TLS, and media lives in R2.
+Full setup (R2 bucket + token, DNS proxy, SSL Full-strict, cache rules) is in
+[`docs/09-cloudflare.md`](docs/09-cloudflare.md).
+
 ## Project structure
 
 ```
