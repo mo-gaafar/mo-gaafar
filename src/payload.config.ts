@@ -25,6 +25,15 @@ import { Home } from './globals/Home'
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
+// Origins allowed to call the CMS API from a browser. Always includes the CMS's
+// own URL; additional headless frontends (e.g. the mngaafar.com site consuming
+// this CMS) are added via CORS_ORIGINS (comma-separated). Used for both CORS
+// (cross-origin reads) and CSRF (cookie-authenticated requests).
+const allowedOrigins = [
+  process.env.NEXT_PUBLIC_SERVER_URL,
+  ...(process.env.CORS_ORIGINS || '').split(',').map((origin) => origin.trim()),
+].filter((origin): origin is string => Boolean(origin))
+
 export default buildConfig({
   admin: {
     user: Users.slug,
@@ -68,7 +77,8 @@ export default buildConfig({
   }),
   sharp,
   serverURL: process.env.NEXT_PUBLIC_SERVER_URL || undefined,
-  cors: process.env.NEXT_PUBLIC_SERVER_URL ? [process.env.NEXT_PUBLIC_SERVER_URL] : undefined,
+  cors: allowedOrigins.length ? allowedOrigins : undefined,
+  csrf: allowedOrigins.length ? allowedOrigins : undefined,
   plugins: [
     // Model Context Protocol server — exposes the CMS to MCP clients at
     // POST/GET /api/mcp (Streamable HTTP). Requests authenticate with an API
