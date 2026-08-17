@@ -74,6 +74,14 @@ Practical, direct, consultant-oriented. Ground claims in real experience; prefer
 measurable outcomes over AI hype. Topic clusters: AI automation consulting, n8n,
 Claude/LLM agents, voice AI (VAPI/Retell), RAG, and neurotechnology software.
 
+## MCP
+
+The CMS is exposed over MCP via `@payloadcms/plugin-mcp` at `/api/mcp`
+(Streamable HTTP, `Authorization: Bearer <api-key>`). Configure exposed
+collections/globals in the `mcpPlugin({...})` block in `src/payload.config.ts`;
+issue keys in `/admin` → MCP → API Keys. Disable with `DISABLE_MCP=true`. See
+`docs/08-mcp.md`.
+
 ## Notes
 
 - Testimonials are intentionally **empty** — add real ones via `/admin`; do not

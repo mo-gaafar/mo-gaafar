@@ -64,6 +64,7 @@ export type SupportedTimezones =
 export interface Config {
   auth: {
     users: UserAuthOperations;
+    'payload-mcp-api-keys': PayloadMcpApiKeyAuthOperations;
   };
   blocks: {};
   collections: {
@@ -79,6 +80,7 @@ export interface Config {
     education: Education;
     certifications: Certification;
     users: User;
+    'payload-mcp-api-keys': PayloadMcpApiKey;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -98,6 +100,7 @@ export interface Config {
     education: EducationSelect<false> | EducationSelect<true>;
     certifications: CertificationsSelect<false> | CertificationsSelect<true>;
     users: UsersSelect<false> | UsersSelect<true>;
+    'payload-mcp-api-keys': PayloadMcpApiKeysSelect<false> | PayloadMcpApiKeysSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -119,13 +122,31 @@ export interface Config {
   widgets: {
     collections: CollectionsWidget;
   };
-  user: User;
+  user: User | PayloadMcpApiKey;
   jobs: {
     tasks: unknown;
     workflows: unknown;
   };
 }
 export interface UserAuthOperations {
+  forgotPassword: {
+    email: string;
+    password: string;
+  };
+  login: {
+    email: string;
+    password: string;
+  };
+  registerFirstUser: {
+    email: string;
+    password: string;
+  };
+  unlock: {
+    email: string;
+    password: string;
+  };
+}
+export interface PayloadMcpApiKeyAuthOperations {
   forgotPassword: {
     email: string;
     password: string;
@@ -557,6 +578,199 @@ export interface User {
   collection: 'users';
 }
 /**
+ * API keys control which collections, resources, tools, and prompts MCP clients can access
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "payload-mcp-api-keys".
+ */
+export interface PayloadMcpApiKey {
+  id: number;
+  /**
+   * The user that the API key is associated with.
+   */
+  user: number | User;
+  /**
+   * A useful label for the API key.
+   */
+  label?: string | null;
+  /**
+   * The purpose of the API key.
+   */
+  description?: string | null;
+  projects?: {
+    /**
+     * Allow clients to find projects.
+     */
+    find?: boolean | null;
+    /**
+     * Allow clients to create projects.
+     */
+    create?: boolean | null;
+    /**
+     * Allow clients to update projects.
+     */
+    update?: boolean | null;
+  };
+  caseStudies?: {
+    /**
+     * Allow clients to find case-studies.
+     */
+    find?: boolean | null;
+    /**
+     * Allow clients to create case-studies.
+     */
+    create?: boolean | null;
+    /**
+     * Allow clients to update case-studies.
+     */
+    update?: boolean | null;
+  };
+  publications?: {
+    /**
+     * Allow clients to find publications.
+     */
+    find?: boolean | null;
+    /**
+     * Allow clients to create publications.
+     */
+    create?: boolean | null;
+    /**
+     * Allow clients to update publications.
+     */
+    update?: boolean | null;
+  };
+  posts?: {
+    /**
+     * Allow clients to find posts.
+     */
+    find?: boolean | null;
+    /**
+     * Allow clients to create posts.
+     */
+    create?: boolean | null;
+    /**
+     * Allow clients to update posts.
+     */
+    update?: boolean | null;
+  };
+  services?: {
+    /**
+     * Allow clients to find services.
+     */
+    find?: boolean | null;
+    /**
+     * Allow clients to create services.
+     */
+    create?: boolean | null;
+    /**
+     * Allow clients to update services.
+     */
+    update?: boolean | null;
+  };
+  testimonials?: {
+    /**
+     * Allow clients to find testimonials.
+     */
+    find?: boolean | null;
+    /**
+     * Allow clients to create testimonials.
+     */
+    create?: boolean | null;
+    /**
+     * Allow clients to update testimonials.
+     */
+    update?: boolean | null;
+  };
+  experience?: {
+    /**
+     * Allow clients to find experience.
+     */
+    find?: boolean | null;
+    /**
+     * Allow clients to create experience.
+     */
+    create?: boolean | null;
+    /**
+     * Allow clients to update experience.
+     */
+    update?: boolean | null;
+  };
+  skillGroups?: {
+    /**
+     * Allow clients to find skill-groups.
+     */
+    find?: boolean | null;
+    /**
+     * Allow clients to create skill-groups.
+     */
+    create?: boolean | null;
+    /**
+     * Allow clients to update skill-groups.
+     */
+    update?: boolean | null;
+  };
+  education?: {
+    /**
+     * Allow clients to find education.
+     */
+    find?: boolean | null;
+    /**
+     * Allow clients to create education.
+     */
+    create?: boolean | null;
+    /**
+     * Allow clients to update education.
+     */
+    update?: boolean | null;
+  };
+  certifications?: {
+    /**
+     * Allow clients to find certifications.
+     */
+    find?: boolean | null;
+    /**
+     * Allow clients to create certifications.
+     */
+    create?: boolean | null;
+    /**
+     * Allow clients to update certifications.
+     */
+    update?: boolean | null;
+  };
+  media?: {
+    /**
+     * Allow clients to find media.
+     */
+    find?: boolean | null;
+  };
+  siteSettings?: {
+    /**
+     * Allow clients to find site-settings global.
+     */
+    find?: boolean | null;
+    /**
+     * Allow clients to update site-settings global.
+     */
+    update?: boolean | null;
+  };
+  home?: {
+    /**
+     * Allow clients to find home global.
+     */
+    find?: boolean | null;
+    /**
+     * Allow clients to update home global.
+     */
+    update?: boolean | null;
+  };
+  updatedAt: string;
+  createdAt: string;
+  enableAPIKey?: boolean | null;
+  apiKey?: string | null;
+  apiKeyIndex?: string | null;
+  collection: 'payload-mcp-api-keys';
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv".
  */
@@ -627,12 +841,21 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'users';
         value: number | User;
+      } | null)
+    | ({
+        relationTo: 'payload-mcp-api-keys';
+        value: number | PayloadMcpApiKey;
       } | null);
   globalSlug?: string | null;
-  user: {
-    relationTo: 'users';
-    value: number | User;
-  };
+  user:
+    | {
+        relationTo: 'users';
+        value: number | User;
+      }
+    | {
+        relationTo: 'payload-mcp-api-keys';
+        value: number | PayloadMcpApiKey;
+      };
   updatedAt: string;
   createdAt: string;
 }
@@ -642,10 +865,15 @@ export interface PayloadLockedDocument {
  */
 export interface PayloadPreference {
   id: number;
-  user: {
-    relationTo: 'users';
-    value: number | User;
-  };
+  user:
+    | {
+        relationTo: 'users';
+        value: number | User;
+      }
+    | {
+        relationTo: 'payload-mcp-api-keys';
+        value: number | PayloadMcpApiKey;
+      };
   key?: string | null;
   value?:
     | {
@@ -942,6 +1170,107 @@ export interface UsersSelect<T extends boolean = true> {
         createdAt?: T;
         expiresAt?: T;
       };
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "payload-mcp-api-keys_select".
+ */
+export interface PayloadMcpApiKeysSelect<T extends boolean = true> {
+  user?: T;
+  label?: T;
+  description?: T;
+  projects?:
+    | T
+    | {
+        find?: T;
+        create?: T;
+        update?: T;
+      };
+  caseStudies?:
+    | T
+    | {
+        find?: T;
+        create?: T;
+        update?: T;
+      };
+  publications?:
+    | T
+    | {
+        find?: T;
+        create?: T;
+        update?: T;
+      };
+  posts?:
+    | T
+    | {
+        find?: T;
+        create?: T;
+        update?: T;
+      };
+  services?:
+    | T
+    | {
+        find?: T;
+        create?: T;
+        update?: T;
+      };
+  testimonials?:
+    | T
+    | {
+        find?: T;
+        create?: T;
+        update?: T;
+      };
+  experience?:
+    | T
+    | {
+        find?: T;
+        create?: T;
+        update?: T;
+      };
+  skillGroups?:
+    | T
+    | {
+        find?: T;
+        create?: T;
+        update?: T;
+      };
+  education?:
+    | T
+    | {
+        find?: T;
+        create?: T;
+        update?: T;
+      };
+  certifications?:
+    | T
+    | {
+        find?: T;
+        create?: T;
+        update?: T;
+      };
+  media?:
+    | T
+    | {
+        find?: T;
+      };
+  siteSettings?:
+    | T
+    | {
+        find?: T;
+        update?: T;
+      };
+  home?:
+    | T
+    | {
+        find?: T;
+        update?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  enableAPIKey?: T;
+  apiKey?: T;
+  apiKeyIndex?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

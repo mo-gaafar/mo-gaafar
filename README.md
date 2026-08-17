@@ -80,6 +80,45 @@ docs/                   # Site map + rebuild documentation
 Dockerfile, docker-compose.yml   # Coolify deployment
 ```
 
+## MCP (Model Context Protocol) support
+
+The CMS is exposed to MCP clients via `@payloadcms/plugin-mcp`, so an AI client
+(Claude Desktop, Claude Code, Cursor, etc.) can read and edit portfolio content
+through tools.
+
+- **Endpoint:** `POST/GET {NEXT_PUBLIC_SERVER_URL}/api/mcp` (Streamable HTTP).
+- **Auth:** `Authorization: Bearer <api-key>`.
+- **Turn off:** set `DISABLE_MCP=true`.
+
+### Create an API key
+
+1. Open `/admin` → **MCP → API Keys** → *Create*.
+2. Tick **Enable API Key** (the key is generated and shown once — copy it).
+3. Toggle the exact capabilities that key should have per collection/global
+   (find / create / update). Keys are scoped: a client only sees tools for the
+   capabilities its key grants, and only ever acts as the key's associated user.
+
+### Connect a client
+
+Streamable-HTTP MCP client config (e.g. Claude Desktop `mcpServers`):
+
+```jsonc
+{
+  "mcpServers": {
+    "mngaafar-portfolio": {
+      "type": "http",
+      "url": "https://www.mngaafar.com/api/mcp",
+      "headers": { "Authorization": "Bearer YOUR_API_KEY" }
+    }
+  }
+}
+```
+
+Exposed tools follow `find*` / `create*` / `update*` per enabled collection
+(e.g. `findProjects`, `updateHome`). Delete is disabled by default;
+globals support find/update only. Which collections/globals are available is
+configured in `src/payload.config.ts` (the `mcpPlugin({...})` block).
+
 ## Content model
 
 Managed in `/admin`:

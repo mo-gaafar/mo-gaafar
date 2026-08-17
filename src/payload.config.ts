@@ -1,5 +1,6 @@
 import { postgresAdapter } from '@payloadcms/db-postgres'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
+import { mcpPlugin } from '@payloadcms/plugin-mcp'
 import path from 'path'
 import { buildConfig } from 'payload'
 import { fileURLToPath } from 'url'
@@ -67,4 +68,77 @@ export default buildConfig({
   sharp,
   serverURL: process.env.NEXT_PUBLIC_SERVER_URL || undefined,
   cors: process.env.NEXT_PUBLIC_SERVER_URL ? [process.env.NEXT_PUBLIC_SERVER_URL] : undefined,
+  plugins: [
+    // Model Context Protocol server — exposes the CMS to MCP clients at
+    // POST/GET /api/mcp (Streamable HTTP). Requests authenticate with an API
+    // key created in the admin (Users → MCP API Keys). Toggle the whole plugin
+    // off with DISABLE_MCP=true.
+    mcpPlugin({
+      disabled: process.env.DISABLE_MCP === 'true',
+      userCollection: 'users',
+      collections: {
+        projects: {
+          description: 'Portfolio projects (builds and open-source work).',
+          enabled: { find: true, create: true, update: true, delete: false },
+        },
+        'case-studies': {
+          description: 'Deep proof stories used for the Fractional CTO positioning.',
+          enabled: { find: true, create: true, update: true, delete: false },
+        },
+        publications: {
+          description: 'Papers, articles, and talks.',
+          enabled: { find: true, create: true, update: true, delete: false },
+        },
+        posts: {
+          description: 'Blog posts (AI automation, agents, RAG, neurotech).',
+          enabled: { find: true, create: true, update: true, delete: false },
+        },
+        services: {
+          description: 'Service offerings shown in the "How I work" section.',
+          enabled: { find: true, create: true, update: true, delete: false },
+        },
+        testimonials: {
+          description: 'Client testimonials / social proof.',
+          enabled: { find: true, create: true, update: true, delete: false },
+        },
+        experience: {
+          description: 'Work history / résumé roles.',
+          enabled: { find: true, create: true, update: true, delete: false },
+        },
+        'skill-groups': {
+          description: 'Grouped skills inventory.',
+          enabled: { find: true, create: true, update: true, delete: false },
+        },
+        education: {
+          description: 'Education history.',
+          enabled: { find: true, create: true, update: true, delete: false },
+        },
+        certifications: {
+          description: 'Professional certifications.',
+          enabled: { find: true, create: true, update: true, delete: false },
+        },
+        media: {
+          description: 'Uploaded images and files.',
+          enabled: { find: true },
+        },
+      },
+      globals: {
+        'site-settings': {
+          description: 'Global site identity, contact details, and social links.',
+          enabled: { find: true, update: true },
+        },
+        home: {
+          description: 'Home-page content: hero, proof metrics, and section visibility.',
+          enabled: { find: true, update: true },
+        },
+      },
+      mcp: {
+        serverOptions: {
+          serverInfo: { name: 'mngaafar-portfolio', version: '1.0.0' },
+          instructions:
+            'Content API for Mohamed Gaafar\'s portfolio. Use these tools to read and edit portfolio content: projects, case studies, publications, blog posts, services, experience, skills, education, certifications, and the site/home globals.',
+        },
+      },
+    }),
+  ],
 })
