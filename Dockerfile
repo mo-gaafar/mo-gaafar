@@ -7,7 +7,9 @@ WORKDIR /app
 
 # ---- Dependencies ----
 FROM base AS deps
-COPY package.json pnpm-lock.yaml* ./
+# pnpm-workspace.yaml carries onlyBuiltDependencies (sharp/esbuild) for pnpm 11;
+# .npmrc carries install settings. Both must be present before install runs.
+COPY package.json pnpm-lock.yaml* pnpm-workspace.yaml* .npmrc* ./
 RUN pnpm install --frozen-lockfile || pnpm install
 
 # ---- Build ----
