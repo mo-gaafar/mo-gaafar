@@ -41,3 +41,13 @@ services:
     # 3000:3000 conflicts with anything already bound to host port 3000.
     expose:
       - '3000'
+    # Join Coolify's shared "coolify" network so the app can resolve the
+    # managed Postgres resource by its internal hostname (the DB lives on this
+    # network). Traefik also routes to the app over it.
+    networks:
+      - default
+      - coolify
+
+networks:
+  coolify:
+    external: true
