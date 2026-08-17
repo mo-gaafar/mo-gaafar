@@ -29,6 +29,45 @@ pnpm generate:types   # after changing collections/globals
 Requires a Postgres reachable via `DATABASE_URL` and a `PAYLOAD_SECRET`
 (see `.env.example`).
 
+## Production, hosting & DNS
+
+One Next.js + Payload app (frontend, `/admin`, and `/api/*` are the same
+container) runs on **Coolify** and is reachable under two hostnames:
+
+- **`mngaafar.com` + `www.mngaafar.com`** — the public **frontend**, served
+  **through the Cloudflare proxy** (orange-cloud) as CDN in front of the origin.
+- **`mo-cms.botica.it.com`** — the **backend** host (admin + REST/GraphQL + MCP).
+  Not behind Cloudflare; DNS points straight at the origin. **Keep as-is.**
+
+Topology: `mngaafar.com` (Cloudflare edge) → Coolify origin `157.90.237.90`
+(Traefik) → the `app` container (port 3000). Traefik terminates TLS at the
+origin with **Let's Encrypt** certs (HTTP-01), and Cloudflare runs **Full
+(strict)** SSL on top.
+
+**Coolify:** app `portfolio`, uuid `zk1p7tgp8dckzly0m4xsrl8c`, project
+`mngaafar-portfolio`, build pack **dockercompose** (builds the `Dockerfile`).
+Domains live in the app's `docker_compose_domains` (comma-separated), currently
+all three hosts point at the single `app` service. Changing domains requires a
+**redeploy** so Traefik regenerates routers and requests certs.
+
+**Cloudflare** (zone `mngaafar.com`): apex + `www` are `A → 157.90.237.90`,
+proxied. Mail/verification records (MX, SPF, DKIM, DMARC, brevo,
+google-site-verification) are unrelated to hosting — **leave them untouched**.
+To (re)issue an origin cert cleanly, set the record grey-cloud (DNS-only) first
+so HTTP-01 validates against the origin, verify, then flip back to proxied.
+
+**Ops secrets** (never commit): `CLOUDFLARE_API_TOKEN` (DNS-scoped — cannot
+change zone SSL settings), `COOLIFY_API_TOKEN` + `COOLIFY_BASE_URL` (deploy/edit
+the app), and `PAYLOAD_MO_API` (MCP bearer key).
+
+⚠️ **Canonical/SEO caveat:** `NEXT_PUBLIC_SERVER_URL` is
+`https://mo-cms.botica.it.com`, and `serverURL`/`cors` derive from it
+(`src/payload.config.ts:70-71`). So pages on `mngaafar.com` render fine but
+their `<link rel=canonical>`/OG tags point at `mo-cms`. To make `mngaafar.com`
+canonical, set `NEXT_PUBLIC_SERVER_URL=https://www.mngaafar.com` **and** widen
+`cors` to include both hosts (so admin/MCP on `mo-cms` keep working), then
+redeploy.
+
 ## Key files
 
 - `src/payload.config.ts` — Payload config (Postgres, collections, globals).
@@ -81,6 +120,10 @@ The CMS is exposed over MCP via `@payloadcms/plugin-mcp` at `/api/mcp`
 collections/globals in the `mcpPlugin({...})` block in `src/payload.config.ts`;
 issue keys in `/admin` → MCP → API Keys. Disable with `DISABLE_MCP=true`. See
 `docs/08-mcp.md`.
+
+Production endpoint: `https://mo-cms.botica.it.com/api/mcp` (the backend host),
+bearer key in the `PAYLOAD_MO_API` env var. Verify with an `initialize` call —
+the server identifies as `mngaafar-portfolio`.
 
 ## Notes
 
