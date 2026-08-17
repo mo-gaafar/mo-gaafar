@@ -46,22 +46,31 @@ it clears and re-inserts content collections each run.
 
 ## Deploying to Coolify
 
-1. Create a **Docker Compose** resource pointing at this repo's
+Postgres is a **separate Coolify-managed database resource** (Coolify runs it
+from the official Postgres image and handles its volume/backups). The app
+deploys on its own and connects via `DATABASE_URL`. `docker-compose.yml` is
+app-only; the bundled-Postgres file (`docker-compose.local.yml`) is for local
+runs only.
+
+1. In Coolify, create a **PostgreSQL** database resource. Copy its **internal**
+   connection string (e.g. `postgres://user:pass@<service>:5432/<db>`).
+2. Create a **Docker Compose** resource pointing at this repo's
    `docker-compose.yml`.
-2. Set env vars in Coolify: `PAYLOAD_SECRET`, `NEXT_PUBLIC_SERVER_URL`
-   (your domain), and `POSTGRES_PASSWORD`. Optionally `SEED_ADMIN_*`.
-3. Deploy. The `db` service is a bundled Postgres with a persistent volume;
-   the app connects to it over the compose network. Schema is auto-synced on
-   boot (`push: true`).
-4. First run only — seed the content from the app container's terminal:
+3. Set env vars in Coolify: `DATABASE_URL` (from step 1), `PAYLOAD_SECRET`,
+   `NEXT_PUBLIC_SERVER_URL` (your domain), the `S3_*` (R2) vars, and optionally
+   `SEED_ADMIN_EMAIL` / `SEED_ADMIN_PASSWORD`.
+4. Deploy. Schema is auto-synced on boot (`push: true`), so no manual migration
+   step is needed against the fresh database.
+5. First run only — seed the content from the app container's terminal:
    ```bash
    pnpm seed
    ```
-5. Point your domain at the app service and set it as `NEXT_PUBLIC_SERVER_URL`.
+6. Point your domain at the app service and set it as `NEXT_PUBLIC_SERVER_URL`.
 
-> If you prefer Coolify's managed Postgres over the bundled `db` service,
-> delete the `db` service from `docker-compose.yml` and set `DATABASE_URL` to
-> the managed instance.
+> Local prod-like run with a throwaway Postgres:
+> `docker compose -f docker-compose.local.yml up --build`.
+>
+> If the managed DB enforces TLS, append `?sslmode=require` to `DATABASE_URL`.
 
 ### Media storage (important) + Cloudflare
 

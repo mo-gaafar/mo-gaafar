@@ -10,17 +10,23 @@ the rest are already in the repo or are one-off commands.
 
 - [ ] 🧩 A Coolify instance/server you can deploy to.
 - [ ] 🧩 A Cloudflare account with the `mngaafar.com` domain added.
-- [ ] Decide DB: bundled Postgres in `docker-compose.yml` (default) **or**
-      Coolify-managed Postgres (then delete the `db` service and set `DATABASE_URL`).
+- [ ] DB plan: a **Coolify-managed PostgreSQL** resource (recommended; app
+      connects via `DATABASE_URL`). `docker-compose.yml` is app-only;
+      `docker-compose.local.yml` bundles Postgres for local runs only.
 
-## 1. Secrets & environment
+## 1. Database (Coolify-managed Postgres) 🧩
+
+- [ ] Coolify → create a **PostgreSQL** database resource.
+- [ ] Copy its **internal** connection string → this is `DATABASE_URL`.
+- [ ] If the DB enforces TLS, append `?sslmode=require` to `DATABASE_URL`.
+
+## 2. Secrets & environment
 
 - [ ] Generate a strong `PAYLOAD_SECRET` — `openssl rand -base64 32`.
-- [ ] Choose a strong `POSTGRES_PASSWORD` (if using the bundled db).
 - [ ] Decide `SEED_ADMIN_EMAIL` / `SEED_ADMIN_PASSWORD` for the first admin login.
 - [ ] Note `NEXT_PUBLIC_SERVER_URL` = `https://www.mngaafar.com` (your real domain).
 
-## 2. Cloudflare R2 (media storage) 🧩
+## 3. Cloudflare R2 (media storage) 🧩
 
 > Required — container disks are ephemeral; uploads must live in R2.
 
@@ -29,16 +35,17 @@ the rest are already in the repo or are one-off commands.
 - [ ] Record: `S3_BUCKET`, `S3_ENDPOINT` (`https://<account_id>.r2.cloudflarestorage.com`),
       `S3_REGION=auto`, `S3_ACCESS_KEY_ID`, `S3_SECRET_ACCESS_KEY`.
 
-## 3. Deploy on Coolify 🧩
+## 4. Deploy on Coolify 🧩
 
-- [ ] Create a **Docker Compose** resource pointing at this repo (`docker-compose.yml`),
-      branch `claude/portfolio-rebuild-modernize-szz2gi` (or after merge, `main`).
-- [ ] Set env vars in Coolify: `PAYLOAD_SECRET`, `NEXT_PUBLIC_SERVER_URL`,
-      `POSTGRES_PASSWORD`, and all `S3_*` from step 2. Optionally `SEED_ADMIN_*`.
-- [ ] Deploy. Confirm the container starts and the health check passes.
+- [ ] Create a **Docker Compose** resource pointing at this repo (`docker-compose.yml`
+      — app only), branch `claude/portfolio-rebuild-modernize-szz2gi`
+      (or after merge, `main`).
+- [ ] Set env vars in Coolify: `DATABASE_URL` (from step 1), `PAYLOAD_SECRET`,
+      `NEXT_PUBLIC_SERVER_URL`, all `S3_*` from step 3, and optionally `SEED_ADMIN_*`.
+- [ ] Deploy. Confirm the container starts (schema auto-syncs on boot).
 - [ ] Confirm the app answers on its Coolify URL (before Cloudflare is in front).
 
-## 4. First-run content seed (once)
+## 5. First-run content seed (once)
 
 - [ ] In the app container's terminal: `pnpm seed`.
 - [ ] Verify counts look right (7 experience, 4 skill groups, 4 projects,
@@ -46,7 +53,7 @@ the rest are already in the repo or are one-off commands.
 - [ ] Log in to `/admin` with the seed admin credentials.
 - [ ] **Change the admin password** (and delete/rotate the seed default).
 
-## 5. Cloudflare in front 🧩
+## 6. Cloudflare in front 🧩
 
 - [ ] DNS: proxied (orange-cloud) record for the app at the Coolify host.
 - [ ] SSL/TLS mode: **Full (strict)**.
@@ -57,7 +64,7 @@ the rest are already in the repo or are one-off commands.
   - [ ] **Bypass** `/admin*` and `/api/*` (except `/api/media`).
 - [ ] Confirm `NEXT_PUBLIC_SERVER_URL` matches the live domain, then redeploy.
 
-## 6. Content polish (in `/admin`) 🧩
+## 7. Content polish (in `/admin`) 🧩
 
 - [ ] **Booking CTA:** set `bookingUrl` in Site Settings (Cal.com/Calendly) —
       CTAs fall back to email until then.
@@ -70,7 +77,7 @@ the rest are already in the repo or are one-off commands.
 - [ ] Upload a test image in `/admin` → confirm it appears **and survives a
       redeploy** (proves R2 works).
 
-## 7. SEO & correctness
+## 8. SEO & correctness
 
 - [ ] Résumé opens at `/resume` and the PDF loads
       (`/files/Mohamed%20Gaafar%20CV.pdf`).
@@ -80,7 +87,7 @@ the rest are already in the repo or are one-off commands.
 - [ ] GA4 firing (id `G-5GL6K1NVFM` in Site Settings) — or update/remove it.
 - [ ] Open Graph / title look right when sharing the URL.
 
-## 8. MCP (optional)
+## 9. MCP (optional)
 
 - [ ] Decide if MCP stays on (default) or set `DISABLE_MCP=true`.
 - [ ] If on: create an API key in `/admin` → MCP → API Keys (tick *Enable API Key*).
@@ -88,7 +95,7 @@ the rest are already in the repo or are one-off commands.
       (see `docs/08-mcp.md`).
 - [ ] Confirm `/api/mcp` is **cache-bypassed** at Cloudflare.
 
-## 9. Go-live verification
+## 10. Go-live verification
 
 - [ ] `https://www.mngaafar.com/` loads over HTTPS; `cf-cache-status` present on
       static assets.
@@ -97,14 +104,14 @@ the rest are already in the repo or are one-off commands.
 - [ ] Mobile nav + layout check on a phone width.
 - [ ] Lighthouse pass (perf/SEO/a11y) — note anything to follow up.
 
-## 10. Cutover & cleanup
+## 11. Cutover & cleanup
 
 - [ ] Merge the branch to `main` (or point Coolify at `main`).
 - [ ] Confirm the old GitHub Pages deploy is retired (the workflow was removed;
       unpublish Pages in the repo settings if still enabled).
 - [ ] Optionally delete the retired Hugo dirs (`content/`, `data/`, `themes/`,
       `static/`, `content-example/`) — superseded by Payload + `public/`.
-- [ ] Set up DB backups (Coolify scheduled backup or `pg_dump` cron).
+- [ ] Enable **scheduled backups on the Coolify PostgreSQL resource**.
 
 ## Optional / later
 

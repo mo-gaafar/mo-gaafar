@@ -1,9 +1,18 @@
-# Docker Compose for Coolify (or local prod-like runs).
+# Docker Compose for Coolify — app only.
 #
-# In Coolify: create a "Docker Compose" resource pointing at this file.
-# Set the environment variables (PAYLOAD_SECRET, NEXT_PUBLIC_SERVER_URL,
-# POSTGRES_PASSWORD, and optionally SEED_ADMIN_*) in the Coolify UI.
-# Coolify injects them at deploy time.
+# Postgres is provisioned SEPARATELY as a Coolify PostgreSQL database resource
+# (Coolify runs it from the official postgres image and manages backups/volume).
+# This compose deploys just the app and connects to that database via
+# DATABASE_URL.
+#
+# In Coolify:
+#   1. Create a "PostgreSQL" database resource. Copy its connection string.
+#   2. Create a "Docker Compose" resource pointing at this file.
+#   3. Set env vars in the Coolify UI: DATABASE_URL (from step 1), PAYLOAD_SECRET,
+#      NEXT_PUBLIC_SERVER_URL, the S3_* (R2) vars, and optionally SEED_ADMIN_*.
+#
+# For a self-contained LOCAL run with a bundled Postgres, use
+# docker-compose.local.yml instead.
 
 services:
   app:
@@ -11,14 +20,16 @@ services:
       context: .
       dockerfile: Dockerfile
     restart: unless-stopped
-    depends_on:
-      db:
-        condition: service_healthy
     environment:
-      DATABASE_URL: postgres://portfolio:${POSTGRES_PASSWORD:-portfolio}@db:5432/portfolio
+      # Point at the Coolify-managed PostgreSQL resource. Use its INTERNAL
+      # hostname (same Docker network). Add ?sslmode=require if the DB enforces TLS.
+      DATABASE_URL: ${DATABASE_URL:?set DATABASE_URL to the Coolify Postgres connection string}
       PAYLOAD_SECRET: ${PAYLOAD_SECRET:?set a strong PAYLOAD_SECRET}
       NEXT_PUBLIC_SERVER_URL: ${NEXT_PUBLIC_SERVER_URL:-http://localhost:3000}
       NODE_ENV: production
+      # First-run admin (used only by `pnpm seed`).
+      SEED_ADMIN_EMAIL: ${SEED_ADMIN_EMAIL:-}
+      SEED_ADMIN_PASSWORD: ${SEED_ADMIN_PASSWORD:-}
       # Media storage on Cloudflare R2 (required in prod — see docs/09-cloudflare.md).
       S3_BUCKET: ${S3_BUCKET:-}
       S3_ENDPOINT: ${S3_ENDPOINT:-}
@@ -27,21 +38,3 @@ services:
       S3_SECRET_ACCESS_KEY: ${S3_SECRET_ACCESS_KEY:-}
     ports:
       - '3000:3000'
-
-  db:
-    image: postgres:16-alpine
-    restart: unless-stopped
-    environment:
-      POSTGRES_USER: portfolio
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-portfolio}
-      POSTGRES_DB: portfolio
-    volumes:
-      - db-data:/var/lib/postgresql/data
-    healthcheck:
-      test: ['CMD-SHELL', 'pg_isready -U portfolio -d portfolio']
-      interval: 5s
-      timeout: 5s
-      retries: 10
-
-volumes:
-  db-data:

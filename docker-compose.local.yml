@@ -1,0 +1,46 @@
+# Self-contained LOCAL prod-like run: app + bundled Postgres.
+#
+#   docker compose -f docker-compose.local.yml up --build
+#
+# For Coolify, use docker-compose.yml (app only) with a separate Coolify-managed
+# PostgreSQL resource instead.
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgres://portfolio:${POSTGRES_PASSWORD:-portfolio}@db:5432/portfolio
+      PAYLOAD_SECRET: ${PAYLOAD_SECRET:-dev-secret-not-for-production}
+      NEXT_PUBLIC_SERVER_URL: ${NEXT_PUBLIC_SERVER_URL:-http://localhost:3000}
+      NODE_ENV: production
+      S3_BUCKET: ${S3_BUCKET:-}
+      S3_ENDPOINT: ${S3_ENDPOINT:-}
+      S3_REGION: ${S3_REGION:-auto}
+      S3_ACCESS_KEY_ID: ${S3_ACCESS_KEY_ID:-}
+      S3_SECRET_ACCESS_KEY: ${S3_SECRET_ACCESS_KEY:-}
+    ports:
+      - '3000:3000'
+
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: portfolio
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-portfolio}
+      POSTGRES_DB: portfolio
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U portfolio -d portfolio']
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  db-data:
