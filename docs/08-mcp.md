@@ -11,6 +11,8 @@ read and edit portfolio content as tools. Implemented with the official
   (SSE disabled, so no Redis needed). Note: the endpoint is **not** on
   `mngaafar.com`.
 - **Auth:** `Authorization: Bearer <api-key>`. Unauthenticated requests get `401`.
+  In Claude remote/dev sessions the key is provided as the `PAYLOAD_MO_API`
+  environment variable.
 - **Kill switch:** `DISABLE_MCP=true`.
 - Served through Payload's existing custom-endpoint route
   (`src/app/(payload)/api/[...slug]/route.ts`) — no extra route file.

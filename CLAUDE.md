@@ -84,6 +84,18 @@ is `https://mo-cms.botica.it.com/api/mcp`. Do **not** assume the endpoint lives
 on `mngaafar.com` (that is the eventual public domain from the old Hugo docs,
 not where the CMS is hosted).
 
+In Claude remote/dev sessions the MCP API key is provided as the
+**`PAYLOAD_MO_API`** environment variable — check `env` before concluding you
+have no CMS access. Example call:
+
+```bash
+curl -X POST https://mo-cms.botica.it.com/api/mcp \
+  -H "Authorization: Bearer $PAYLOAD_MO_API" \
+  -H "Content-Type: application/json" \
+  -H "Accept: application/json, text/event-stream" \
+  -d '{"jsonrpc":"2.0","id":1,"method":"tools/list","params":{}}'
+```
+
 Configure exposed collections/globals in the `mcpPlugin({...})` block in
 `src/payload.config.ts`; issue keys in `/admin` → MCP → API Keys. Disable with
 `DISABLE_MCP=true`. See `docs/08-mcp.md`.
