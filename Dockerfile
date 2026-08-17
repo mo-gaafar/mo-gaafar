@@ -8,7 +8,11 @@ WORKDIR /app
 # ---- Dependencies ----
 FROM base AS deps
 COPY package.json pnpm-lock.yaml* ./
-RUN pnpm install --frozen-lockfile || pnpm install
+# --prod=false forces devDependencies (typescript, etc.) to install even when
+# NODE_ENV=production is passed as a build arg. Next.js needs `typescript` to
+# apply tsconfig `paths` (e.g. the `@payload-config` alias); without it the
+# production build fails with "Module not found: '@payload-config'".
+RUN pnpm install --frozen-lockfile --prod=false || pnpm install --prod=false
 
 # ---- Build ----
 FROM base AS build
