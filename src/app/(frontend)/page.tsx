@@ -94,20 +94,17 @@ export default async function HomePage() {
             )}
           </div>
 
-          <div className="hero-companion">
-            {portrait && (
-              <aside className="hero-visual" aria-label="Portrait">
-                <div className="orbit orbit-one" aria-hidden="true" />
-                <div className="orbit orbit-two" aria-hidden="true" />
-                <div className="hero-portrait">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={portrait} width={480} height={540} fetchPriority="high" alt={`${settings?.firstName ?? ''} ${settings?.lastName ?? ''}`.trim()} />
-                </div>
-                <div className="portrait-caption"><span aria-hidden="true">↗</span> {settings?.roleTitle}</div>
-              </aside>
-            )}
-            <RobotCat bookingUrl={settings?.bookingUrl} />
-          </div>
+          {portrait && (
+            <aside className="hero-visual" aria-label="Portrait">
+              <div className="orbit orbit-one" aria-hidden="true" />
+              <div className="orbit orbit-two" aria-hidden="true" />
+              <div className="hero-portrait">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={portrait} width={480} height={540} fetchPriority="high" alt={`${settings?.firstName ?? ''} ${settings?.lastName ?? ''}`.trim()} />
+              </div>
+              <div className="portrait-caption"><span aria-hidden="true">↗</span> {settings?.roleTitle}</div>
+            </aside>
+          )}
         </div>
         {proof.length > 0 && (
           <div className="proof-strip">
@@ -120,6 +117,7 @@ export default async function HomePage() {
           </div>
         )}
       </header>
+      <RobotCat bookingUrl={settings?.bookingUrl} />
 
       {/* ---------- Services ---------- */}
       {vis.showServices !== false && services.length > 0 && (
