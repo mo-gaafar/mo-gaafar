@@ -26,6 +26,7 @@ services:
       DATABASE_URL: ${DATABASE_URL:?set DATABASE_URL to the Coolify Postgres connection string}
       PAYLOAD_SECRET: ${PAYLOAD_SECRET:?set a strong PAYLOAD_SECRET}
       NEXT_PUBLIC_SERVER_URL: ${NEXT_PUBLIC_SERVER_URL:-http://localhost:3000}
+      SITE_URL: ${SITE_URL:-https://mngaafar.com}
       NODE_ENV: production
       # First-run admin (used only by `pnpm seed`).
       SEED_ADMIN_EMAIL: ${SEED_ADMIN_EMAIL:-}

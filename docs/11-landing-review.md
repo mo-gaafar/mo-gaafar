@@ -7,7 +7,7 @@ Reviewed 25 October 2026 on `claude/landing-page-design-audit-ubarw4` (base `ffc
 The local `main` checkout was outdated. After fetching, remote `main` already
 contained the landing branch's implementation; its one additional commit was a
 README update. This revamp was made on the requested landing branch, not main.
-Changes are local and have not been deployed or written into the production CMS.
+Changes are pushed to the landing branch. Production CMS content was not overwritten.
 
 ## What changed
 
@@ -31,9 +31,9 @@ Changes are local and have not been deployed or written into the production CMS.
 | Public website | https://mngaafar.com responds 200 and identifies as Next.js, Payload. |
 | CMS | https://mo-cms.botica.it.com/admin responds 200. Payload 3 is part of the Next.js app, not a separate SaaS CMS. |
 | CMS API | Documented endpoint: https://mo-cms.botica.it.com/api/mcp. Requires a scoped API key. |
-| Compute | Docker Compose configuration targets Coolify, exposing app port 3000 on its shared network. Exact running commit and server provider require the Coolify dashboard. |
+| Compute | Confirmed Coolify Docker Compose app mngaafar-portfolio, exposing app port 3000. Tracking was changed from main to the landing branch on October 25. Server provider not inspected. |
 | Database | PostgreSQL via DATABASE_URL; documented as a separate Coolify-managed resource. Live connection and backups were not inspected. |
-| Media | S3-compatible storage (intended Cloudflare R2) when S3_BUCKET is set; otherwise local container disk. Production setting remains unverified. |
+| Media | R2 is not configured and no persistent storage mounts exist. The live media collection contains zero records. Configure storage before uploading files. |
 | Edge/DNS | Cloudflare is the documented target, but neither checked response had cf-ray. This does not establish Cloudflare proxying. Confirm DNS and dashboard settings. |
 | Previous host | Legacy Hugo/GitHub Pages files are historical; the current public response is Next.js/Payload. GitHub Pages account settings were not inspected. |
 
@@ -64,11 +64,12 @@ No production biography, dates, certificates, or statistics were overwritten.
 
 ### Before deployment
 
-- [ ] In Coolify, verify the tracked branch is `claude/landing-page-design-audit-ubarw4`
+- [x] In Coolify, verify the tracked branch is `claude/landing-page-design-audit-ubarw4`
       and review the intended commit before triggering a deployment.
 - [ ] Take a PostgreSQL backup and test restoration. Confirm R2 uploads survive redeployment.
-- [ ] Set NEXT_PUBLIC_SERVER_URL to the chosen public origin, e.g. https://mngaafar.com,
-      and redirect www consistently. The CMS hostname must not become the preferred public canonical.
+- [x] Set SITE_URL to https://mngaafar.com for public canonicals. Keep
+      NEXT_PUBLIC_SERVER_URL at the CMS origin for existing API/CMS connections.
+- [ ] Redirect www and the CMS hostname's public pages consistently to the canonical host.
 - [ ] Review the existing database `push: true` setting and introduce versioned migrations
       before future schema changes. This revamp changes no collection/global schema.
 - [ ] **Do not run pnpm seed on the populated production database.** It deletes and

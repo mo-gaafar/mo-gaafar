@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 
-export const siteUrl = () => new URL(process.env.NEXT_PUBLIC_SERVER_URL || 'https://mngaafar.com').origin
+export const siteUrl = () => new URL(process.env.SITE_URL || process.env.NEXT_PUBLIC_SERVER_URL || 'https://mngaafar.com').origin
 
 export function pageMetadata(title: string, description: string, path: string): Metadata {
   return {
