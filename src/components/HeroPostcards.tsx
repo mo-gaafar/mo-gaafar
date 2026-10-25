@@ -1,7 +1,7 @@
 export function HeroPostcards() {
   return (
-    <div className="hero-postcards" aria-label="My roots and everyday life">
-      <figure className="hero-postcard postcard-egypt">
+    <div className="hero-postcards" aria-label="A few things about me">
+      <button type="button" className="hero-postcard postcard-egypt" aria-label="Egypt" aria-describedby="doodle-egypt">
         <svg viewBox="0 0 140 100" aria-hidden="true" fill="none" stroke="var(--doodle-line)" strokeWidth="2.5" strokeLinejoin="round">
           <circle cx="106" cy="22" r="13" fill="var(--doodle-fill)" stroke="none" />
           <path d="M8 84 49 22 91 84Z" fill="var(--doodle-fill)" />
@@ -10,9 +10,9 @@ export function HeroPostcards() {
           <path d="M5 88q55-8 130 0" />
           <path d="m17 23 4-6m-3 18-7-1" stroke="var(--doodle-line)" />
         </svg>
-        <figcaption>Half Egyptian<span>My Egyptian roots</span></figcaption>
-      </figure>
-      <figure className="hero-postcard postcard-syria">
+        <span className="doodle-caption" role="tooltip" id="doodle-egypt">Egypt · أم الدنيا<span>Mother of the world.</span></span>
+      </button>
+      <button type="button" className="hero-postcard postcard-syria" aria-label="Syria" aria-describedby="doodle-syria">
         <svg viewBox="0 0 140 100" aria-hidden="true" fill="none" stroke="var(--doodle-line)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
           <path d="M81 42h49v42h-10V63a8 8 0 0 0-16 0v21H91V54H81Z" fill="var(--doodle-fill)" />
           <path d="M83 35h49v8H83" />
@@ -23,9 +23,9 @@ export function HeroPostcards() {
           <path d="M46 85l7-36 8 36" fill="var(--doodle-fill)" />
           <path d="M8 89q10-5 20 0t20 0t20 0t20 0t20 0t20 0M17 96q10-4 20 0t20 0t20 0" stroke="var(--primary)" />
         </svg>
-        <figcaption>Half Syrian<span>نواعير · Syrian waterwheels</span></figcaption>
-      </figure>
-      <figure className="hero-postcard postcard-pisa">
+        <span className="doodle-caption" role="tooltip" id="doodle-syria">Syria · يا شام<span>A little love for al-Sham.</span></span>
+      </button>
+      <button type="button" className="hero-postcard postcard-pisa" aria-label="Pisa" aria-describedby="doodle-pisa">
         <svg viewBox="0 0 140 100" aria-hidden="true" fill="none" stroke="var(--doodle-line)" strokeWidth="2.5" strokeLinejoin="round">
           <path d="M19 89q45-9 103 0" stroke="var(--doodle-line)" />
           <g transform="rotate(12 70 86)">
@@ -35,18 +35,18 @@ export function HeroPostcards() {
           </g>
           <path d="M17 30h12m-6-6v12" stroke="var(--doodle-line)" />
         </svg>
-        <figcaption>Home in Pisa<span>Life in Italy</span></figcaption>
-      </figure>
-      <figure className="hero-postcard postcard-torino">
+        <span className="doodle-caption" role="tooltip" id="doodle-pisa">Pisa<span>My home in Italy. A little off-centre, in good company.</span></span>
+      </button>
+      <button type="button" className="hero-postcard postcard-torino" aria-label="Torino" aria-describedby="doodle-torino">
         <svg viewBox="0 0 140 100" aria-hidden="true" fill="none" stroke="var(--doodle-line)" strokeWidth="2.5" strokeLinejoin="round">
           <path d="M36 88V68h68v20Z" fill="var(--doodle-fill)" />
           <path d="M40 66q25-12 30-36 5 24 30 36Z" fill="var(--doodle-fill)" />
           <path d="M65 31V23h10v8M70 23V5M62 35h16M32 89h76M45 73v10m12-10v10m13-10v10m13-10v10m12-10v10" />
           <path d="m106 28 3-7 3 7 7 3-7 3-3 7-3-7-7-3Z" fill="var(--doodle-fill)" stroke="none" />
         </svg>
-        <figcaption>Work in Torino<span>The company’s home</span></figcaption>
-      </figure>
-      <figure className="hero-postcard postcard-cat">
+        <span className="doodle-caption" role="tooltip" id="doodle-torino">Torino<span>My company’s home, under the Mole.</span></span>
+      </button>
+      <button type="button" className="hero-postcard postcard-cat" aria-label="Cats" aria-describedby="doodle-cat">
         <svg viewBox="0 0 140 100" aria-hidden="true" fill="none" stroke="var(--doodle-line)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
           <path d="M93 80q32 5 28-17-3-12-11-6" stroke="var(--doodle-line)" strokeWidth="10" />
           <ellipse cx="73" cy="71" rx="29" ry="21" fill="var(--doodle-fill)" />
@@ -55,8 +55,8 @@ export function HeroPostcards() {
           <path d="m65 33 3 9m8-9-2 9M53 52q5-6 10 0m17 0q5-6 10 0m-24 9 5 4 5-4m-5 4v5M35 56l15 3m-14 8 14-3m44-5 15-3m-15 8 14 3" />
           <path d="M55 87h15m8 0h15" />
         </svg>
-        <figcaption>Cat person<span>Obviously.</span></figcaption>
-      </figure>
+        <span className="doodle-caption" role="tooltip" id="doodle-cat">Cat person<span>Every good workspace needs a cat.</span></span>
+      </button>
     </div>
   )
 }
