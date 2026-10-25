@@ -90,7 +90,7 @@ No production biography, dates, certificates, or statistics were overwritten.
 
 ### SEO and generative search visibility
 
-- [ ] After deploying, inspect homepage, case-study, project, and blog canonical/OG tags.
+- [x] After deploying, inspect homepage, case-study, project, and blog canonical/OG tags.
 - [ ] Submit /sitemap.xml in Google Search Console and Bing Webmaster Tools.
 - [ ] Use URL Inspection to confirm indexability; validate the JSON-LD and social preview.
 - [ ] Check old URLs and permanent redirects, robots.txt, and accidental preview-domain indexing.
@@ -125,8 +125,16 @@ TypeScript and assert-based SEO/contact checks passed. Production build passed.
 Production HTTP checks passed for eight pages (status, single H1, canonical),
 21 unique sitemap URLs, robots rules, the PNG social image, and a missing-case 404.
 Desktop light/dark and 390px mobile layouts were visually reviewed; mobile menu and
-case-study links were exercised. No production Lighthouse score, authenticated CMS
-edit, Search Console inspection, or deployment has been performed.
+case-study links were exercised.
+
+Deployed successfully through Coolify on October 25, 2026 at 10:28 UTC:
+commit `5892881cb662c37486c7b819099898546ea79f09`, deployment
+`1pfydmvfkl8jb5sk76vszffk`, landing branch. All 21 live sitemap pages returned 200,
+had one H1, the correct public canonical, and the expected OG image. Home JSON-LD,
+robots.txt, sitemap.xml, PNG sharing image, www host, and CMS admin response passed.
+Live desktop (1440px) and mobile (390px) screenshots were visually reviewed.
+No production Lighthouse score, authenticated CMS edit, database restore test,
+or Search Console inspection was performed. The existing favicon request returns 404.
 
 Local production preview: http://127.0.0.1:3037 (while the preview process is running).
 Screenshot: `output/playwright/landing-desktop.jpg` (ignored local artifact).
