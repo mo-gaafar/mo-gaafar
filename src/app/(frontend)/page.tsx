@@ -3,6 +3,7 @@ import { getPayloadClient, mediaUrl } from '../../lib/payload'
 import { Icon, type IconName } from '../../components/Icon'
 import { contactAction, jsonLd, siteUrl } from '../../lib/seo'
 import { WhatsAppLink } from '../../components/WhatsAppLink'
+import { RobotCat } from '../../components/RobotCat'
 
 export const dynamic = 'force-dynamic'
 
@@ -93,17 +94,20 @@ export default async function HomePage() {
             )}
           </div>
 
-          {portrait && (
-            <aside className="hero-visual" aria-label="Portrait">
-              <div className="orbit orbit-one" aria-hidden="true" />
-              <div className="orbit orbit-two" aria-hidden="true" />
-              <div className="hero-portrait">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={portrait} width={480} height={540} fetchPriority="high" alt={`${settings?.firstName ?? ''} ${settings?.lastName ?? ''}`.trim()} />
-              </div>
-              <div className="portrait-caption"><span aria-hidden="true">↗</span> {settings?.roleTitle}</div>
-            </aside>
-          )}
+          <div className="hero-companion">
+            {portrait && (
+              <aside className="hero-visual" aria-label="Portrait">
+                <div className="orbit orbit-one" aria-hidden="true" />
+                <div className="orbit orbit-two" aria-hidden="true" />
+                <div className="hero-portrait">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={portrait} width={480} height={540} fetchPriority="high" alt={`${settings?.firstName ?? ''} ${settings?.lastName ?? ''}`.trim()} />
+                </div>
+                <div className="portrait-caption"><span aria-hidden="true">↗</span> {settings?.roleTitle}</div>
+              </aside>
+            )}
+            <RobotCat bookingUrl={settings?.bookingUrl} />
+          </div>
         </div>
         {proof.length > 0 && (
           <div className="proof-strip">
