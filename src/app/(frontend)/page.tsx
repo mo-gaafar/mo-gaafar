@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { getPayloadClient, mediaUrl } from '../../lib/payload'
 import { Icon, type IconName } from '../../components/Icon'
 import { contactAction, jsonLd, siteUrl } from '../../lib/seo'
+import { WhatsAppLink } from '../../components/WhatsAppLink'
 
 export const dynamic = 'force-dynamic'
 
@@ -57,6 +58,8 @@ export default async function HomePage() {
             <h1>{home?.headline || 'AI Engineer & Fractional CTO'}</h1>
             <p className="hero-lede">{home?.lede}</p>
             <div className="hero-actions">
+              <WhatsAppLink />
+              {settings?.bookingUrl && <a href={settings.bookingUrl} className="btn btn-secondary" target="_blank" rel="noopener">Book a meeting</a>}
               {ctas.length > 0 ? (
                 ctas.map((c, i) => (
                   <a
@@ -67,7 +70,7 @@ export default async function HomePage() {
                         ? 'btn btn-secondary'
                         : c.style === 'link'
                           ? 'btn btn-link'
-                          : 'btn btn-primary'
+                          : 'btn btn-secondary'
                     }
                     target={c.url?.startsWith('http') ? '_blank' : undefined}
                     rel="noopener"
@@ -141,6 +144,7 @@ export default async function HomePage() {
               </article>
             ))}
           </div>
+          <p style={{ marginTop: '1.5rem' }}><WhatsAppLink>Discuss your project on WhatsApp</WhatsAppLink></p>
         </section>
       )}
 
@@ -350,13 +354,12 @@ export default async function HomePage() {
           <p className="eyebrow">Let’s talk</p>
           <h2>Have a system worth building?</h2>
           <p className="lead">
-            Tell me what you’re trying to build — or un-break. If I can help, I’ll say how. If I can’t, I’ll tell you that too.
+            Have a question, an idea, or a project in mind? Just message me on WhatsApp at +39 351 427 7009.
           </p>
         </div>
         <div className="hero-actions">
-          <a href={bookingUrl} className="btn btn-primary" target={bookingUrl.startsWith('http') ? '_blank' : undefined} rel="noopener">
-            <Icon name="send" size={16} /> {contact.label}
-          </a>
+          <WhatsAppLink />
+          {settings?.bookingUrl && <a href={settings.bookingUrl} className="btn btn-secondary" target="_blank" rel="noopener">Book a meeting</a>}
           {settings?.email && (
             <a href={`mailto:${settings.email}`} className="btn btn-secondary">
               <Icon name="mail" size={16} /> {settings.email}

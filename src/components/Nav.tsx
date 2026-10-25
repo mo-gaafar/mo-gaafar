@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { Icon, type IconName } from './Icon'
 import { ThemeToggle } from './ThemeToggle'
 import { contactAction } from '../lib/seo'
+import { WhatsAppLink } from './WhatsAppLink'
 
 type Social = { label: string; url: string }
 
@@ -73,10 +74,11 @@ export function Nav({
         </ul>
 
         <div className="sidenav-foot">
-          <a className="nav-cta" href={cta.url} target={bookingUrl ? '_blank' : undefined} rel="noopener">
+          <WhatsAppLink className="nav-cta">WhatsApp me</WhatsAppLink>
+          {bookingUrl && <a className="btn btn-secondary" href={cta.url} target="_blank" rel="noopener">
             <Icon name="send" size={15} />
             {cta.label}
-          </a>
+          </a>}
           {socials.length > 0 && (
             <ul className="nav-socials" aria-label="Social links">
               {socials.map((s) => (

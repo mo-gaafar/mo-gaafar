@@ -1,4 +1,5 @@
 import { Icon, type IconName } from './Icon'
+import { WhatsAppLink } from './WhatsAppLink'
 
 type Social = { label: string; url: string }
 
@@ -22,6 +23,7 @@ export function Footer({
         <span>
           © {year} {name}. Built with Next.js &amp; Payload.
         </span>
+        <WhatsAppLink>WhatsApp · +39 351 427 7009</WhatsAppLink>
         {socials.length > 0 && (
           <ul className="footer-socials" aria-label="Social links">
             {socials.map((s) => (

@@ -686,9 +686,12 @@ h4 {
 
 /* ============================================================ Footer */
 .site-footer {
+  padding-bottom: 5rem;
   border-top: 1px solid var(--border);
   background: var(--surface);
 }
+.whatsapp-float { position: fixed; bottom: max(1rem, env(safe-area-inset-bottom)); right: 1rem; z-index: 50; padding: 0.85rem 1.1rem; border-radius: 999px; background: #075e54; color: #fff; font-weight: 600; box-shadow: 0 4px 20px #0003; }
+.whatsapp-float:hover { background: #064c44; color: #fff; }
 .site-footer .inner {
   max-width: var(--maxw);
   margin: 0 auto;
