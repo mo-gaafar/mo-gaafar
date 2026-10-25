@@ -758,7 +758,7 @@ h4 {
 @media (max-width: 760px) { .review-track { grid-auto-columns: 88%; } }
 .review-rating { color: var(--primary); letter-spacing: .08em; }
 .review-rating span { font-size: .8rem; letter-spacing: normal; margin-left: .6rem; }
-.review-rating .review-stars { color: #c18a15; font-size: 1.45rem; letter-spacing: .12em; margin-left: 0; text-shadow: 0 1px 0 #f8df98; }
+.review-rating .review-stars { color: #c18a15; font-size: 2.1rem; line-height: 1; letter-spacing: .08em; margin-left: 0; text-shadow: 0 1px 0 #f8df98; }
 [data-theme="dark"] .review-rating .review-stars { color: #f1c45b; text-shadow: none; }
 /* Keep the doodles in the hero's open margins, clear of copy and actions. */
 .hub-hero { position: relative; padding-bottom: 10rem; }
