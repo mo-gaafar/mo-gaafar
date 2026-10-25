@@ -2,10 +2,10 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { Icon, type IconName } from './Icon'
 import { ThemeToggle } from './ThemeToggle'
 import { contactAction } from '../lib/seo'
-import { WhatsAppLink } from './WhatsAppLink'
 
 type Social = { label: string; url: string }
 
@@ -16,10 +16,8 @@ const socialIcon: Record<string, IconName> = {
 }
 
 const links = [
-  { href: '/#services', label: 'Services' },
+  { href: '/#offers', label: 'Offers' },
   { href: '/#work', label: 'Work' },
-  { href: '/#experience', label: 'Experience' },
-  { href: '/#skills', label: 'Skills' },
   { href: '/blog', label: 'Writing' },
   { href: '/resume', label: 'Résumé' },
 ]
@@ -38,10 +36,20 @@ export function Nav({
   socials?: Social[]
 }) {
   const [open, setOpen] = useState(false)
+  const pathname = usePathname()
+  const contactHref =
+    pathname === '/' || pathname === '/offers/ai-software-factory' ? '#contact' : '/#contact'
   const cta = contactAction(bookingUrl, email)
 
   return (
-    <nav className="sidenav" aria-label="Main navigation" data-open={open} onKeyDown={(event) => { if (event.key === 'Escape') setOpen(false) }}>
+    <nav
+      className="sidenav"
+      aria-label="Main navigation"
+      data-open={open}
+      onKeyDown={(event) => {
+        if (event.key === 'Escape') setOpen(false)
+      }}
+    >
       <div className="sidenav-top">
         <Link href="/#top" className="brand" onClick={() => setOpen(false)}>
           <span className="brand-name">{name}</span>
@@ -74,16 +82,26 @@ export function Nav({
         </ul>
 
         <div className="sidenav-foot">
-          <WhatsAppLink className="nav-cta">WhatsApp me</WhatsAppLink>
-          {bookingUrl && <a className="btn btn-secondary" href={cta.url} target="_blank" rel="noopener">
-            <Icon name="send" size={15} />
-            {cta.label}
-          </a>}
+          <Link className="nav-cta" href={contactHref} onClick={() => setOpen(false)}>
+            Let’s talk <Icon name="arrow" size={16} />
+          </Link>
+          {bookingUrl && (
+            <a className="btn btn-secondary" href={cta.url} target="_blank" rel="noopener">
+              <Icon name="send" size={15} />
+              {cta.label}
+            </a>
+          )}
           {socials.length > 0 && (
             <ul className="nav-socials" aria-label="Social links">
               {socials.map((s) => (
                 <li key={s.label}>
-                  <a href={s.url} target="_blank" rel="me noopener" aria-label={s.label} title={s.label}>
+                  <a
+                    href={s.url}
+                    target="_blank"
+                    rel="me noopener"
+                    aria-label={s.label}
+                    title={s.label}
+                  >
                     {socialIcon[s.label] ? (
                       <Icon name={socialIcon[s.label]} size={16} />
                     ) : (

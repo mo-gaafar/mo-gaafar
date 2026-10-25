@@ -16,7 +16,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }] : [])
   }))
   return [
-    ...['', '/projects', '/blog', '/blog/archive', '/publications', '/resume'].map((path) => ({ url: `${siteUrl()}${path}` })),
+    ...['', '/offers/ai-software-factory', '/projects', '/blog', '/blog/archive', '/publications', '/resume'].map((path) => ({ url: `${siteUrl()}${path}` })),
     ...groups.flat(),
   ]
 }

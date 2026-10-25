@@ -1,373 +1,204 @@
 import Link from 'next/link'
 import { getPayloadClient, mediaUrl } from '../../lib/payload'
-import { Icon, type IconName } from '../../components/Icon'
-import { contactAction, jsonLd, siteUrl } from '../../lib/seo'
-import { WhatsAppLink } from '../../components/WhatsAppLink'
-import { RobotCat } from '../../components/RobotCat'
+import { jsonLd, siteUrl } from '../../lib/seo'
+import { ContactOptions } from '../../components/ContactOptions'
+import { ClientProof } from '../../components/ClientProof'
+import { CatPlayground } from '../../components/CatPlayground'
+import { HeroPostcards } from '../../components/HeroPostcards'
 
 export const dynamic = 'force-dynamic'
 
-const fmtDate = (d?: string | null) =>
-  d ? new Date(d).toLocaleDateString('en-US', { year: 'numeric', month: 'long' }) : ''
-
 export default async function HomePage() {
   const payload = await getPayloadClient()
-
-  const [home, settings, experience, skillGroups, education, services, testimonials, caseStudies, projects, publications, posts] =
-    await Promise.all([
-      payload.findGlobal({ slug: 'home' }).catch(() => null),
-      payload.findGlobal({ slug: 'site-settings' }).catch(() => null),
-      payload.find({ collection: 'experience', sort: 'order', limit: 50, depth: 0 }).then((r) => r.docs).catch(() => []),
-      payload.find({ collection: 'skill-groups', sort: 'order', limit: 50, depth: 1 }).then((r) => r.docs).catch(() => []),
-      payload.find({ collection: 'education', sort: 'order', limit: 50, depth: 0 }).then((r) => r.docs).catch(() => []),
-      payload.find({ collection: 'services', sort: 'order', limit: 20, depth: 0 }).then((r) => r.docs).catch(() => []),
-      payload.find({ collection: 'testimonials', where: { featured: { equals: true } }, sort: 'order', limit: 10, depth: 1 }).then((r) => r.docs).catch(() => []),
-      payload.find({ collection: 'case-studies', where: { featured: { equals: true } }, sort: 'order', limit: 6, depth: 1 }).then((r) => r.docs).catch(() => []),
-      payload.find({ collection: 'projects', where: { featured: { equals: true } }, sort: 'order', limit: 6, depth: 1 }).then((r) => r.docs).catch(() => []),
-      payload.find({ collection: 'publications', where: { featured: { equals: true } }, sort: '-date', limit: 6, depth: 1 }).then((r) => r.docs).catch(() => []),
-      payload.find({ collection: 'posts', where: { and: [{ featured: { equals: true } }, { archived: { not_equals: true } }] }, sort: '-date', limit: 3, depth: 1 }).then((r) => r.docs).catch(() => []),
-    ])
-
-  const vis = home?.visibility ?? {}
-  const portrait = mediaUrl(settings?.profileImage, '/img/mo.jpeg')
-  const contact = contactAction(settings?.bookingUrl, settings?.email)
-  const bookingUrl = contact.url
-
-  const ctas = home?.ctas ?? []
-  const focusTags = home?.focusTags ?? []
-  const proof = home?.proofMetrics ?? []
-
+  const [settings, caseStudies] = await Promise.all([
+    payload.findGlobal({ slug: 'site-settings' }),
+    payload
+      .find({
+        collection: 'case-studies',
+        where: { featured: { equals: true } },
+        sort: 'order',
+        limit: 3,
+        depth: 1,
+      })
+      .then((r) => r.docs),
+  ])
+  const name = `${settings.firstName || 'Mohamed'} ${settings.lastName || 'Gaafar'}`
+  const portrait = mediaUrl(settings.profileImage, '/img/mo.jpeg')!
+  const description =
+    'I build AI agents, knowledge systems and software delivery workflows. From a messy process to a working system your team can use.'
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd({
-        '@context': 'https://schema.org', '@type': 'ProfilePage',
-        '@id': `${siteUrl()}/#profile`, url: siteUrl(),
-        mainEntity: {
-          '@type': 'Person', '@id': `${siteUrl()}/#person`,
-          name: `${settings?.firstName ?? ''} ${settings?.lastName ?? ''}`.trim(),
-          jobTitle: settings?.roleTitle, description: home?.lede,
-          image: portrait ? new URL(portrait, siteUrl()).href : undefined,
-          sameAs: settings?.socials?.filter((s) => s.url.startsWith('https://')).map((s) => s.url),
-        },
-      }) }} />
-      {/* ---------- Hero ---------- */}
-      <header className="hero" id="about">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: jsonLd({
+            '@context': 'https://schema.org',
+            '@type': 'ProfilePage',
+            url: siteUrl(),
+            mainEntity: {
+              '@type': 'Person',
+              '@id': `${siteUrl()}/#person`,
+              name,
+              jobTitle: settings.roleTitle,
+              description,
+              image: new URL(portrait, siteUrl()).href,
+              sameAs: settings.socials
+                ?.filter((s) => s.url.startsWith('https://'))
+                .map((s) => s.url),
+            },
+          }),
+        }}
+      />
+      <header className="hero hub-hero" id="about">
         <div className="hero-grid">
           <div className="hero-copy">
-            {home?.kicker && <p className="hero-kicker">{home.kicker}</p>}
-            <p className="hero-name">{settings?.firstName} {settings?.lastName}</p>
-            <h1>{home?.headline || 'AI Engineer & Fractional CTO'}</h1>
-            <p className="hero-lede">{home?.lede}</p>
+            <p className="hero-kicker">AI engineering · Practical automation</p>
+            <p className="hero-name">Hi, I’m {name}.</p>
+            <h1>
+              Good ideas.
+              <br />
+              Working systems.
+            </h1>
+            <p className="hero-lede">{description}</p>
             <div className="hero-actions">
-              <WhatsAppLink />
-              {settings?.bookingUrl && <a href={settings.bookingUrl} className="btn btn-secondary" target="_blank" rel="noopener">Book a meeting</a>}
-              {ctas.length > 0 ? (
-                ctas.map((c, i) => (
-                  <a
-                    key={i}
-                    href={c.url}
-                    className={
-                      c.style === 'secondary'
-                        ? 'btn btn-secondary'
-                        : c.style === 'link'
-                          ? 'btn btn-link'
-                          : 'btn btn-secondary'
-                    }
-                    target={c.url?.startsWith('http') ? '_blank' : undefined}
-                    rel="noopener"
-                  >
-                    {c.label === 'Book a call' && c.url?.startsWith('mailto:') ? 'Let’s talk' : c.label}
-                  </a>
-                ))
-              ) : (
-                <a href={bookingUrl} className="btn btn-primary">
-                  <Icon name="send" size={16} /> {contact.label}
-                </a>
-              )}
+              <a className="btn btn-primary" href="#contact">
+                Let’s talk about your project ↗
+              </a>
+              <a className="btn btn-secondary" href="#offers">
+                Explore how I can help ↓
+              </a>
             </div>
-            {focusTags.length > 0 && (
-              <p className="hero-focus" aria-label="Focus areas">
-                {focusTags.map((t, i) => (
-                  <span key={i}>{t.label}</span>
-                ))}
-              </p>
-            )}
+            <p className="hub-note">
+              Engineer, technical founder, and your partner from idea to delivery.
+            </p>
           </div>
-
-          {portrait && (
-            <aside className="hero-visual" aria-label="Portrait">
-              <div className="orbit orbit-one" aria-hidden="true" />
-              <div className="orbit orbit-two" aria-hidden="true" />
-              <div className="hero-portrait">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={portrait} width={480} height={540} fetchPriority="high" alt={`${settings?.firstName ?? ''} ${settings?.lastName ?? ''}`.trim()} />
-              </div>
-              <div className="portrait-caption"><span aria-hidden="true">↗</span> {settings?.roleTitle}</div>
-            </aside>
-          )}
+          <aside className="hero-visual" aria-label="Portrait and a little about me">
+            <div className="hero-portrait">
+              <img src={portrait} width={480} height={540} fetchPriority="high" alt={name} />
+            </div>
+            <div className="portrait-caption">A human behind the automation.</div>
+            <HeroPostcards />
+          </aside>
         </div>
-        {proof.length > 0 && (
-          <div className="proof-strip">
-            {proof.map((m, i) => (
-              <div className="proof" key={i}>
-                <strong>{m.value}</strong>
-                <span>{m.label}</span>
-              </div>
-            ))}
-          </div>
-        )}
       </header>
-      <RobotCat bookingUrl={settings?.bookingUrl} />
-
-      {/* ---------- Services ---------- */}
-      {vis.showServices !== false && services.length > 0 && (
-        <section className="section" id="services">
-          <div className="section-head">
-            <p className="eyebrow">What I do</p>
-            <h2>{home?.servicesHeading || 'How I work'}</h2>
-            {home?.servicesIntro && <p className="lead">{home.servicesIntro}</p>}
+      <section className="section" id="offers">
+        <div className="section-head">
+          <p className="eyebrow">Ways to work together</p>
+          <h2>Start with the problem.</h2>
+          <p className="lead">
+            A connected delivery process. A useful AI agent. Knowledge your team can actually find.
+          </p>
+        </div>
+        <Link className="featured-offer reveal" href="/offers/ai-software-factory">
+          <div>
+            <span className="offer-label">For agencies · Featured offer</span>
+            <h3>
+              Your agency’s
+              <br />
+              AI software factory.
+            </h3>
+            <p>
+              Connect client requests, Linear planning, development and ongoing care—with people in
+              control.
+            </p>
+            <span className="offer-link">Explore the offer ↗</span>
           </div>
-          <div className="service-grid">
-            {services.map((s) => (
-              <article className="service" key={s.id}>
-                <span className="service-icon">
-                  <Icon name={(s.icon as IconName) || 'cpu'} size={20} />
-                </span>
-                <h3>{s.title}</h3>
-                {s.forWho && <p className="for-who">{s.forWho}</p>}
-                <p className="muted">{s.summary}</p>
-                {s.bullets && s.bullets.length > 0 && (
-                  <ul>
-                    {s.bullets.map((b, i) => (
-                      <li key={i}>{b.text}</li>
-                    ))}
-                  </ul>
-                )}
-              </article>
-            ))}
+          <div className="offer-mini-flow" aria-hidden="true">
+            <span>01 / Understand</span>
+            <i>↓</i>
+            <span>02 / Build & check</span>
+            <i>↓</i>
+            <span>03 / Deliver & maintain</span>
           </div>
-          <p style={{ marginTop: '1.5rem' }}><WhatsAppLink>Discuss your project on WhatsApp</WhatsAppLink></p>
-        </section>
-      )}
-
-      {/* ---------- Case studies / Work ---------- */}
-      {vis.showCaseStudies !== false && caseStudies.length > 0 && (
+        </Link>
+        <div className="other-services">
+          <article>
+            <h3>AI agents & automation</h3>
+            <p>
+              Connect tools and reduce repetitive operational work, with review where it matters.
+            </p>
+            <a className="text-link" href="#contact">
+              Discuss your workflow ↗
+            </a>
+          </article>
+          <article>
+            <h3>Knowledge systems & RAG</h3>
+            <p>
+              Turn scattered documents into searchable knowledge and answers grounded in your
+              sources.
+            </p>
+            <a className="text-link" href="#contact">
+              Discuss your knowledge system ↗
+            </a>
+          </article>
+        </div>
+      </section>
+      <ClientProof />
+      {caseStudies.length > 0 && (
         <section className="section" id="work">
           <div className="section-head">
             <p className="eyebrow">Selected work</p>
-            <h2>Case studies</h2>
-            <p className="lead">Problems I was brought in to solve, what I led, and the measurable result.</p>
+            <h2>From the idea to the real world.</h2>
+            <p className="lead">A few examples of my engineering and automation work.</p>
           </div>
           <div className="case-grid">
             {caseStudies.map((c) => (
-              <article className="case" key={c.id}>
+              <article className="case reveal" key={c.id}>
                 <div>
-                  {c.role && <p className="role">{c.role}{c.client ? ` · ${c.client}` : ''}</p>}
-                  <h3><Link href={`/case-studies/${c.slug}`}>{c.title}</Link></h3>
-                  <p className="muted">{c.summary}</p>
-                  {c.stack && c.stack.length > 0 && (
-                    <p className="stack-line">{c.stack.map((s) => s.item).join(' · ')}</p>
+                  {c.role && (
+                    <p className="role">
+                      {c.role}
+                      {c.client ? ` · ${c.client}` : ''}
+                    </p>
                   )}
-                </div>
-                {c.headlineMetric && (
-                  <div className="metric">
-                    <strong>{c.headlineMetric}</strong>
-                    <span>{c.headlineMetricLabel}</span>
-                  </div>
-                )}
-              </article>
-            ))}
-          </div>
-        </section>
-      )}
-
-      {/* ---------- Testimonials ---------- */}
-      {vis.showTestimonials !== false && testimonials.length > 0 && (
-        <section className="section" id="testimonials">
-          <div className="section-head">
-            <p className="eyebrow">Kind words</p>
-            <h2>What people say</h2>
-          </div>
-          <div className="card-grid">
-            {testimonials.map((t) => (
-              <figure className="quote" key={t.id}>
-                <blockquote>“{t.quote}”</blockquote>
-                <figcaption className="who">
-                  <div>
-                    <strong>{t.author}</strong>
-                    <br />
-                    <span>
-                      {[t.role, t.company].filter(Boolean).join(', ')}
-                    </span>
-                  </div>
-                </figcaption>
-              </figure>
-            ))}
-          </div>
-        </section>
-      )}
-
-      {/* ---------- Experience ---------- */}
-      {vis.showExperience !== false && experience.length > 0 && (
-        <section className="section" id="experience">
-          <div className="section-head">
-            <p className="eyebrow">Track record</p>
-            <h2>Experience</h2>
-          </div>
-          <div className="timeline">
-            {experience.map((e) => (
-              <article className="timeline-item" key={e.id}>
-                <div>
-                  <h3>{e.role}</h3>
-                  <p className="org">{e.company}</p>
-                  <p className="muted">{e.summary}</p>
-                </div>
-                <div className="when">{e.range}</div>
-              </article>
-            ))}
-          </div>
-        </section>
-      )}
-
-      {/* ---------- Skills ---------- */}
-      {vis.showSkills !== false && skillGroups.length > 0 && (
-        <section className="section" id="skills">
-          <div className="section-head">
-            <p className="eyebrow">Toolkit</p>
-            <h2>Skills</h2>
-          </div>
-          {skillGroups.map((g) => (
-            <div className="skill-group" key={g.id}>
-              <p className="label">{g.grouping}</p>
-              <ul className="skill-list">
-                {(g.skills ?? []).map((s, i) => (
-                  <li key={i}>{s.name}</li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </section>
-      )}
-
-      {/* ---------- Projects ---------- */}
-      {vis.showProjects !== false && projects.length > 0 && (
-        <section className="section" id="projects">
-          <div className="section-head">
-            <p className="eyebrow">Build log</p>
-            <h2>Projects</h2>
-          </div>
-          <div className="card-grid">
-            {projects.map((p) => {
-              const img = mediaUrl(p.cover, p.coverUrl)
-              return (
-                <article className="card" key={p.id}>
-                  {img && (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img src={img} loading="lazy" width={640} height={400} alt={p.title} style={{ borderRadius: 4, marginBottom: '0.9rem', aspectRatio: '16/10', objectFit: 'cover' }} />
-                  )}
-                  <h3 style={{ fontSize: '1.15rem' }}>
-                    <Link href={`/projects/${p.slug}`}>{p.title}</Link>
-                  </h3>
-                  <p className="muted" style={{ marginTop: '0.4rem' }}>{p.description}</p>
-                </article>
-              )
-            })}
-          </div>
-          <p style={{ marginTop: '1.5rem' }}>
-            <Link href="/projects" className="btn btn-secondary">
-              All projects <Icon name="arrow" size={16} />
-            </Link>
-          </p>
-        </section>
-      )}
-
-      {/* ---------- Publications ---------- */}
-      {vis.showPublications !== false && publications.length > 0 && (
-        <section className="section" id="publications">
-          <div className="section-head">
-            <p className="eyebrow">Research</p>
-            <h2>Publications</h2>
-          </div>
-          <div className="timeline">
-            {publications.map((p) => (
-              <article className="timeline-item" key={p.id}>
-                <div>
                   <h3>
-                    {p.pubType} — {p.link ? <a href={p.link} target="_blank" rel="noopener">{p.title}</a> : p.title}
+                    <Link href={`/case-studies/${c.slug}`}>{c.title}</Link>
                   </h3>
-                  <p className="muted" style={{ marginTop: '0.4rem' }}>{p.description}</p>
+                  <p className="muted">{c.summary}</p>
                 </div>
-                <div className="when">{fmtDate(p.date)}</div>
+                <Link className="text-link" href={`/case-studies/${c.slug}`}>
+                  Read the case study ↗
+                </Link>
               </article>
             ))}
           </div>
         </section>
       )}
-
-      {/* ---------- Education ---------- */}
-      {vis.showEducation !== false && education.length > 0 && (
-        <section className="section" id="education">
-          <div className="section-head">
-            <p className="eyebrow">Background</p>
-            <h2>Education</h2>
-          </div>
-          <div className="timeline">
-            {education.map((e) => (
-              <article className="timeline-item" key={e.id}>
-                <div>
-                  <h3>{e.schoolUrl ? <a href={e.schoolUrl} target="_blank" rel="noopener">{e.school}</a> : e.school}</h3>
-                  <p className="org">{e.degree}{e.major ? ` · ${e.major}` : ''}</p>
-                  {e.notes && <p className="muted">{e.notes}</p>}
-                </div>
-                <div className="when">{e.range}</div>
-              </article>
-            ))}
-          </div>
-        </section>
-      )}
-
-      {/* ---------- Blog teaser ---------- */}
-      {vis.showBlog !== false && posts.length > 0 && (
-        <section className="section" id="writing">
-          <div className="section-head">
-            <p className="eyebrow">Writing</p>
-            <h2>From the blog</h2>
-          </div>
-          {posts.map((p) => (
-            <div className="post-row" key={p.id}>
-              <h3>
-                <Link href={`/blog/${p.slug}`}>{p.title}</Link>
-              </h3>
-              <p className="meta">{fmtDate(p.date)}</p>
-              <p className="muted">{p.description}</p>
-            </div>
-          ))}
-          <p style={{ marginTop: '1.5rem' }}>
-            <Link href="/blog" className="btn btn-secondary">
-              All writing <Icon name="arrow" size={16} />
-            </Link>
+      <section className="section about-compact" id="background">
+        <div>
+          <p className="eyebrow">A little more about me</p>
+          <h2>
+            Curious by nature.
+            <br />
+            Engineer by practice.
+          </h2>
+          <p className="lead">
+            My work spans AI systems, software engineering and technical leadership. I care about
+            what happens after the demo: a system people can understand, operate and improve.
           </p>
-        </section>
-      )}
-
-      {/* ---------- Contact ---------- */}
+          <div className="hero-actions">
+            <Link href="/resume" className="text-link">
+              My background ↗
+            </Link>
+            <Link href="/projects" className="text-link">
+              Projects ↗
+            </Link>
+            <Link href="/blog" className="text-link">
+              Writing ↗
+            </Link>
+          </div>
+        </div>
+        <CatPlayground />
+      </section>
       <section className="section" id="contact">
         <div className="section-head">
           <p className="eyebrow">Let’s talk</p>
-          <h2>Have a system worth building?</h2>
+          <h2>What would you like to make work?</h2>
           <p className="lead">
-            Have a question, an idea, or a project in mind? Just message me on WhatsApp at +39 351 427 7009.
+            Send me a little context about your team and the problem you’re solving.
           </p>
         </div>
-        <div className="hero-actions">
-          <WhatsAppLink />
-          {settings?.bookingUrl && <a href={settings.bookingUrl} className="btn btn-secondary" target="_blank" rel="noopener">Book a meeting</a>}
-          {settings?.email && (
-            <a href={`mailto:${settings.email}`} className="btn btn-secondary">
-              <Icon name="mail" size={16} /> {settings.email}
-            </a>
-          )}
-        </div>
+        <ContactOptions email={settings.email} />
       </section>
     </>
   )

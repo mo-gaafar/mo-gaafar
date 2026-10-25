@@ -34,12 +34,14 @@
     "payload": "3.88.0",
     "react": "19.0.0",
     "react-dom": "19.0.0",
-    "sharp": "0.33.5"
+    "sharp": "0.33.5",
+    "three": "^0.186.1"
   },
   "devDependencies": {
     "@types/node": "^22.10.5",
     "@types/react": "19.0.7",
     "@types/react-dom": "19.0.3",
+    "@types/three": "^0.186.0",
     "eslint": "^9.17.0",
     "eslint-config-next": "15.3.9",
     "tsx": "^4.19.2",

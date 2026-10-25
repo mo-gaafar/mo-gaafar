@@ -6,7 +6,6 @@ import Script from 'next/script'
 import './globals.css'
 import { Nav } from '../../components/Nav'
 import { Footer } from '../../components/Footer'
-import { WhatsAppLink } from '../../components/WhatsAppLink'
 import { getPayloadClient } from '../../lib/payload'
 import { pageMetadata, siteUrl } from '../../lib/seo'
 
@@ -60,7 +59,6 @@ export default async function FrontendLayout({ children }: { children: React.Rea
         <div className="main">
           <Footer name={name} socials={socials} />
         </div>
-        <WhatsAppLink className="whatsapp-float">Chat on WhatsApp ↗</WhatsAppLink>
         {analyticsId && (
           <>
             <Script

@@ -1,5 +1,4 @@
 import { Icon, type IconName } from './Icon'
-import { WhatsAppLink } from './WhatsAppLink'
 
 type Social = { label: string; url: string }
 
@@ -9,26 +8,25 @@ const socialIcon: Record<string, IconName> = {
   Email: 'mail',
 }
 
-export function Footer({
-  name,
-  socials = [],
-}: {
-  name: string
-  socials?: Social[]
-}) {
+export function Footer({ name, socials = [] }: { name: string; socials?: Social[] }) {
   const year = 2026
   return (
     <footer className="site-footer">
       <div className="inner">
         <span>
-          © {year} {name}. Built with Next.js &amp; Payload.
+          © {year} {name}.
         </span>
-        <WhatsAppLink>WhatsApp · +39 351 427 7009</WhatsAppLink>
         {socials.length > 0 && (
           <ul className="footer-socials" aria-label="Social links">
             {socials.map((s) => (
               <li key={s.label}>
-                <a href={s.url} target="_blank" rel="me noopener" aria-label={s.label} title={s.label}>
+                <a
+                  href={s.url}
+                  target="_blank"
+                  rel="me noopener"
+                  aria-label={s.label}
+                  title={s.label}
+                >
                   {socialIcon[s.label] ? (
                     <Icon name={socialIcon[s.label]} size={18} />
                   ) : (
