@@ -1,4 +1,6 @@
 import React from 'react'
+import { ReviewScroller } from './ReviewScroller'
+import { ClientFlag } from './ClientFlag'
 
 export const upworkProfile = 'https://www.upwork.com/freelancers/~0169b1c1f18b963e0e'
 
@@ -13,7 +15,7 @@ export function ClientProof({ reviews }: { reviews: Testimonial[] }) {
         <h2>Good work is a collaboration.</h2>
         <p className="lead">Reviews from completed Upwork projects.</p>
       </div>
-      <div className="review-grid">
+      <ReviewScroller>
         {reviews.map((review) => (
           <figure className="quote reveal" key={review.id}>
             {typeof review.rating === 'number' && (
@@ -24,7 +26,7 @@ export function ClientProof({ reviews }: { reviews: Testimonial[] }) {
             )}
             <blockquote>“{review.quote}”</blockquote>
             <figcaption>
-              <strong className="review-author">{review.author}</strong>
+              <strong className="review-author"><ClientFlag location={review.location} />{review.author}</strong>
               {[review.role, review.company, review.location].filter(Boolean).length > 0 && (
                 <span className="review-attribution">{[review.role, review.company, review.location].filter(Boolean).join(' · ')}</span>
               )}
@@ -35,7 +37,7 @@ export function ClientProof({ reviews }: { reviews: Testimonial[] }) {
             </figcaption>
           </figure>
         ))}
-      </div>
+      </ReviewScroller>
       <p className="proof-source">
         Top Rated Plus · 100% Job Success · 14 total jobs{' '}
         <span>— Upwork profile, October 2026. </span>
