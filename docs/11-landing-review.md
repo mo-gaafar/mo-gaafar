@@ -138,3 +138,62 @@ or Search Console inspection was performed. The existing favicon request returns
 
 Local production preview: http://127.0.0.1:3037 (while the preview process is running).
 Screenshot: `output/playwright/landing-desktop.jpg` (ignored local artifact).
+
+## Independent AI/CMS audit and contact update
+
+The audit agent found a strong technical foundation: rendered HTML, ordinary links,
+canonical metadata, sitemap, and ProfilePage/Person JSON-LD. Payload directly feeds
+the page and has an MCP server with scoped capabilities. Unauthenticated MCP returned
+401 and users returned 403. Actual authenticated MCP editing and AI citations were not tested.
+
+- [ ] Fill the empty approach fields in all three case studies; add methods, baselines,
+      dates, limitations, and evidence behind the commercial metrics.
+- [ ] Add drafts/version recovery before allowing unattended AI edits. Current MCP
+      create/update operations can immediately change public content; deletion is disabled.
+- [ ] Log CMS errors and avoid silently returning an incomplete successful homepage
+      when essential content cannot load.
+- [ ] Add visible blog authorship and accurate BlogPosting metadata.
+- [ ] Configure persistent media storage before uploading files.
+
+WhatsApp now uses the explicitly requested `https://wa.me/393514277009` in the
+shared WhatsAppLink component. The older CMS phone field is not used by these links.
+The configured seed admin credentials could not authenticate (missing email), so no
+CMS settings were changed. Update the CMS phone field when admin access is available.
+Meeting buttons read Site Settings → bookingUrl and stay hidden until it is configured.
+
+Cal.diy configuration is in `deploy/cal-diy.compose.yml`, on the same Coolify server
+with its own persistent PostgreSQL volume. Its official v6.2.0 release workflow
+publishes the Docker image under the legacy calcom/cal.com name; the digest is pinned.
+Live host: https://cal.botica.it.com (valid HTTPS verified October 25).
+Coolify service: `tpxiiacwkf23yn6shoizuy5n`, app `gncqyfxpggoc2839ino9og6o`.
+The first administrator was created for mohamed_gaafar@ieee.org, username
+`mohamed-gaafar`. Its generated password is only in the ignored local `.env`
+under CAL_DIY_ADMIN_PASSWORD. The encryption secret was configured explicitly
+because Coolify left SERVICE_PASSWORD_32_ENCRYPTION empty; preserve it across updates.
+Optional proxy compression was disabled for this service while diagnosing startup.
+Google OAuth and calendar consent are required
+before enabling live booking. SMTP delivery and database backups also need configuration.
+Cal.diy's maintainers recommend the community edition for personal, non-production use:
+https://www.cal.diy/ . Google setup: https://www.cal.diy/apps/google .
+
+### Google Calendar setup remaining
+
+1. In Google Cloud Console, create/select a project and enable Google Calendar API.
+2. Configure OAuth branding and audience. Use mohamed_gaafar@ieee.org as a test
+   user for External testing; use Internal only if the Workspace organization permits it.
+3. Request `https://www.googleapis.com/auth/calendar.events` and
+   `https://www.googleapis.com/auth/calendar.readonly`.
+4. Create a Web application OAuth client with both redirect URIs:
+   - https://cal.botica.it.com/api/integrations/googlecalendar/callback
+   - https://cal.botica.it.com/api/auth/callback/google
+5. Download the client JSON and save it as GOOGLE_API_CREDENTIALS in the ignored
+   local .env or directly in this Cal.diy service's Coolify environment. Never commit it.
+6. Apply it to the booking service, restart, and connect Google Calendar while signed
+   into the IEEE account. Choose conflict calendars and the booking destination calendar.
+7. Configure real availability, meeting duration, buffers, meeting location, and SMTP.
+8. Verify an end-to-end booking before setting Payload Site Settings → bookingUrl
+   to the verified event URL. The website's meeting buttons are already wired to that field.
+
+WhatsApp deployment `iefs6g0ltgqdhwgsq92ajou4` finished successfully with commit
+`410d277` on the landing branch. Six wa.me links were checked; live 390px mobile and
+1440px desktop screenshots were reviewed. The 21-page SEO regression check passed again.

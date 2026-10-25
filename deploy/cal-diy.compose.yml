@@ -13,6 +13,7 @@ services:
       DATABASE_URL: postgresql://cal:${SERVICE_PASSWORD_DATABASE}@database:5432/cal
       DATABASE_DIRECT_URL: postgresql://cal:${SERVICE_PASSWORD_DATABASE}@database:5432/cal
       NEXTAUTH_SECRET: ${SERVICE_PASSWORD_64_AUTH}
+      # Set this to a random 32-character secret in Coolify before starting.
       CALENDSO_ENCRYPTION_KEY: ${SERVICE_PASSWORD_32_ENCRYPTION}
       CALCOM_TELEMETRY_DISABLED: '1'
       NEXT_PUBLIC_DISABLE_SIGNUP: 'true'
