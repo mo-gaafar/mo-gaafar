@@ -742,6 +742,9 @@ h4 {
 .text-link { display: inline-block; font-weight: 600; padding-block: .4rem; }
 .review-grid .quote { margin: 0; padding: 2rem; display: flex; flex-direction: column; gap: 1.3rem; }
 .review-grid blockquote { font-size: 1.05rem; flex: 1; }
+.review-grid blockquote { white-space: pre-line; }
+.review-author { display: block; color: var(--ink); font-size: 1rem; }
+.review-attribution { display: block; color: var(--muted); margin: .25rem 0 .65rem; font-size: .85rem; }
 .review-grid .quote:last-child:nth-child(odd) { grid-column: 1 / -1; }
 .review-rating { color: var(--primary); letter-spacing: .08em; }
 .review-rating span { font-size: .8rem; letter-spacing: normal; margin-left: .6rem; }

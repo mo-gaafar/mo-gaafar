@@ -4,7 +4,7 @@ import { factoryMessage } from '../../../../components/WhatsAppLink'
 import { ContactOptions } from '../../../../components/ContactOptions'
 import { getPayloadClient } from '../../../../lib/payload'
 import { FactoryWalkthrough } from '../../../../components/FactoryWalkthrough'
-import { upworkProfile, clientReviews } from '../../../../components/ClientProof'
+import { upworkProfile } from '../../../../components/ClientProof'
 
 const title = 'AI Software Factory for Agencies'
 export const dynamic = 'force-dynamic'
@@ -14,7 +14,11 @@ export const metadata = pageMetadata(title, description, '/offers/ai-software-fa
 
 export default async function SoftwareFactoryPage() {
   const payload = await getPayloadClient()
-  const settings = await payload.findGlobal({ slug: 'site-settings' })
+  const [settings, { docs: reviews }] = await Promise.all([
+    payload.findGlobal({ slug: 'site-settings' }),
+    payload.find({ collection: 'testimonials', where: { and: [{ featured: { equals: true } }, { project: { equals: 'Consultant & Engineer for VAPI AI Caller' } }] }, limit: 1, depth: 0 }),
+  ])
+  const review = reviews[0]
   return (
     <>
       <script
@@ -142,24 +146,24 @@ export default async function SoftwareFactoryPage() {
           <p>Security checks reduce risk; they do not guarantee vulnerability-free software.</p>
         </div>
       </section>
-      <section className="section">
+      {review && <section className="section">
         <div className="section-head">
           <p className="eyebrow">Relevant experience</p>
           <h2>A partner who follows through.</h2>
           <p className="lead">Feedback from a completed voice AI consulting engagement.</p>
         </div>
         <figure className="quote">
-          <blockquote>“{clientReviews[0].quote}”</blockquote>
+          <blockquote>“{review.quote}”</blockquote>
           <figcaption>
             <a href={upworkProfile} target="_blank" rel="noopener noreferrer">
-              Upwork client · {clientReviews[0].project} · 5/5 ↗
+              {review.author} · {[review.role, review.location].filter(Boolean).join(' · ')} · {review.project} ↗
             </a>
           </figcaption>
         </figure>
         <p className="proof-source">
           <Link href="/#work">Explore related engineering projects ↗</Link>
         </p>
-      </section>
+      </section>}
       <section className="section" id="contact">
         <div className="section-head">
           <p className="eyebrow">Start with your bottleneck</p>

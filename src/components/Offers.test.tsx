@@ -2,6 +2,7 @@ import assert from 'node:assert/strict'
 import React from 'react'
 import { renderToStaticMarkup } from 'react-dom/server'
 import { ClientProof } from './ClientProof'
+import { initialReviews } from '../seed/reviews'
 import { FactoryWalkthrough } from './FactoryWalkthrough'
 import { CatPlayground } from './CatPlayground'
 import { makeCat } from '../lib/catScene'
@@ -41,9 +42,15 @@ for (const match of walkthrough.matchAll(/href="#([^"]+)"/g)) {
 }
 assert.match(walkthrough, /automated tests, quality checks and security scans/)
 assert.match(walkthrough, /updates pass through testing and the agreed approval gates/)
-const proof = renderToStaticMarkup(<ClientProof />)
+const reviewFixtures = initialReviews.map((review, id) => ({ ...review, id, rating: 5, createdAt: '', updatedAt: '' }))
+const proof = renderToStaticMarkup(<ClientProof reviews={reviewFixtures} />)
 assert.match(proof, /14 total jobs/)
 assert.doesNotMatch(proof, /14 clients/)
+for (const author of ['Edo Grado', 'Evan', 'Dan', 'Samsung']) assert.ok(proof.includes(author))
+assert.doesNotMatch(proof, /France/)
+assert.equal((proof.match(/class="review-stars"/g) ?? []).length, 4)
+assert.equal(renderToStaticMarkup(<ClientProof reviews={[]} />), '')
+assert.doesNotMatch(renderToStaticMarkup(<ClientProof reviews={[{ ...reviewFixtures[0], rating: null }]} />), /review-stars/)
 const residentCat = renderToStaticMarkup(<CatPlayground />)
 assert.match(residentCat, /<canvas/)
 assert.doesNotMatch(residentCat, /Meet the 3D cat/)

@@ -10,7 +10,7 @@ export const dynamic = 'force-dynamic'
 
 export default async function HomePage() {
   const payload = await getPayloadClient()
-  const [settings, caseStudies] = await Promise.all([
+  const [settings, caseStudies, reviews] = await Promise.all([
     payload.findGlobal({ slug: 'site-settings' }),
     payload
       .find({
@@ -21,6 +21,7 @@ export default async function HomePage() {
         depth: 1,
       })
       .then((r) => r.docs),
+    payload.find({ collection: 'testimonials', where: { featured: { equals: true } }, sort: 'order', pagination: false, depth: 0 }).then((r) => r.docs),
   ])
   const name = `${settings.firstName || 'Mohamed'} ${settings.lastName || 'Gaafar'}`
   const portrait = mediaUrl(settings.profileImage, '/img/mo.jpeg')!
@@ -81,6 +82,7 @@ export default async function HomePage() {
           </aside>
         </div>
       </header>
+      <ClientProof reviews={reviews} />
       <section className="section" id="offers">
         <div className="section-head">
           <p className="eyebrow">Ways to work together</p>
@@ -133,7 +135,6 @@ export default async function HomePage() {
           </article>
         </div>
       </section>
-      <ClientProof />
       {caseStudies.length > 0 && (
         <section className="section" id="work">
           <div className="section-head">

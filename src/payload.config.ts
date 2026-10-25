@@ -21,11 +21,13 @@ import { Publications } from './collections/Publications'
 import { Posts } from './collections/Posts'
 import { SiteSettings } from './globals/SiteSettings'
 import { Home } from './globals/Home'
+import { importReviews } from './seed/importReviews'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
 export default buildConfig({
+  onInit: importReviews,
   admin: {
     user: Users.slug,
     importMap: {

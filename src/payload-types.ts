@@ -462,6 +462,13 @@ export interface Testimonial {
   author: string;
   role?: string | null;
   company?: string | null;
+  location?: string | null;
+  project?: string | null;
+  /**
+   * Display date from the original review.
+   */
+  reviewDate?: string | null;
+  rating?: number | null;
   avatar?: (number | null) | Media;
   featured?: boolean | null;
   order?: number | null;
@@ -1030,6 +1037,10 @@ export interface TestimonialsSelect<T extends boolean = true> {
   author?: T;
   role?: T;
   company?: T;
+  location?: T;
+  project?: T;
+  reviewDate?: T;
+  rating?: T;
   avatar?: T;
   featured?: T;
   order?: T;
