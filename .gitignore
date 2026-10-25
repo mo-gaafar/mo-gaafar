@@ -24,3 +24,7 @@ public/media/
 *.pem
 npm-debug.log*
 yarn-error.log*
+
+# Local review artifacts
+output/
+*.tsbuildinfo

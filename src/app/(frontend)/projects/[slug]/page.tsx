@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import { pageMetadata } from '../../../../lib/seo'
 import { notFound } from 'next/navigation'
 import { getPayloadClient, mediaUrl } from '../../../../lib/payload'
 import { RichText } from '../../../../components/RichText'
@@ -17,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params
   const p = await getProject(slug)
   if (!p) return { title: 'Project' }
-  return { title: p.title, description: p.description }
+  return pageMetadata(p.title, p.description || '', `/projects/${p.slug}`)
 }
 
 export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -32,7 +33,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         <Link href="/projects">Projects</Link> / {p.title}
       </div>
       <div className="section-head">
-        <h2>{p.title}</h2>
+        <h1>{p.title}</h1>
         <p className="lead">{p.description}</p>
       </div>
       {img && (

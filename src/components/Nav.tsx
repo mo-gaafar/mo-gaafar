@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { Icon, type IconName } from './Icon'
 import { ThemeToggle } from './ThemeToggle'
+import { contactAction } from '../lib/seo'
 
 type Social = { label: string; url: string }
 
@@ -36,10 +37,10 @@ export function Nav({
   socials?: Social[]
 }) {
   const [open, setOpen] = useState(false)
-  const cta = bookingUrl || (email ? `mailto:${email}` : '#contact')
+  const cta = contactAction(bookingUrl, email)
 
   return (
-    <nav className="sidenav" data-open={open}>
+    <nav className="sidenav" aria-label="Main navigation" data-open={open} onKeyDown={(event) => { if (event.key === 'Escape') setOpen(false) }}>
       <div className="sidenav-top">
         <Link href="/#top" className="brand" onClick={() => setOpen(false)}>
           <span className="brand-name">{name}</span>
@@ -52,6 +53,7 @@ export function Nav({
             className="menu-btn"
             aria-label="Toggle menu"
             aria-expanded={open}
+            aria-controls="navigation-links"
             onClick={() => setOpen((v) => !v)}
           >
             <Icon name={open ? 'close' : 'menu'} size={20} />
@@ -59,7 +61,7 @@ export function Nav({
         </div>
       </div>
 
-      <div className="sidenav-body">
+      <div className="sidenav-body" id="navigation-links">
         <ul className="sidenav-links">
           {links.map((l) => (
             <li key={l.href}>
@@ -71,9 +73,9 @@ export function Nav({
         </ul>
 
         <div className="sidenav-foot">
-          <a className="nav-cta" href={cta} target={bookingUrl ? '_blank' : undefined} rel="noopener">
+          <a className="nav-cta" href={cta.url} target={bookingUrl ? '_blank' : undefined} rel="noopener">
             <Icon name="send" size={15} />
-            Book a call
+            {cta.label}
           </a>
           {socials.length > 0 && (
             <ul className="nav-socials" aria-label="Social links">

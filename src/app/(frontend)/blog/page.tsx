@@ -1,9 +1,10 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import { pageMetadata } from '../../../lib/seo'
 import { getPayloadClient } from '../../../lib/payload'
 
 export const dynamic = 'force-dynamic'
-export const metadata: Metadata = { title: 'Writing' }
+export const metadata: Metadata = pageMetadata('Writing', 'Practical notes on AI agents, RAG, voice AI, automation, and engineering.', '/blog')
 
 const fmtDate = (d?: string | null) =>
   d ? new Date(d).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) : ''
@@ -25,7 +26,7 @@ export default async function BlogPage() {
       </div>
       <div className="section-head">
         <p className="eyebrow">Writing</p>
-        <h2>AI automation, agents &amp; engineering</h2>
+        <h1>AI automation, agents &amp; engineering</h1>
         <p className="lead">
           Practical notes on AI automation, Claude agents, n8n workflows, voice agents, RAG systems, and shipping
           production LLM applications.

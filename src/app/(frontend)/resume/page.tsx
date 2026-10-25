@@ -1,10 +1,11 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import { pageMetadata } from '../../../lib/seo'
 import { getPayloadClient } from '../../../lib/payload'
 import { Icon } from '../../../components/Icon'
 
 export const dynamic = 'force-dynamic'
-export const metadata: Metadata = { title: 'Résumé' }
+export const metadata: Metadata = pageMetadata('Résumé', 'Professional experience, education, and résumé of Mohamed Gaafar.', '/resume')
 
 export default async function ResumePage() {
   const payload = await getPayloadClient()
@@ -17,7 +18,7 @@ export default async function ResumePage() {
         <Link href="/">Home</Link> / Résumé
       </div>
       <div className="section-head">
-        <h2>Résumé</h2>
+        <h1>Résumé</h1>
       </div>
       <div className="hero-actions">
         <a href={pdf} className="btn btn-primary" target="_blank" rel="noopener">

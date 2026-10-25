@@ -7,6 +7,7 @@ import './globals.css'
 import { Nav } from '../../components/Nav'
 import { Footer } from '../../components/Footer'
 import { getPayloadClient } from '../../lib/payload'
+import { pageMetadata, siteUrl } from '../../lib/seo'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' })
 const sora = Sora({ subsets: ['latin'], variable: '--font-sora', display: 'swap' })
@@ -19,13 +20,13 @@ export async function generateMetadata(): Promise<Metadata> {
   const s = await payload.findGlobal({ slug: 'site-settings' }).catch(() => null)
   const title = s?.siteTitle || 'Mohamed Gaafar'
   const description = s?.description || 'AI Engineer & Fractional CTO'
-  const url = process.env.NEXT_PUBLIC_SERVER_URL || undefined
+  const url = siteUrl()
   return {
-    metadataBase: url ? new URL(url) : undefined,
+    ...pageMetadata(title, description, '/'),
+    metadataBase: new URL(url),
     title: { default: title, template: `%s · ${s?.firstName ?? 'Mohamed'} ${s?.lastName ?? 'Gaafar'}` },
     description,
-    openGraph: { title, description, type: 'website', url },
-    twitter: { card: 'summary_large_image', title, description },
+
   }
 }
 
@@ -44,6 +45,7 @@ export default async function FrontendLayout({ children }: { children: React.Rea
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body>
+        <a className="skip-link" href="#main-content">Skip to content</a>
         <div className="app-shell" id="top">
           <Nav
             name={name}
@@ -52,7 +54,7 @@ export default async function FrontendLayout({ children }: { children: React.Rea
             email={s?.email}
             socials={socials}
           />
-          <div className="main">{children}</div>
+          <main className="main" id="main-content" tabIndex={-1}>{children}</main>
         </div>
         <div className="main">
           <Footer name={name} socials={socials} />

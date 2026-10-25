@@ -1,9 +1,10 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import { pageMetadata } from '../../../lib/seo'
 import { getPayloadClient } from '../../../lib/payload'
 
 export const dynamic = 'force-dynamic'
-export const metadata: Metadata = { title: 'Publications' }
+export const metadata: Metadata = pageMetadata('Publications', 'Research by Mohamed Gaafar on brain-computer interfaces and virtual reality.', '/publications')
 
 const fmtDate = (d?: string | null) =>
   d ? new Date(d).toLocaleDateString('en-US', { year: 'numeric', month: 'long' }) : ''
@@ -19,7 +20,7 @@ export default async function PublicationsPage() {
       </div>
       <div className="section-head">
         <p className="eyebrow">Research</p>
-        <h2>Publications</h2>
+        <h1>Publications</h1>
         <p className="lead">Papers, articles, and talks — mostly in neurotechnology and applied AI.</p>
       </div>
       <div className="timeline">

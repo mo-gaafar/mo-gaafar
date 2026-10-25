@@ -1,9 +1,10 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import { pageMetadata } from '../../../lib/seo'
 import { getPayloadClient, mediaUrl } from '../../../lib/payload'
 
 export const dynamic = 'force-dynamic'
-export const metadata: Metadata = { title: 'Projects' }
+export const metadata: Metadata = pageMetadata('Projects', 'Applied AI and neurotechnology projects by Mohamed Gaafar.', '/projects')
 
 export default async function ProjectsPage() {
   const payload = await getPayloadClient()
@@ -16,7 +17,7 @@ export default async function ProjectsPage() {
       </div>
       <div className="section-head">
         <p className="eyebrow">Build log</p>
-        <h2>Projects</h2>
+        <h1>Projects</h1>
         <p className="lead">Things I have designed, built, or led — from applied AI to neurotechnology.</p>
       </div>
       <div className="card-grid">

@@ -1,9 +1,10 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import { pageMetadata } from '../../../../lib/seo'
 import { getPayloadClient } from '../../../../lib/payload'
 
 export const dynamic = 'force-dynamic'
-export const metadata: Metadata = { title: 'Archived posts' }
+export const metadata: Metadata = pageMetadata('Archived writing', 'Older engineering articles and technical notes by Mohamed Gaafar.', '/blog/archive')
 
 const fmtDate = (d?: string | null) =>
   d ? new Date(d).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) : ''
@@ -24,7 +25,7 @@ export default async function ArchivePage() {
         <Link href="/blog">Writing</Link> / Archive
       </div>
       <div className="section-head">
-        <h2>Archived posts</h2>
+        <h1>Archived posts</h1>
         <p className="lead">Older technical notes preserved for reference.</p>
       </div>
       {docs.map((p) => (

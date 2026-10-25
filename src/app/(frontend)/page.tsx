@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { getPayloadClient, mediaUrl } from '../../lib/payload'
 import { Icon, type IconName } from '../../components/Icon'
+import { contactAction, jsonLd, siteUrl } from '../../lib/seo'
 
 export const dynamic = 'force-dynamic'
 
@@ -27,7 +28,8 @@ export default async function HomePage() {
 
   const vis = home?.visibility ?? {}
   const portrait = mediaUrl(settings?.profileImage, '/img/mo.jpeg')
-  const bookingUrl = settings?.bookingUrl || (settings?.email ? `mailto:${settings.email}` : '#contact')
+  const contact = contactAction(settings?.bookingUrl, settings?.email)
+  const bookingUrl = contact.url
 
   const ctas = home?.ctas ?? []
   const focusTags = home?.focusTags ?? []
@@ -35,11 +37,23 @@ export default async function HomePage() {
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd({
+        '@context': 'https://schema.org', '@type': 'ProfilePage',
+        '@id': `${siteUrl()}/#profile`, url: siteUrl(),
+        mainEntity: {
+          '@type': 'Person', '@id': `${siteUrl()}/#person`,
+          name: `${settings?.firstName ?? ''} ${settings?.lastName ?? ''}`.trim(),
+          jobTitle: settings?.roleTitle, description: home?.lede,
+          image: portrait ? new URL(portrait, siteUrl()).href : undefined,
+          sameAs: settings?.socials?.filter((s) => s.url.startsWith('https://')).map((s) => s.url),
+        },
+      }) }} />
       {/* ---------- Hero ---------- */}
       <header className="hero" id="about">
         <div className="hero-grid">
-          <div>
+          <div className="hero-copy">
             {home?.kicker && <p className="hero-kicker">{home.kicker}</p>}
+            <p className="hero-name">{settings?.firstName} {settings?.lastName}</p>
             <h1>{home?.headline || 'AI Engineer & Fractional CTO'}</h1>
             <p className="hero-lede">{home?.lede}</p>
             <div className="hero-actions">
@@ -58,12 +72,12 @@ export default async function HomePage() {
                     target={c.url?.startsWith('http') ? '_blank' : undefined}
                     rel="noopener"
                   >
-                    {c.label}
+                    {c.label === 'Book a call' && c.url?.startsWith('mailto:') ? 'Let’s talk' : c.label}
                   </a>
                 ))
               ) : (
                 <a href={bookingUrl} className="btn btn-primary">
-                  <Icon name="send" size={16} /> Book a call
+                  <Icon name="send" size={16} /> {contact.label}
                 </a>
               )}
             </div>
@@ -77,9 +91,14 @@ export default async function HomePage() {
           </div>
 
           {portrait && (
-            <aside className="hero-portrait" aria-label="Portrait">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={portrait} alt={`${settings?.firstName ?? ''} ${settings?.lastName ?? ''}`.trim()} />
+            <aside className="hero-visual" aria-label="Portrait">
+              <div className="orbit orbit-one" aria-hidden="true" />
+              <div className="orbit orbit-two" aria-hidden="true" />
+              <div className="hero-portrait">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={portrait} width={480} height={540} fetchPriority="high" alt={`${settings?.firstName ?? ''} ${settings?.lastName ?? ''}`.trim()} />
+              </div>
+              <div className="portrait-caption"><span aria-hidden="true">↗</span> {settings?.roleTitle}</div>
             </aside>
           )}
         </div>
@@ -133,12 +152,12 @@ export default async function HomePage() {
             <h2>Case studies</h2>
             <p className="lead">Problems I was brought in to solve, what I led, and the measurable result.</p>
           </div>
-          <div className="timeline">
+          <div className="case-grid">
             {caseStudies.map((c) => (
               <article className="case" key={c.id}>
                 <div>
                   {c.role && <p className="role">{c.role}{c.client ? ` · ${c.client}` : ''}</p>}
-                  <h3>{c.title}</h3>
+                  <h3><Link href={`/case-studies/${c.slug}`}>{c.title}</Link></h3>
                   <p className="muted">{c.summary}</p>
                   {c.stack && c.stack.length > 0 && (
                     <p className="stack-line">{c.stack.map((s) => s.item).join(' · ')}</p>
@@ -238,7 +257,7 @@ export default async function HomePage() {
                 <article className="card" key={p.id}>
                   {img && (
                     // eslint-disable-next-line @next/next/no-img-element
-                    <img src={img} alt={p.title} style={{ borderRadius: 4, marginBottom: '0.9rem', aspectRatio: '16/10', objectFit: 'cover' }} />
+                    <img src={img} loading="lazy" width={640} height={400} alt={p.title} style={{ borderRadius: 4, marginBottom: '0.9rem', aspectRatio: '16/10', objectFit: 'cover' }} />
                   )}
                   <h3 style={{ fontSize: '1.15rem' }}>
                     <Link href={`/projects/${p.slug}`}>{p.title}</Link>
@@ -336,7 +355,7 @@ export default async function HomePage() {
         </div>
         <div className="hero-actions">
           <a href={bookingUrl} className="btn btn-primary" target={bookingUrl.startsWith('http') ? '_blank' : undefined} rel="noopener">
-            <Icon name="send" size={16} /> Book a call
+            <Icon name="send" size={16} /> {contact.label}
           </a>
           {settings?.email && (
             <a href={`mailto:${settings.email}`} className="btn btn-secondary">
