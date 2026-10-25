@@ -1,7 +1,7 @@
 // Verbatim client feedback supplied by the site owner; used only for the initial CMS import.
 export const initialReviews = [
   {
-    author: 'Edo Grado',
+    author: 'Edogrado',
     role: null,
     location: 'Texas, United States',
     project: 'WhatsApp Selling Agent & Seller Dashboard',
@@ -19,7 +19,7 @@ export const initialReviews = [
   {
     author: 'Dan',
     role: null,
-    location: null,
+    location: 'France',
     project: 'Vapi to n8n to Google Sheets Lookup',
     reviewDate: 'September 17, 2025',
     quote: 'I had a great experience working with Mohamed. His code was clean, well-structured, and exactly what I needed. He explained technical concepts clearly and provided practical solutions that worked perfectly for my project. Beyond his technical skills, Mohamed was genuinely pleasant to collaborate with - responsive, professional, and easy to communicate with throughout the entire process.\nI would definitely hire him again and recommend him to others looking for quality development work.Clear, helpful and practical coder\nNice person to work with',

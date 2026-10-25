@@ -2,6 +2,15 @@ import React from 'react'
 
 export function ClientFlag({ location }: { location?: string | null }) {
   const country = location?.split(',').at(-1)?.trim()
+  if (country === 'France') {
+    return (
+      <svg className="client-flag" data-country="FR" viewBox="0 0 60 40" aria-hidden="true">
+        <path d="M0 0h20v40H0Z" fill="#002395" />
+        <path d="M20 0h20v40H20Z" fill="#fff" />
+        <path d="M40 0h20v40H40Z" fill="#ed2939" />
+      </svg>
+    )
+  }
   if (country === 'United States') {
     return (
       <svg className="client-flag" data-country="US" viewBox="0 0 60 40" aria-hidden="true">

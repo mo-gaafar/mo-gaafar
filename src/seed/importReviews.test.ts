@@ -8,8 +8,10 @@ const payload = await getPayload({ config })
 try {
   const before = await payload.find({ collection: 'testimonials', pagination: false })
   assert.equal(before.docs.length, 4)
+  assert.ok(before.docs.some((review) => review.author === 'Edogrado'))
   const review = before.docs.find((review) => review.author === 'Dan')!
   assert.ok(review)
+  assert.equal(review.location, 'France')
   await payload.update({ collection: 'testimonials', id: review.id, data: { quote: 'CMS edit must survive restart' } })
   try {
     await importReviews(payload)

@@ -746,10 +746,11 @@ h4 {
 .review-navigation > div { display: flex; gap: .5rem; }
 .review-navigation button { width: 44px; height: 44px; border: 1px solid var(--border); border-radius: 50%; color: var(--ink); background: var(--surface); font-size: 1.3rem; cursor: pointer; }
 .review-navigation button:hover { background: var(--primary-soft); }
-.review-track { display: grid; grid-auto-flow: column; grid-auto-columns: min(44%, 30rem); gap: 1rem; overflow-x: auto; scroll-snap-type: x proximity; overscroll-behavior-x: contain; padding: .25rem .25rem 1rem; scrollbar-color: var(--primary) var(--surface-alt); }
-.review-track .quote { margin: 0; padding: 1.25rem; gap: .85rem; min-width: 0; scroll-snap-align: start; align-self: start; border: 1px solid var(--border); border-radius: 12px; background: var(--surface); }
+.review-track { display: grid; grid-auto-flow: column; grid-auto-columns: min(44%, 30rem); gap: 1rem; overflow-x: auto; scroll-snap-type: x proximity; overscroll-behavior-x: contain; padding: .25rem .25rem 1rem; scrollbar-width: none; }
+.review-track::-webkit-scrollbar { display: none; }
+.review-track .quote { margin: 0; padding: 1.25rem; gap: .85rem; min-width: 0; scroll-snap-align: start; align-self: stretch; border: 1px solid var(--border); border-radius: 12px; background: var(--surface); }
 .review-track blockquote { font-size: .95rem; line-height: 1.65; white-space: pre-line; }
-.review-track .quote figcaption { margin-top: .25rem; }
+.review-track .quote figcaption { margin-top: auto; padding-top: .25rem; min-height: 8rem; }
 .review-author { display: flex; align-items: center; gap: .55rem; color: var(--ink); font-size: 1rem; }
 .client-flag { width: 27px; height: 18px; border-radius: 2px; flex: 0 0 auto; box-shadow: 0 0 0 1px #8884; }
 .review-attribution { display: block; color: var(--muted); margin: .25rem 0 .5rem; font-size: .8rem; }
