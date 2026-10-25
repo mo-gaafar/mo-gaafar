@@ -78,9 +78,9 @@ export default async function HomePage() {
               <img src={portrait} width={480} height={540} fetchPriority="high" alt={name} />
             </div>
             <div className="portrait-caption">A human behind the automation.</div>
-            <HeroPostcards />
           </aside>
         </div>
+        <HeroPostcards />
       </header>
       <ClientProof reviews={reviews} />
       <section className="section" id="offers">
