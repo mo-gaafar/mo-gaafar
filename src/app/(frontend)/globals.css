@@ -859,3 +859,16 @@ h4 {
   .factory-diagram .is-active { transform: none; }
   .scope-note { padding-left: 1.25rem; }
 }
+
+/* Latest CMS posts and the forthcoming newsletter share one compact section. */
+.writing-layout { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: clamp(1.5rem, 5vw, 4rem); align-items: start; }
+.writing-layout .post-row:first-child { padding-top: 0; }
+.writing-layout .post-row h3 { margin-bottom: .65rem; line-height: 1.4; }
+.writing-layout .post-row .text-link { font-size: .85rem; margin-top: .5rem; }
+.writing-all { margin-top: 1rem; }
+.newsletter-panel { margin-top: 0; padding: clamp(1.5rem, 3vw, 2.5rem); }
+.newsletter-mark { display: block; color: var(--primary); font-size: 2.5rem; margin-bottom: 1.5rem; }
+.newsletter-panel h3 { font-size: 1.7rem; margin: .75rem 0 1rem; }
+.newsletter-panel p + p { margin-top: 1rem; }
+.newsletter-panel .text-link { margin-top: 1rem; }
+@media (max-width: 760px) { .writing-layout { grid-template-columns: 1fr; } }

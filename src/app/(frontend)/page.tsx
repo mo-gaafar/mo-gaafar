@@ -10,7 +10,7 @@ export const dynamic = 'force-dynamic'
 
 export default async function HomePage() {
   const payload = await getPayloadClient()
-  const [settings, caseStudies, reviews] = await Promise.all([
+  const [settings, caseStudies, reviews, posts] = await Promise.all([
     payload.findGlobal({ slug: 'site-settings' }),
     payload
       .find({
@@ -22,6 +22,13 @@ export default async function HomePage() {
       })
       .then((r) => r.docs),
     payload.find({ collection: 'testimonials', where: { featured: { equals: true } }, sort: 'order', pagination: false, depth: 0 }).then((r) => r.docs),
+    payload.find({
+      collection: 'posts',
+      where: { and: [{ archived: { not_equals: true } }, { date: { less_than_equal: new Date().toISOString() } }] },
+      sort: '-date',
+      limit: 3,
+      depth: 0,
+    }).then((r) => r.docs),
   ])
   const name = `${settings.firstName || 'Mohamed'} ${settings.lastName || 'Gaafar'}`
   const portrait = mediaUrl(settings.profileImage, '/img/mo.jpeg')!
@@ -165,6 +172,34 @@ export default async function HomePage() {
           </div>
         </section>
       )}
+      <section className="section" id="writing" aria-labelledby="writing-heading">
+        <div className="section-head">
+          <p className="eyebrow">From my notebook</p>
+          <h2 id="writing-heading">Ideas, experiments, and lessons learned.</h2>
+          <p className="lead">Practical notes on AI, automation, and building useful software.</p>
+        </div>
+        <div className="writing-layout">
+          <div>
+            {posts.map((post) => (
+              <article className="post-row reveal" key={post.id}>
+                <p className="meta"><time dateTime={post.date}>{new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })}</time></p>
+                <h3><Link href={`/blog/${post.slug}`}>{post.title}</Link></h3>
+                <p className="muted">{post.description}</p>
+                <Link className="text-link" href={`/blog/${post.slug}`}>Read the article ↗</Link>
+              </article>
+            ))}
+            <Link className="text-link writing-all" href="/blog">Explore all writing ↗</Link>
+          </div>
+          <aside className="panel newsletter-panel reveal" aria-labelledby="newsletter-heading">
+            <span className="newsletter-mark" aria-hidden="true">✉</span>
+            <p className="eyebrow">Newsletter · Coming soon</p>
+            <h3 id="newsletter-heading">Good ideas, delivered.</h3>
+            <p>I’m putting together a newsletter about what I’m building, what I’m learning, and the ideas worth sharing along the way.</p>
+            <p className="muted">Signups will open here when it launches. In the meantime, explore the latest articles.</p>
+            <Link className="text-link" href="/blog">Read my writing ↗</Link>
+          </aside>
+        </div>
+      </section>
       <section className="section about-compact" id="background">
         <div>
           <p className="eyebrow">A little more about me</p>
