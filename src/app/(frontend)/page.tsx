@@ -172,6 +172,32 @@ export default async function HomePage() {
           </div>
         </section>
       )}
+      <section className="section about-compact" id="background">
+        <div>
+          <p className="eyebrow">A little more about me</p>
+          <h2>
+            Curious by nature.
+            <br />
+            Engineer by practice.
+          </h2>
+          <p className="lead">
+            My work spans AI systems, software engineering and technical leadership. I care about
+            what happens after the demo: a system people can understand, operate and improve.
+          </p>
+          <div className="hero-actions">
+            <Link href="/resume" className="text-link">
+              My background ↗
+            </Link>
+            <Link href="/projects" className="text-link">
+              Projects ↗
+            </Link>
+            <Link href="/blog" className="text-link">
+              Writing ↗
+            </Link>
+          </div>
+        </div>
+        <CatPlayground />
+      </section>
       <section className="section" id="writing" aria-labelledby="writing-heading">
         <div className="section-head">
           <p className="eyebrow">From my notebook</p>
@@ -199,32 +225,6 @@ export default async function HomePage() {
             <Link className="text-link" href="/blog">Read my writing ↗</Link>
           </aside>
         </div>
-      </section>
-      <section className="section about-compact" id="background">
-        <div>
-          <p className="eyebrow">A little more about me</p>
-          <h2>
-            Curious by nature.
-            <br />
-            Engineer by practice.
-          </h2>
-          <p className="lead">
-            My work spans AI systems, software engineering and technical leadership. I care about
-            what happens after the demo: a system people can understand, operate and improve.
-          </p>
-          <div className="hero-actions">
-            <Link href="/resume" className="text-link">
-              My background ↗
-            </Link>
-            <Link href="/projects" className="text-link">
-              Projects ↗
-            </Link>
-            <Link href="/blog" className="text-link">
-              Writing ↗
-            </Link>
-          </div>
-        </div>
-        <CatPlayground />
       </section>
       <section className="section" id="contact">
         <div className="section-head">
