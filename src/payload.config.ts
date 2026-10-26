@@ -22,12 +22,16 @@ import { Posts } from './collections/Posts'
 import { SiteSettings } from './globals/SiteSettings'
 import { Home } from './globals/Home'
 import { importReviews } from './seed/importReviews'
+import { configureNewsletter } from './seed/configureNewsletter'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
 export default buildConfig({
-  onInit: importReviews,
+  onInit: async (payload) => {
+    await importReviews(payload)
+    await configureNewsletter(payload)
+  },
   admin: {
     user: Users.slug,
     importMap: {

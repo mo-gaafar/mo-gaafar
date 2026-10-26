@@ -872,3 +872,12 @@ h4 {
 .newsletter-panel p + p { margin-top: 1rem; }
 .newsletter-panel .text-link { margin-top: 1rem; }
 @media (max-width: 760px) { .writing-layout { grid-template-columns: 1fr; } }
+
+.newsletter-form { display: grid; gap: .75rem; margin-top: 1.5rem; }
+.newsletter-form label { font-size: .85rem; font-weight: 600; }
+.newsletter-form input[type="email"] { width: 100%; min-width: 0; min-height: 48px; padding: .8rem; border: 1px solid var(--border); border-radius: 8px; background: var(--bg); color: var(--text); font: inherit; }
+.newsletter-form .btn { width: 100%; cursor: pointer; }
+.newsletter-form #newsletter-note { font-size: .75rem; line-height: 1.6; margin: 0; }
+.newsletter-form .text-link { font-size: .8rem; margin-top: 0; }
+
+.writing-layout:not(:has(.newsletter-panel)) { grid-template-columns: 1fr; }

@@ -4,6 +4,7 @@ import { jsonLd, siteUrl } from '../../lib/seo'
 import { ContactOptions } from '../../components/ContactOptions'
 import { ClientProof } from '../../components/ClientProof'
 import { CatPlayground } from '../../components/CatPlayground'
+import { NewsletterSignup } from '../../components/NewsletterSignup'
 import { HeroPostcards } from '../../components/HeroPostcards'
 
 export const dynamic = 'force-dynamic'
@@ -216,14 +217,7 @@ export default async function HomePage() {
             ))}
             <Link className="text-link writing-all" href="/blog">Explore all writing ↗</Link>
           </div>
-          <aside className="panel newsletter-panel reveal" aria-labelledby="newsletter-heading">
-            <span className="newsletter-mark" aria-hidden="true">✉</span>
-            <p className="eyebrow">Newsletter · Coming soon</p>
-            <h3 id="newsletter-heading">Good ideas, delivered.</h3>
-            <p>I’m putting together a newsletter about what I’m building, what I’m learning, and the ideas worth sharing along the way.</p>
-            <p className="muted">Signups will open here when it launches. In the meantime, explore the latest articles.</p>
-            <Link className="text-link" href="/blog">Read my writing ↗</Link>
-          </aside>
+          <NewsletterSignup newsletter={settings.newsletter} />
         </div>
       </section>
       <section className="section" id="contact">

@@ -1357,6 +1357,19 @@ export interface SiteSetting {
   resumeUrl?: string | null;
   upworkUrl?: string | null;
   /**
+   * Homepage signup. Subscribers and emails are managed in Buttondown.
+   */
+  newsletter: {
+    enabled?: boolean | null;
+    title: string;
+    description: string;
+    buttonLabel: string;
+    /**
+     * Only the username from buttondown.com/USERNAME, without a URL or API key.
+     */
+    buttondownUsername: string;
+  };
+  /**
    * GA4 measurement ID.
    */
   analyticsId?: string | null;
@@ -1439,6 +1452,15 @@ export interface SiteSettingsSelect<T extends boolean = true> {
   bookingUrl?: T;
   resumeUrl?: T;
   upworkUrl?: T;
+  newsletter?:
+    | T
+    | {
+        enabled?: T;
+        title?: T;
+        description?: T;
+        buttonLabel?: T;
+        buttondownUsername?: T;
+      };
   analyticsId?: T;
   socials?:
     | T
