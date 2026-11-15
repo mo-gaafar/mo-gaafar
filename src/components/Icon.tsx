@@ -1,125 +1,51 @@
-import React from 'react'
+'use client'
 
-/* Minimal inline icon set (lucide-style 24px stroke paths). */
-const paths: Record<string, React.ReactNode> = {
-  whatsapp: (
-    <path
-      fill="currentColor"
-      stroke="none"
-      d="M20.52 3.48A11.91 11.91 0 0 0 12.05 0C5.46 0 .1 5.36.1 11.95c0 2.11.55 4.17 1.6 5.99L0 24l6.23-1.63a11.94 11.94 0 0 0 5.82 1.48h.01C18.64 23.85 24 18.49 24 11.9c0-3.19-1.24-6.19-3.48-8.42ZM12.06 21.84a9.9 9.9 0 0 1-5.04-1.38l-.36-.21-3.7.97.99-3.61-.24-.37a9.9 9.9 0 0 1-1.52-5.29C2.19 6.47 6.62 2.04 12.07 2.04c2.64 0 5.12 1.03 6.98 2.9a9.81 9.81 0 0 1 2.89 6.98c0 5.45-4.43 9.92-9.88 9.92Zm5.42-7.41c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.18-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.48-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.21 5.08 4.5.71.3 1.26.49 1.69.63.71.22 1.35.19 1.86.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.18-1.42-.08-.12-.28-.2-.57-.35Z"
-    />
-  ),
-  mail: (
-    <>
-      <rect x="2" y="4" width="20" height="16" rx="2" />
-      <path d="m22 7-10 6L2 7" />
-    </>
-  ),
-  send: <path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z" />,
-  external: (
-    <>
-      <path d="M15 3h6v6" />
-      <path d="M10 14 21 3" />
-      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-    </>
-  ),
-  download: (
-    <>
-      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-      <path d="M7 10l5 5 5-5M12 15V3" />
-    </>
-  ),
-  arrow: <path d="M5 12h14M13 5l7 7-7 7" />,
-  github: (
-    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
-  ),
-  linkedin: (
-    <>
-      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z" />
-      <rect x="2" y="9" width="4" height="12" />
-      <circle cx="4" cy="4" r="2" />
-    </>
-  ),
-  mapPin: (
-    <>
-      <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z" />
-      <circle cx="12" cy="10" r="3" />
-    </>
-  ),
-  sun: (
-    <>
-      <circle cx="12" cy="12" r="4" />
-      <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
-    </>
-  ),
-  moon: <path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z" />,
-  menu: <path d="M3 6h18M3 12h18M3 18h18" />,
-  close: <path d="M18 6 6 18M6 6l12 12" />,
-  compass: (
-    <>
-      <circle cx="12" cy="12" r="10" />
-      <path d="m16.2 7.8-2.9 6.4-6.4 2.9 2.9-6.4 6.4-2.9z" />
-    </>
-  ),
-  cpu: (
-    <>
-      <rect x="4" y="4" width="16" height="16" rx="2" />
-      <rect x="9" y="9" width="6" height="6" />
-      <path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3" />
-    </>
-  ),
-  lightbulb: (
-    <>
-      <path d="M9 18h6M10 22h4" />
-      <path d="M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.1V18h6v-1.2c0-.8.4-1.6 1-2.1A7 7 0 0 0 12 2z" />
-    </>
-  ),
-  workflow: (
-    <>
-      <rect x="3" y="3" width="7" height="7" rx="1" />
-      <rect x="14" y="14" width="7" height="7" rx="1" />
-      <path d="M10 6.5h5a2 2 0 0 1 2 2V14" />
-    </>
-  ),
-  mic: (
-    <>
-      <rect x="9" y="2" width="6" height="12" rx="3" />
-      <path d="M5 10a7 7 0 0 0 14 0M12 17v5" />
-    </>
-  ),
-  search: (
-    <>
-      <circle cx="11" cy="11" r="7" />
-      <path d="m21 21-4.3-4.3" />
-    </>
-  ),
+import React from 'react'
+import WhatsApp from '@mui/icons-material/WhatsApp'
+import MailOutlineRounded from '@mui/icons-material/MailOutlineRounded'
+import SendRounded from '@mui/icons-material/SendRounded'
+import OpenInNewRounded from '@mui/icons-material/OpenInNewRounded'
+import FileDownloadRounded from '@mui/icons-material/FileDownloadRounded'
+import ArrowForwardRounded from '@mui/icons-material/ArrowForwardRounded'
+import ArrowOutwardRounded from '@mui/icons-material/ArrowOutwardRounded'
+import ArrowDownwardRounded from '@mui/icons-material/ArrowDownwardRounded'
+import ArrowUpwardRounded from '@mui/icons-material/ArrowUpwardRounded'
+import ArrowBackRounded from '@mui/icons-material/ArrowBackRounded'
+import RotateRightRounded from '@mui/icons-material/RotateRightRounded'
+import RestartAltRounded from '@mui/icons-material/RestartAltRounded'
+import StarRounded from '@mui/icons-material/StarRounded'
+import GitHub from '@mui/icons-material/GitHub'
+import LinkedIn from '@mui/icons-material/LinkedIn'
+import LightModeRounded from '@mui/icons-material/LightModeRounded'
+import DarkModeRounded from '@mui/icons-material/DarkModeRounded'
+import MenuRounded from '@mui/icons-material/MenuRounded'
+import CloseRounded from '@mui/icons-material/CloseRounded'
+
+const icons = {
+  whatsapp: WhatsApp,
+  mail: MailOutlineRounded,
+  send: SendRounded,
+  external: OpenInNewRounded,
+  download: FileDownloadRounded,
+  arrow: ArrowForwardRounded,
+  arrowOutward: ArrowOutwardRounded,
+  arrowDown: ArrowDownwardRounded,
+  arrowUp: ArrowUpwardRounded,
+  arrowBack: ArrowBackRounded,
+  rotate: RotateRightRounded,
+  restart: RestartAltRounded,
+  star: StarRounded,
+  github: GitHub,
+  linkedin: LinkedIn,
+  sun: LightModeRounded,
+  moon: DarkModeRounded,
+  menu: MenuRounded,
+  close: CloseRounded,
 }
 
-export type IconName = keyof typeof paths
+export type IconName = keyof typeof icons
 
-export function Icon({
-  name,
-  size = 18,
-  className,
-}: {
-  name: IconName
-  size?: number
-  className?: string
-}) {
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-      className={className}
-    >
-      {paths[name]}
-    </svg>
-  )
+export function Icon({ name, size = 18, className }: { name: IconName; size?: number; className?: string }) {
+  const MaterialIcon = icons[name]
+  return <MaterialIcon aria-hidden="true" focusable="false" fontSize="inherit" className={className} style={{ width: size, height: size, verticalAlign: 'middle', flexShrink: 0 }} />
 }

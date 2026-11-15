@@ -1,3 +1,4 @@
+import { Icon } from './Icon'
 import React from 'react'
 import type { SiteSetting } from '../payload-types'
 import { validButtondownUsername } from '../lib/newsletter'
@@ -7,7 +8,7 @@ export function NewsletterSignup({ newsletter }: { newsletter?: SiteSetting['new
   const username = newsletter.buttondownUsername
   return (
     <aside className="panel newsletter-panel reveal" aria-labelledby="newsletter-heading">
-      <span className="newsletter-mark" aria-hidden="true">✉</span>
+      <span className="newsletter-mark" aria-hidden="true"><Icon name="mail" size={40} /></span>
       <p className="eyebrow">Newsletter</p>
       <h3 id="newsletter-heading">{newsletter.title}</h3>
       <p>{newsletter.description}</p>
@@ -17,7 +18,7 @@ export function NewsletterSignup({ newsletter }: { newsletter?: SiteSetting['new
         <input type="hidden" name="embed" value="1" />
         <button className="btn btn-primary" type="submit">{newsletter.buttonLabel}</button>
         <p id="newsletter-note" className="muted">Your email goes to Buttondown to subscribe. Unsubscribe at any time.</p>
-        <a className="text-link" href={`https://buttondown.com/${username}`}>Read on Buttondown ↗</a>
+        <a className="text-link" href={`https://buttondown.com/${username}`}>Read on Buttondown <Icon name="arrowOutward" /></a>
       </form>
     </aside>
   )

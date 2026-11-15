@@ -1,5 +1,7 @@
 'use client'
 
+import { Icon } from './Icon'
+import IconButton from '@mui/material/IconButton'
 import React, { useRef } from 'react'
 
 export function ReviewScroller({ children }: { children: React.ReactNode }) {
@@ -12,8 +14,8 @@ export function ReviewScroller({ children }: { children: React.ReactNode }) {
       <div className="review-navigation">
         <span>Scroll through client stories</span>
         <div>
-          <button type="button" aria-label="Previous reviews" aria-controls="review-track" onClick={() => scroll(-1)}>←</button>
-          <button type="button" aria-label="Next reviews" aria-controls="review-track" onClick={() => scroll(1)}>→</button>
+          <IconButton aria-label="Previous reviews" aria-controls="review-track" onClick={() => scroll(-1)}><Icon name="arrowBack" /></IconButton>
+          <IconButton aria-label="Next reviews" aria-controls="review-track" onClick={() => scroll(1)}><Icon name="arrow" /></IconButton>
         </div>
       </div>
       <div className="review-track" id="review-track" ref={track} tabIndex={0} role="region" aria-label="Client reviews, scroll horizontally">

@@ -1,3 +1,4 @@
+import { Icon } from '../../components/Icon'
 import Link from 'next/link'
 import { getPayloadClient, mediaUrl } from '../../lib/payload'
 import { jsonLd, siteUrl } from '../../lib/seo'
@@ -71,10 +72,10 @@ export default async function HomePage() {
             <p className="hero-lede">{description}</p>
             <div className="hero-actions">
               <a className="btn btn-primary" href="#contact">
-                Let’s talk about your project ↗
+                Let’s talk about your project <Icon name="arrowOutward" />
               </a>
               <a className="btn btn-secondary" href="#offers">
-                Explore how I can help ↓
+                Explore how I can help <Icon name="arrowDown" />
               </a>
             </div>
             <p className="hub-note">
@@ -111,13 +112,13 @@ export default async function HomePage() {
               Connect client requests, Linear planning, development and ongoing care—with people in
               control.
             </p>
-            <span className="offer-link">Explore the offer ↗</span>
+            <span className="offer-link">Explore the offer <Icon name="arrowOutward" /></span>
           </div>
           <div className="offer-mini-flow" aria-hidden="true">
             <span>01 / Understand</span>
-            <i>↓</i>
+            <i><Icon name="arrowDown" /></i>
             <span>02 / Build & check</span>
-            <i>↓</i>
+            <i><Icon name="arrowDown" /></i>
             <span>03 / Deliver & maintain</span>
           </div>
         </Link>
@@ -128,7 +129,7 @@ export default async function HomePage() {
               Connect tools and reduce repetitive operational work, with review where it matters.
             </p>
             <a className="text-link" href="#contact">
-              Discuss your workflow ↗
+              Discuss your workflow <Icon name="arrowOutward" />
             </a>
           </article>
           <article>
@@ -138,7 +139,7 @@ export default async function HomePage() {
               sources.
             </p>
             <a className="text-link" href="#contact">
-              Discuss your knowledge system ↗
+              Discuss your knowledge system <Icon name="arrowOutward" />
             </a>
           </article>
         </div>
@@ -166,7 +167,7 @@ export default async function HomePage() {
                   <p className="muted">{c.summary}</p>
                 </div>
                 <Link className="text-link" href={`/case-studies/${c.slug}`}>
-                  Read the case study ↗
+                  Read the case study <Icon name="arrowOutward" />
                 </Link>
               </article>
             ))}
@@ -187,13 +188,13 @@ export default async function HomePage() {
           </p>
           <div className="hero-actions">
             <Link href="/resume" className="text-link">
-              My background ↗
+              My background <Icon name="arrowOutward" />
             </Link>
             <Link href="/projects" className="text-link">
-              Projects ↗
+              Projects <Icon name="arrowOutward" />
             </Link>
             <Link href="/blog" className="text-link">
-              Writing ↗
+              Writing <Icon name="arrowOutward" />
             </Link>
           </div>
         </div>
@@ -212,10 +213,10 @@ export default async function HomePage() {
                 <p className="meta"><time dateTime={post.date}>{new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })}</time></p>
                 <h3><Link href={`/blog/${post.slug}`}>{post.title}</Link></h3>
                 <p className="muted">{post.description}</p>
-                <Link className="text-link" href={`/blog/${post.slug}`}>Read the article ↗</Link>
+                <Link className="text-link" href={`/blog/${post.slug}`}>Read the article <Icon name="arrowOutward" /></Link>
               </article>
             ))}
-            <Link className="text-link writing-all" href="/blog">Explore all writing ↗</Link>
+            <Link className="text-link writing-all" href="/blog">Explore all writing <Icon name="arrowOutward" /></Link>
           </div>
           <NewsletterSignup newsletter={settings.newsletter} />
         </div>

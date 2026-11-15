@@ -1,5 +1,6 @@
 'use client'
 
+import { Icon } from './Icon'
 import React, { useEffect, useRef, useState } from 'react'
 import type { CatControls } from '../lib/catScene'
 
@@ -85,7 +86,7 @@ export function CatPlayground() {
             {paused ? 'Let it walk' : 'Pause'}
           </button>
           <button type="button" disabled={!ready} onClick={() => controls.current?.turn()}>
-            Turn ↻
+            Turn <Icon name="rotate" />
           </button>
         </div>
       )}

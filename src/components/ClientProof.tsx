@@ -1,3 +1,4 @@
+import { Icon } from './Icon'
 import React from 'react'
 import { ReviewScroller } from './ReviewScroller'
 import { ClientFlag } from './ClientFlag'
@@ -20,7 +21,7 @@ export function ClientProof({ reviews }: { reviews: Testimonial[] }) {
           <figure className="quote reveal" key={review.id}>
             {typeof review.rating === 'number' && (
               <p className="review-rating" aria-label={`Rated ${review.rating} out of 5`}>
-                <span className="review-stars" aria-hidden="true">{'★'.repeat(Math.floor(review.rating))}</span>
+                <span className="review-stars" aria-hidden="true">{Array.from({ length: Math.floor(review.rating) }, (_, index) => <Icon key={index} name="star" size={34} />)}</span>
                 <span>{review.rating.toFixed(1)} / 5</span>
               </p>
             )}
@@ -31,7 +32,7 @@ export function ClientProof({ reviews }: { reviews: Testimonial[] }) {
                 <span className="review-attribution">{[review.role, review.company, review.location].filter(Boolean).join(' · ')}</span>
               )}
               <a href={upworkProfile} target="_blank" rel="noopener noreferrer">
-                {review.project || 'Client project'} ↗
+                {review.project || 'Client project'} <Icon name="arrowOutward" />
               </a>
               <small>{review.reviewDate}</small>
             </figcaption>
@@ -40,7 +41,7 @@ export function ClientProof({ reviews }: { reviews: Testimonial[] }) {
       </ReviewScroller>
       <p className="proof-source">
         <a href={upworkProfile} target="_blank" rel="noopener noreferrer">
-          View original client feedback ↗
+          View original client feedback <Icon name="arrowOutward" />
         </a>
       </p>
     </section>

@@ -1,3 +1,4 @@
+import { Icon } from '../../../../components/Icon'
 import Link from 'next/link'
 import { pageMetadata, jsonLd, siteUrl } from '../../../../lib/seo'
 import { factoryMessage } from '../../../../components/WhatsAppLink'
@@ -36,7 +37,7 @@ export default async function SoftwareFactoryPage() {
       />
       <header className="hero offer-hero">
         <Link className="breadcrumbs" href="/#offers">
-          ← All services
+          <Icon name="arrowBack" /> All services
         </Link>
         <p className="hero-kicker">A connected delivery system for agencies</p>
         <h1>
@@ -52,10 +53,10 @@ export default async function SoftwareFactoryPage() {
         </p>
         <div className="hero-actions">
           <a className="btn btn-primary" href="#contact">
-            Discuss your agency’s workflow ↗
+            Discuss your agency’s workflow <Icon name="arrowOutward" />
           </a>
           <a className="text-link" href="#how-it-works">
-            See how it works ↓
+            See how it works <Icon name="arrowDown" />
           </a>
         </div>
         <p className="hub-note">
@@ -156,12 +157,12 @@ export default async function SoftwareFactoryPage() {
           <blockquote>“{review.quote}”</blockquote>
           <figcaption>
             <a href={upworkProfile} target="_blank" rel="noopener noreferrer">
-              {review.author} · {[review.role, review.location].filter(Boolean).join(' · ')} · {review.project} ↗
+              {review.author} · {[review.role, review.location].filter(Boolean).join(' · ')} · {review.project} <Icon name="arrowOutward" />
             </a>
           </figcaption>
         </figure>
         <p className="proof-source">
-          <Link href="/#work">Explore related engineering projects ↗</Link>
+          <Link href="/#work">Explore related engineering projects <Icon name="arrowOutward" /></Link>
         </p>
       </section>}
       <section className="section" id="contact">

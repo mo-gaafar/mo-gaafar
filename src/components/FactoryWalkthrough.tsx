@@ -1,5 +1,6 @@
 'use client'
 
+import { Icon } from './Icon'
 import React, { useEffect, useRef, useState } from 'react'
 
 export const factoryStages = [
@@ -73,7 +74,7 @@ export function FactoryWalkthrough() {
             >
               <span>{String(i + 1).padStart(2, '0')}</span>
               {stage.label}
-              <span aria-hidden="true">{i === 4 ? '↺' : '↓'}</span>
+              <span aria-hidden="true"><Icon name={i === 4 ? 'restart' : 'arrowDown'} /></span>
             </a>
           ))}
         </nav>
