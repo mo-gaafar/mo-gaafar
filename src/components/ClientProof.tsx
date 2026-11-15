@@ -11,9 +11,9 @@ export function ClientProof({ reviews }: { reviews: Testimonial[] }) {
   return (
     <section className="section" id="client-feedback">
       <div className="section-head">
-        <p className="eyebrow">Client feedback</p>
+        <p className="eyebrow">Happy clients</p>
         <h2>Good work is a collaboration.</h2>
-        <p className="lead">Reviews from completed Upwork projects.</p>
+        <p className="lead">A few words from people I’ve built with.</p>
       </div>
       <ReviewScroller>
         {reviews.map((review) => (
@@ -31,7 +31,7 @@ export function ClientProof({ reviews }: { reviews: Testimonial[] }) {
                 <span className="review-attribution">{[review.role, review.company, review.location].filter(Boolean).join(' · ')}</span>
               )}
               <a href={upworkProfile} target="_blank" rel="noopener noreferrer">
-                {review.project || 'Read on Upwork'} ↗
+                {review.project || 'Client project'} ↗
               </a>
               <small>{review.reviewDate}</small>
             </figcaption>
@@ -39,10 +39,8 @@ export function ClientProof({ reviews }: { reviews: Testimonial[] }) {
         ))}
       </ReviewScroller>
       <p className="proof-source">
-        Top Rated Plus · 100% Job Success · 14 total jobs{' '}
-        <span>— Upwork profile, October 2026. </span>
         <a href={upworkProfile} target="_blank" rel="noopener noreferrer">
-          View current profile ↗
+          View original client feedback ↗
         </a>
       </p>
     </section>
