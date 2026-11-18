@@ -841,11 +841,23 @@ h4 {
 .cat-controls button { font: inherit; font-size: .8rem; color: var(--text); background: var(--surface); border: 1px solid var(--border); border-radius: 7px; min-height: 44px; padding: .5rem .75rem; cursor: pointer; }
 .cat-controls button:disabled { opacity: .5; cursor: default; }
 @keyframes page-arrive { from { opacity: .5; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@keyframes section-arrive {
+  from { opacity: 0; translate: 0 var(--reveal-rise, 32px); }
+  to { opacity: 1; translate: 0 0; }
+}
 @media (prefers-reduced-motion: no-preference) {
   html { scroll-behavior: smooth; }
   .page-enter { animation: page-arrive .45s ease-out both; }
-  [data-reveal-pending] { opacity: 0; transform: translateY(32px); }
-  [data-reveal-pending]:focus-within { opacity: 1; transform: none; }
+  [data-reveal='pending'] { opacity: 0; }
+  [data-reveal='entered'] {
+    animation: section-arrive var(--reveal-duration, .75s) cubic-bezier(.2,.7,.2,1) var(--reveal-delay, 0s) backwards;
+  }
+  .hub-hero ~ .section { --reveal-duration: 1.05s; --reveal-rise: 16px; --reveal-delay: .12s; }
+  .hub-hero ~ .section .section-head { --reveal-delay: 0s; }
+}
+@media (min-width: 881px) and (prefers-reduced-motion: no-preference) {
+  .hub-hero ~ .section :is(.quote + .quote, .case + .case, .other-services article + article, .newsletter-panel, .cat-playground) { --reveal-delay: .26s; }
+  .hub-hero ~ .section .case:nth-child(3) { --reveal-delay: .4s; }
 }
 
 .whatsapp-link { display: inline-flex; align-items: center; justify-content: center; gap: .65rem; }
@@ -898,13 +910,14 @@ h4 {
 @media (prefers-reduced-motion: no-preference) {
   .page-enter:has(> .hub-hero) { animation: none; }
   .hub-hero :where(.hero-name, .hero-kicker, h1, h1 .accent, .hero-lede, .hero-actions, .hero-visual, .hero-postcards) {
-    animation: hero-arrive 1.1s cubic-bezier(.2,.65,.25,1) backwards;
+    animation: hero-arrive 1.35s cubic-bezier(.2,.65,.25,1) backwards;
   }
-  .hub-hero h1 { animation-delay: .12s; }
-  .hub-hero h1 .accent, .hub-hero .hero-visual { animation-delay: .28s; }
-  .hub-hero .hero-lede { animation-delay: .43s; }
-  .hub-hero .hero-actions { animation-delay: .56s; }
-  .hub-hero .hero-postcards { animation-delay: .68s; }
+  .hub-hero .hero-name, .hub-hero .hero-visual { animation-delay: .12s; }
+  .hub-hero h1 { animation-delay: .38s; }
+  .hub-hero h1 .accent { animation-delay: .65s; }
+  .hub-hero .hero-lede { animation-delay: .9s; }
+  .hub-hero .hero-actions { animation-delay: 1.15s; }
+  .hub-hero .hero-postcards { animation-delay: 1.3s; }
   .hub-hero :is(.hero-actions, .hero-postcards):focus-within { animation: none; }
 }
 

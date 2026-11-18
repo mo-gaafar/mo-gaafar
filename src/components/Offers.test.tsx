@@ -31,7 +31,7 @@ const noScriptPage = renderToStaticMarkup(
     <h2 className="reveal">Visible without JavaScript</h2>
   </PageTransition>,
 )
-assert.doesNotMatch(noScriptPage, /data-reveal-pending|hidden/)
+assert.doesNotMatch(noScriptPage, /data-reveal=|hidden/)
 
 const walkthrough = renderToStaticMarkup(<FactoryWalkthrough />)
 for (const match of walkthrough.matchAll(/href="#([^"]+)"/g)) {
