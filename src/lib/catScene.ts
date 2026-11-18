@@ -30,14 +30,18 @@ export function makeCat() {
   }
   blob(cat, orange, [0, 0.85, -0.15], [0.56, 0.57, 0.82])
   blob(cat, cream, [0, 0.82, 0.5], [0.4, 0.48, 0.15])
-  const legs: THREE.Mesh[] = []
+  const legs: THREE.Group[] = []
   for (const x of [-0.36, 0.36])
     for (const z of [-0.63, 0.43]) {
-      const leg = blob(cat, orange, [x, 0.35, z], [0.2, 0.35, 0.23])
-      blob(cat, cream, [x, 0.14, z + 0.06], [0.21, 0.14, 0.27])
+      const leg = new THREE.Group()
+      leg.position.set(x, 0.65, z)
+      cat.add(leg)
+      blob(leg, orange, [0, -0.3, 0], [0.2, 0.35, 0.23])
+      blob(leg, cream, [0, -0.51, 0.06], [0.21, 0.14, 0.27])
       legs.push(leg)
     }
   const head = new THREE.Group()
+  const eyes: THREE.Group[] = []
   head.position.set(0, 1.4, 0.58)
   cat.add(head)
   blob(head, orange, [0, 0, 0], [0.66, 0.59, 0.54])
@@ -51,9 +55,13 @@ export function makeCat() {
     inner.rotation.copy(ear.rotation)
     head.add(inner)
     blob(head, cream, [side * 0.19, -0.2, 0.45], [0.26, 0.2, 0.13])
-    blob(head, green, [side * 0.26, 0.06, 0.46], [0.19, 0.22, 0.08])
-    blob(head, black, [side * 0.26, 0.06, 0.53], [0.055, 0.16, 0.025])
-    blob(head, cream, [side * 0.26 - 0.03, 0.12, 0.55], [0.035, 0.04, 0.015])
+    const eye = new THREE.Group()
+    eye.position.set(side * 0.26, 0.06, 0.46)
+    head.add(eye)
+    eyes.push(eye)
+    blob(eye, green, [0, 0, 0], [0.19, 0.22, 0.08])
+    blob(eye, black, [0, 0, 0.07], [0.055, 0.16, 0.025])
+    blob(eye, cream, [-0.03, 0.06, 0.09], [0.035, 0.04, 0.015])
     for (let i = 0; i < 3; i++) {
       const cheek = blob(
         head,
@@ -89,7 +97,7 @@ export function makeCat() {
   ])
   tail.add(new THREE.Mesh(new THREE.TubeGeometry(curve, 20, 0.12, 8, false), orange))
   blob(tail, stripe, [0.15, 1.05, -0.25], [0.12, 0.13, 0.12])
-  return { cat, legs, head, tail }
+  return { cat, legs, head, tail, eyes }
 }
 
 export function createCatScene(canvas: HTMLCanvasElement, onLost: () => void): CatControls {
@@ -102,25 +110,44 @@ export function createCatScene(canvas: HTMLCanvasElement, onLost: () => void): C
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5))
   const scene = new THREE.Scene()
   const camera = new THREE.PerspectiveCamera(36, 1, 0.1, 30)
-  camera.position.set(3.1, 2.6, 5.5)
-  camera.lookAt(0, 1, 0)
-  scene.add(new THREE.HemisphereLight(0xffefd7, 0x64757c, 3))
-  const light = new THREE.DirectionalLight(0xffffff, 3)
+  camera.position.set(1.15, 2.25, 5.25)
+  camera.lookAt(0, .85, 0)
+  scene.add(new THREE.HemisphereLight(0xfff1db, 0x747f88, 1.9))
+  const light = new THREE.DirectionalLight(0xfff6eb, 2)
   light.position.set(-3, 5, 4)
   scene.add(light)
-  const { cat, legs, head, tail } = makeCat()
+  const { cat, legs, head, tail, eyes } = makeCat()
   scene.add(cat)
   const floor = new THREE.Mesh(
     new THREE.CircleGeometry(2, 48),
-    new THREE.MeshStandardMaterial({ color: '#c9d4ca', roughness: 1 }),
+    new THREE.MeshBasicMaterial({ color: '#bb8268' }),
   )
   floor.rotation.x = -Math.PI / 2
   scene.add(floor)
+  for (const radius of [1.8, 1.89]) {
+    const border = new THREE.Mesh(new THREE.RingGeometry(radius, radius + .025, 64), new THREE.MeshBasicMaterial({ color: '#efd2a8' }))
+    border.position.z = .002
+    floor.add(border)
+  }
+  const shadowCanvas = document.createElement('canvas')
+  shadowCanvas.width = shadowCanvas.height = 64
+  const context = shadowCanvas.getContext('2d')!
+  const gradient = context.createRadialGradient(32, 32, 0, 32, 32, 32)
+  gradient.addColorStop(0, 'rgba(43,24,18,.38)')
+  gradient.addColorStop(1, 'rgba(43,24,18,0)')
+  context.fillStyle = gradient
+  context.fillRect(0, 0, 64, 64)
+  const shadowTexture = new THREE.CanvasTexture(shadowCanvas)
+  const shadow = new THREE.Mesh(new THREE.PlaneGeometry(1.45, 2.15), new THREE.MeshBasicMaterial({ map: shadowTexture, transparent: true, depthWrite: false }))
+  shadow.rotation.x = -Math.PI / 2
+  shadow.position.y = .008
+  scene.add(shadow)
   let paused = true
   let visible = false
   let lost = false
   let rotation = 0
   let time = 0
+  let distance = 0
   let previous = 0
   let petUntil = 0
   const render = () => {
@@ -133,17 +160,29 @@ export function createCatScene(canvas: HTMLCanvasElement, onLost: () => void): C
   }
   function animate(now: number) {
     if (previous && now - previous < 1000 / 30) return
-    time += previous ? Math.min((now - previous) / 1000, 0.1) : 0
+    const delta = previous ? Math.min((now - previous) / 1000, 0.1) : 0
+    time += delta
     previous = now
     const petting = now < petUntil
-    cat.position.x = Math.sin(time * 0.55) * 0.55
-    cat.position.y = petting ? Math.abs(Math.sin(time * 7)) * 0.13 : Math.sin(time * 6) * 0.025
-    cat.rotation.y = rotation + Math.sin(time * 0.55) * 0.45
+    // Wander in an oval and ease into a short rest between laps.
+    const speed = petting ? 0 : THREE.MathUtils.smoothstep(Math.sin(time * .65), -.8, -.15)
+    distance += delta * speed
+    const angle = distance * .77 + 1.1
+    cat.position.set(.84 * Math.sin(angle), Math.abs(Math.sin(distance * 5)) * .025 * speed, -.42 * Math.cos(angle))
+    cat.rotation.y = rotation + Math.atan2(.84 * Math.cos(angle), .42 * Math.sin(angle))
+    shadow.position.x = cat.position.x
+    shadow.position.z = cat.position.z
+    shadow.rotation.z = cat.rotation.y
     legs.forEach((leg, i) => {
-      leg.rotation.x = Math.sin(time * 6 + (i === 0 || i === 3 ? 0 : Math.PI)) * 0.28
+      const stride = distance * 5 + (i === 0 || i === 3 ? 0 : Math.PI)
+      leg.rotation.x = Math.sin(stride) * .46 * speed
+      leg.position.y = .65 + Math.max(0, Math.cos(stride)) * .07 * speed
     })
-    tail.rotation.z = Math.sin(time * 2) * 0.2
-    head.rotation.z = petting ? Math.sin(time * 5) * 0.18 : Math.sin(time) * 0.04
+    tail.rotation.z = Math.sin(time * (petting ? 3.6 : 1.8)) * .23
+    head.rotation.z = petting ? -.2 : Math.sin(time * 1.2) * .05
+    head.rotation.y = Math.sin(time * .85) * .24
+    const blink = petting ? .18 : THREE.MathUtils.clamp(Math.abs((time + 2) % 4.6 - 2.3) * 9, .08, 1)
+    eyes.forEach(eye => { eye.scale.y = blink })
     render()
   }
   const resize = new ResizeObserver(() => {
@@ -151,6 +190,7 @@ export function createCatScene(canvas: HTMLCanvasElement, onLost: () => void): C
     if (!width || !height) return
     renderer.setSize(width, height, false)
     camera.aspect = width / height
+    camera.zoom = Math.min(.98, camera.aspect / 1.12)
     camera.updateProjectionMatrix()
     render()
   })
@@ -180,7 +220,8 @@ export function createCatScene(canvas: HTMLCanvasElement, onLost: () => void): C
     },
     turn() {
       rotation += Math.PI / 4
-      cat.rotation.y = rotation
+      cat.rotation.y += Math.PI / 4
+      shadow.rotation.z = cat.rotation.y
       render()
     },
     dispose() {
@@ -202,6 +243,7 @@ export function createCatScene(canvas: HTMLCanvasElement, onLost: () => void): C
       })
       geometries.forEach((geometry) => geometry.dispose())
       materials.forEach((material) => material.dispose())
+      shadowTexture.dispose()
       renderer.dispose()
       renderer.forceContextLoss()
     },

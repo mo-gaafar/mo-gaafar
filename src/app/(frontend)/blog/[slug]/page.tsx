@@ -4,11 +4,12 @@ import { pageMetadata } from '../../../../lib/seo'
 import { notFound, permanentRedirect } from 'next/navigation'
 import { getPayloadClient } from '../../../../lib/payload'
 import { RichText } from '../../../../components/RichText'
+import { Icon } from '../../../../components/Icon'
 
 export const dynamic = 'force-dynamic'
 
 const fmtDate = (d?: string | null) =>
-  d ? new Date(d).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) : ''
+  d ? new Date(d).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' }) : ''
 
 async function getPost(slug: string) {
   const payload = await getPayloadClient()
@@ -46,17 +47,18 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
   }
 
   return (
-    <article className="section center-narrow">
-      <div className="breadcrumbs">
-        <Link href="/blog">Writing</Link> / {p.title}
-      </div>
-      <div className="section-head">
+    <article className="section reading-page">
+      <Link className="reading-back" href={p.archived ? '/blog/archive' : '/blog'}>
+        <Icon name="arrowBack" /> {p.archived ? 'Archived writing' : 'All writing'}
+      </Link>
+      <header className="section-head">
+        <p className="eyebrow"><time dateTime={p.date}>{fmtDate(p.date)}</time></p>
         <h1>{p.title}</h1>
-        <p className="meta muted">{fmtDate(p.date)}</p>
-      </div>
-      {p.content ? <RichText data={p.content} /> : <p className="lead">{p.description}</p>}
+        {p.description && <p className="lead">{p.description}</p>}
+      </header>
+      <RichText data={p.content} />
       {(p.tags?.length ?? 0) > 0 && (
-        <div className="chips" style={{ marginTop: '2rem' }}>
+        <div className="chips">
           {p.tags!.map((t, i) => (
             <span className="chip" key={i}>
               {t.tag}
@@ -64,6 +66,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
           ))}
         </div>
       )}
+      <Link className="reading-back" href="/blog"><Icon name="arrowBack" /> All writing</Link>
     </article>
   )
 }

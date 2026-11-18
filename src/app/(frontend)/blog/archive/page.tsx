@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { Icon } from '../../../../components/Icon'
 import type { Metadata } from 'next'
 import { pageMetadata } from '../../../../lib/seo'
 import { getPayloadClient } from '../../../../lib/payload'
@@ -7,7 +8,7 @@ export const dynamic = 'force-dynamic'
 export const metadata: Metadata = pageMetadata('Archived writing', 'Older engineering articles and technical notes by Mohamed Gaafar.', '/blog/archive')
 
 const fmtDate = (d?: string | null) =>
-  d ? new Date(d).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) : ''
+  d ? new Date(d).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' }) : ''
 
 export default async function ArchivePage() {
   const payload = await getPayloadClient()
@@ -20,22 +21,20 @@ export default async function ArchivePage() {
   })
 
   return (
-    <section className="section">
-      <div className="breadcrumbs">
-        <Link href="/blog">Writing</Link> / Archive
-      </div>
+    <section className="section writing-index">
+      <Link className="reading-back" href="/blog"><Icon name="arrowBack" /> All writing</Link>
       <div className="section-head">
         <h1>Archived posts</h1>
         <p className="lead">Older technical notes preserved for reference.</p>
       </div>
       {docs.map((p) => (
-        <div className="post-row" key={p.id}>
-          <h3>
+        <article className="post-row" key={p.id}>
+          <p className="meta"><time dateTime={p.date}>{fmtDate(p.date)}</time></p>
+          <h2>
             <Link href={`/blog/${p.slug}`}>{p.title}</Link>
-          </h3>
-          <p className="meta">{fmtDate(p.date)}</p>
+          </h2>
           <p className="muted">{p.description}</p>
-        </div>
+        </article>
       ))}
     </section>
   )

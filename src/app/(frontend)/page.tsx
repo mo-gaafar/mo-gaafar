@@ -66,8 +66,7 @@ export default async function HomePage() {
             <p className="hero-name">Hi, I’m {name}.</p>
             <h1>
               Good ideas.
-              <br />
-              Working systems.
+              <span className="accent">Working systems.</span>
             </h1>
             <p className="hero-lede">{description}</p>
             <div className="hero-actions">
@@ -78,15 +77,11 @@ export default async function HomePage() {
                 Explore how I can help <Icon name="arrowDown" />
               </a>
             </div>
-            <p className="hub-note">
-              Engineer, technical founder, and your partner from idea to delivery.
-            </p>
           </div>
           <aside className="hero-visual" aria-label="Portrait and a little about me">
             <div className="hero-portrait">
               <img src={portrait} width={480} height={540} fetchPriority="high" alt={name} />
             </div>
-            <div className="portrait-caption">A human behind the automation.</div>
           </aside>
         </div>
         <HeroPostcards />
@@ -175,7 +170,7 @@ export default async function HomePage() {
         </section>
       )}
       <section className="section about-compact" id="background">
-        <div>
+        <div className="section-head">
           <p className="eyebrow">A little more about me</p>
           <h2>
             Curious by nature.

@@ -12,7 +12,6 @@ export function ReviewScroller({ children }: { children: React.ReactNode }) {
   return (
     <>
       <div className="review-navigation">
-        <span>Scroll through client stories</span>
         <div>
           <IconButton aria-label="Previous reviews" aria-controls="review-track" onClick={() => scroll(-1)}><Icon name="arrowBack" /></IconButton>
           <IconButton aria-label="Next reviews" aria-controls="review-track" onClick={() => scroll(1)}><Icon name="arrow" /></IconButton>

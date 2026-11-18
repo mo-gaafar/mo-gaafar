@@ -62,8 +62,11 @@ const residentCat = renderToStaticMarkup(<CatPlayground />)
 assert.match(residentCat, /<canvas/)
 assert.doesNotMatch(residentCat, /Meet the 3D cat/)
 
-const { cat, legs } = makeCat()
+const { cat, legs, eyes } = makeCat()
 assert.equal(legs.length, 4)
+assert.ok(legs.every(leg => leg.children.length === 2), 'Each paw moves with its leg')
+assert.equal(eyes.length, 2)
+assert.ok(eyes.every(eye => eye.children.length === 3), 'A blink moves the iris, pupil and catchlight together')
 const bounds = new Box3().setFromObject(cat)
 assert.ok(
   !bounds.isEmpty() && bounds.min.y >= -0.01 && bounds.max.y < 3,

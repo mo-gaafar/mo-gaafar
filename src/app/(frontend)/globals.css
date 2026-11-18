@@ -740,9 +740,14 @@ h4 {
 .other-services article { padding: 1.5rem 0; border-top: 1px solid var(--border); }
 .other-services p { color: var(--muted); margin: .7rem 0 1.2rem; }
 .text-link { display: inline-block; font-weight: 600; padding-block: .4rem; }
-#client-feedback { padding-block: 2.5rem; }
+#client-feedback { padding-block: 2.5rem; display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 1rem; }
+#client-feedback :is(.review-track, .proof-source) { grid-column: 1 / -1; }
 #client-feedback .section-head { margin-bottom: .8rem; }
-.review-navigation { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-bottom: .8rem; color: var(--muted); font-size: .8rem; }
+.review-navigation { align-self: end; margin-bottom: .8rem; }
+@media (max-width: 520px) {
+  #client-feedback { grid-template-columns: minmax(0, 1fr); }
+  .review-navigation { justify-self: end; }
+}
 .review-navigation > div { display: flex; gap: .5rem; }
 .review-navigation button { width: 44px; height: 44px; border: 1px solid var(--border); border-radius: 50%; color: var(--ink); background: var(--surface); font-size: 1.3rem; cursor: pointer; }
 .review-navigation button:hover { background: var(--primary-soft); }
@@ -761,16 +766,22 @@ h4 {
 .review-rating .review-stars { color: #c18a15; font-size: 2.1rem; line-height: 1; letter-spacing: .08em; margin-left: 0; text-shadow: 0 1px 0 #f8df98; }
 [data-theme="dark"] .review-rating .review-stars { color: #f1c45b; text-shadow: none; }
 /* Keep the doodles in the hero's open margins, clear of copy and actions. */
-.hub-hero { position: relative; padding-bottom: 10rem; }
+.hub-hero { position: relative; padding-bottom: 6.5rem; }
+.hub-hero ~ .section { padding-block: clamp(2.5rem, 5vw, 4.25rem); }
+.about-compact .section-head { margin: 0; }
+.about-compact .hero-actions { flex-flow: row wrap; column-gap: 1.25rem; }
+.cat-playground .eyebrow, .newsletter-panel .eyebrow {
+  font-size: .78rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted);
+}
 .hero-postcards { position: absolute; inset: 0; pointer-events: none; }
 .hero-postcard { --doodle-line: color-mix(in srgb, var(--ink) 65%, var(--primary)); --doodle-fill: color-mix(in srgb, var(--secondary) 30%, var(--bg)); --doodle-wash: color-mix(in srgb, var(--secondary) 8%, var(--bg)); position: absolute; width: 100px; padding: 0; border: 0; background: none; color: var(--text); font: inherit; cursor: help; pointer-events: auto; border-radius: 12px; }
-.postcard-egypt { left: 3%; bottom: 2.5rem; }
+.postcard-egypt { left: 3%; bottom: 1.25rem; }
 .postcard-egypt svg { transform: rotate(-9deg); }
 .postcard-syria { left: 38%; bottom: 1rem; }
 .postcard-syria svg { transform: rotate(7deg); }
 .postcard-pisa { right: 1%; top: .5rem; }
 .postcard-pisa svg { transform: rotate(8deg); }
-.postcard-torino { right: 3%; bottom: 2rem; }
+.postcard-torino { right: 3%; bottom: 1.25rem; }
 .postcard-torino svg { transform: rotate(-8deg); }
 .postcard-cat { left: 51%; top: .25rem; }
 .postcard-cat svg { transform: rotate(-12deg); }
@@ -880,10 +891,48 @@ h4 {
 .newsletter-form #newsletter-note { font-size: .75rem; line-height: 1.6; margin: 0; }
 .newsletter-form .text-link { font-size: .8rem; margin-top: 0; }
 
+@keyframes hero-arrive {
+  from { opacity: .08; translate: 0 .8rem; }
+  to { opacity: 1; translate: 0 0; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .page-enter:has(> .hub-hero) { animation: none; }
+  .hub-hero :where(.hero-name, .hero-kicker, h1, h1 .accent, .hero-lede, .hero-actions, .hero-visual, .hero-postcards) {
+    animation: hero-arrive 1.1s cubic-bezier(.2,.65,.25,1) backwards;
+  }
+  .hub-hero h1 { animation-delay: .12s; }
+  .hub-hero h1 .accent, .hub-hero .hero-visual { animation-delay: .28s; }
+  .hub-hero .hero-lede { animation-delay: .43s; }
+  .hub-hero .hero-actions { animation-delay: .56s; }
+  .hub-hero .hero-postcards { animation-delay: .68s; }
+  .hub-hero :is(.hero-actions, .hero-postcards):focus-within { animation: none; }
+}
+
+.reading-page, .writing-index { max-width: 52rem; padding-block: clamp(2rem, 5vw, 4rem); }
+.reading-back { display: inline-flex; align-items: center; gap: .5rem; min-height: 44px; font-weight: 600; font-size: .9rem; }
+.reading-page .section-head { margin: 1rem 0 1.75rem; padding-bottom: 1.6rem; border-bottom: 1px solid var(--border); }
+.reading-page .section-head h1 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.14; letter-spacing: -.04em; }
+.reading-page .section-head .lead { font-size: 1.1rem; margin-top: 1rem; }
+.reading-page .prose { font-size: clamp(1.04rem, 1.4vw, 1.125rem); line-height: 1.75; overflow-wrap: anywhere; }
+.reading-page .payload-richtext > * + * { margin-block-start: 1em; }
+.reading-page .payload-richtext :is(h2, h3, h4) { margin: 1.7em 0 .5em; line-height: 1.25; text-wrap: balance; }
+.reading-page .payload-richtext :is(h2, h3, h4) + * { margin-top: 0; }
+.reading-page li + li { margin-top: .35em; }
+.reading-page pre { max-width: 100%; overflow-x: auto; padding: 1rem; border-radius: 8px; background: var(--surface-alt); }
+.reading-page .chips { margin-top: 2rem; }
+.reading-page > .reading-back:last-child { display: flex; margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+.writing-index .section-head { margin-block: 1rem 1.75rem; }
+.writing-index .post-row { padding-block: 1.5rem; }
+.writing-index .post-row h2 { font-size: clamp(1.25rem, 2.4vw, 1.6rem); line-height: 1.3; margin-bottom: .5rem; }
+.writing-index .post-row h2 a { color: var(--ink); }
+.writing-index .post-row:first-of-type { border-top: 1px solid var(--border); }
+
 .writing-layout:not(:has(.newsletter-panel)) { grid-template-columns: 1fr; }
 
 @media (max-width: 880px) {
   .hub-hero .hero-grid { position: relative; }
+  .hub-hero h1 { font-size: clamp(2.25rem, 9.6vw, 3.4rem); }
+  .hub-hero .postcard-cat { left: auto; right: calc(3% + 82px); }
   .hub-hero .hero-visual { position: absolute; top: 0; right: 0; width: clamp(76px, 22vw, 110px); padding: 0; margin: 0; }
   .hub-hero .hero-kicker, .hub-hero .hero-name { padding-right: calc(clamp(76px, 22vw, 110px) + 1rem); }
   .hub-hero .hero-name { min-height: 2.5rem; }

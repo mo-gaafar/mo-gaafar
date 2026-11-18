@@ -23,11 +23,6 @@ export function ContactOptions({ email, message }: { email?: string | null; mess
           <a href="tel:+393514277009">+39 351 427 7009</a>
         </p>
       </details>
-      {email && (
-        <p className="contact-alternative">
-          No WhatsApp, or not signed in? <a href={`mailto:${email}`}>Email me instead.</a>
-        </p>
-      )}
     </div>
   )
 }

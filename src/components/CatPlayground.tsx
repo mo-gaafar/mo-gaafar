@@ -51,45 +51,41 @@ export function CatPlayground() {
     }
   }, [])
 
+  function pet() {
+    if (!ready) return
+    controls.current?.pet()
+    setStatus('Purr. That’s the spot.')
+  }
+
   return (
     <aside className="cat-playground" aria-label="Interactive 3D orange cat">
       <p className="eyebrow">Resident orange cat</p>
       <canvas
         ref={canvas}
         className="cat-canvas"
+        onClick={pet}
         role="img"
         aria-label="Marmalade, a three-dimensional orange tabby wandering around. Use the controls below to pet or pause the cat."
       />
       <p className="cat-status" role="status">
         {status}
       </p>
-      {ready && (
-        <div className="cat-controls">
-          <button
-            type="button"
-            disabled={!ready}
-            onClick={() => {
-              controls.current?.pet()
-              setStatus('Purr. That’s the spot.')
-            }}
-          >
-            Pet the cat
-          </button>
-          <button
-            type="button"
-            disabled={!ready}
-            onClick={() => {
-              controls.current?.pause(!paused)
-              setPaused(!paused)
-            }}
-          >
-            {paused ? 'Let it walk' : 'Pause'}
-          </button>
-          <button type="button" disabled={!ready} onClick={() => controls.current?.turn()}>
-            Turn <Icon name="rotate" />
-          </button>
-        </div>
-      )}
+      <div className="cat-controls">
+        <button type="button" disabled={!ready} onClick={pet}>Pet the cat</button>
+        <button
+          type="button"
+          disabled={!ready}
+          onClick={() => {
+            controls.current?.pause(!paused)
+            setPaused(!paused)
+          }}
+        >
+          {paused ? 'Let it walk' : 'Pause'}
+        </button>
+        <button type="button" disabled={!ready} onClick={() => controls.current?.turn()}>
+          Turn <Icon name="rotate" />
+        </button>
+      </div>
     </aside>
   )
 }

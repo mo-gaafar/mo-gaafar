@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { Icon } from '../../../components/Icon'
 import type { Metadata } from 'next'
 import { pageMetadata } from '../../../lib/seo'
 import { getPayloadClient } from '../../../lib/payload'
@@ -7,7 +8,7 @@ export const dynamic = 'force-dynamic'
 export const metadata: Metadata = pageMetadata('Writing', 'Practical notes on AI agents, RAG, voice AI, automation, and engineering.', '/blog')
 
 const fmtDate = (d?: string | null) =>
-  d ? new Date(d).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) : ''
+  d ? new Date(d).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' }) : ''
 
 export default async function BlogPage() {
   const payload = await getPayloadClient()
@@ -20,10 +21,8 @@ export default async function BlogPage() {
   })
 
   return (
-    <section className="section">
-      <div className="breadcrumbs">
-        <Link href="/">Home</Link> / Writing
-      </div>
+    <section className="section writing-index">
+      <Link className="reading-back" href="/"><Icon name="arrowBack" /> Home</Link>
       <div className="section-head">
         <p className="eyebrow">Writing</p>
         <h1>AI automation, agents &amp; engineering</h1>
@@ -34,21 +33,16 @@ export default async function BlogPage() {
       </div>
 
       {docs.map((p) => (
-        <div className="post-row" key={p.id}>
-          <h3>
+        <article className="post-row" key={p.id}>
+          <p className="meta"><time dateTime={p.date}>{fmtDate(p.date)}</time></p>
+          <h2>
             <Link href={`/blog/${p.slug}`}>{p.title}</Link>
-          </h3>
-          <p className="meta">{fmtDate(p.date)}</p>
+          </h2>
           <p className="muted">{p.description}</p>
-        </div>
+        </article>
       ))}
 
-      <div className="panel">
-        <h3 style={{ fontSize: '1.3rem', marginBottom: '0.4rem' }}>
-          <Link href="/blog/archive">Archived posts</Link>
-        </h3>
-        <p className="muted">Older technical notes preserved for reference.</p>
-      </div>
+      <Link className="reading-back writing-all" href="/blog/archive">Archived posts <Icon name="arrow" /></Link>
     </section>
   )
 }
